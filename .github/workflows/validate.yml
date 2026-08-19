@@ -1,0 +1,54 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  # The pluginindex tool depends on the new-api module (pkg/jsplugin) via a
+  # relative replace directive; the two checkouts below sit side by side so
+  # the path resolves in CI exactly as it does in a local sibling clone.
+  # Until the plugin-task work merges to main, point this at the branch that
+  # carries pkg/jsplugin.
+  NEW_API_REPO: QuantumNous/new-api
+  NEW_API_REF: main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout marketplace
+        uses: actions/checkout@v4
+        with:
+          path: new-api-plugins
+          fetch-depth: 0
+
+      - name: Checkout new-api (jsplugin dependency)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.NEW_API_REPO }}
+          ref: ${{ env.NEW_API_REF }}
+          path: new-api
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: new-api/go.mod
+
+      - name: Compile all plugins and verify index.json
+        working-directory: new-api-plugins/tools/pluginindex
+        run: go run . check ../..
+
+      - name: Published versions are immutable
+        if: github.event_name == 'pull_request'
+        working-directory: new-api-plugins
+        run: |
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          changed=$(git diff --name-only --diff-filter=MD "origin/${{ github.base_ref }}"...HEAD -- 'plugins/**/plugin.js')
+          if [ -n "$changed" ]; then
+            echo "Published plugin versions must not be modified or deleted:"
+            echo "$changed"
+            echo "Publish a new version directory instead."
+            exit 1
+          fi

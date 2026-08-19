@@ -1,0 +1,421 @@
+{
+  "indexVersion": 1,
+  "name": "New API Official Plugins",
+  "plugins": [
+    {
+      "key": "alibaba",
+      "name": "Alibaba Bailian",
+      "icon": "Bailian.Color",
+      "description": {
+        "en": "Alibaba Cloud Bailian Wanxiang video generation (text-to-video and image-to-video)",
+        "zh": "阿里云百炼万相视频生成（文生视频、图生视频）"
+      },
+      "protocols": [
+        {
+          "name": "openai_responses",
+          "supports": [
+            "stream",
+            "sync",
+            "background"
+          ]
+        },
+        {
+          "name": "openai_video"
+        }
+      ],
+      "channelTypes": [
+        17
+      ],
+      "models": [
+        "wan2.7-i2v",
+        "wan2.7-t2v",
+        "wan2.5-t2v-preview",
+        "wan2.5-i2v-preview",
+        "wan2.2-i2v-flash",
+        "wan2.2-i2v-plus",
+        "wanx2.1-i2v-plus",
+        "wanx2.1-i2v-turbo"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/alibaba/1.0.0/plugin.js",
+          "sha256": "b93da331068f04e6c4a0eaed0cec910bbb5cdeae30a522abbdf8e6874348754a",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "doubao",
+      "name": "Doubao Video",
+      "icon": "Doubao.Color",
+      "description": {
+        "en": "Volcengine Doubao Seedance video generation (text-to-video, image-to-video, and video-to-video)",
+        "zh": "火山引擎豆包 Seedance 视频生成（文生视频、图生视频、视频生视频）"
+      },
+      "protocols": [
+        {
+          "name": "openai_responses",
+          "supports": [
+            "stream",
+            "sync",
+            "background"
+          ]
+        },
+        {
+          "name": "openai_video"
+        }
+      ],
+      "channelTypes": [
+        54,
+        45
+      ],
+      "models": [
+        "doubao-seedance-1-0-pro-250528",
+        "doubao-seedance-1-0-lite-t2v",
+        "doubao-seedance-1-0-lite-i2v",
+        "doubao-seedance-1-5-pro-251215",
+        "doubao-seedance-2-0-260128",
+        "doubao-seedance-2-0-fast-260128",
+        "doubao-seedance-2-0-mini-260615",
+        "doubao-seedance-2-5-260628"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/doubao/1.0.0/plugin.js",
+          "sha256": "665128027af2bd5cfe48f912f3000d48545e9353fa2870b6642ed75b2dc1a95c",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "google",
+      "name": "Google Veo (Gemini API)",
+      "icon": "Gemini.Color",
+      "description": {
+        "en": "Google Veo video generation on the Gemini API (text-to-video and image-to-video)",
+        "zh": "Google Veo 视频生成（文生视频、图生视频），Gemini API 版本"
+      },
+      "protocols": [
+        {
+          "name": "openai_responses",
+          "supports": [
+            "stream",
+            "sync",
+            "background"
+          ]
+        },
+        {
+          "name": "openai_video"
+        }
+      ],
+      "channelTypes": [
+        24
+      ],
+      "models": [
+        "veo-3.0-generate-001",
+        "veo-3.0-fast-generate-001",
+        "veo-3.1-generate-preview",
+        "veo-3.1-fast-generate-preview"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/google/1.0.0/plugin.js",
+          "sha256": "20be7f6ea5b04799d67cc563750993f3737b33c6c9cdb69f6d012efca1dd6813",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "hailuo",
+      "name": "Hailuo Video",
+      "icon": "Hailuo.Color",
+      "description": {
+        "en": "MiniMax Hailuo video generation (text-to-video and image-to-video)",
+        "zh": "MiniMax 海螺视频生成（文生视频、图生视频）"
+      },
+      "protocols": [
+        {
+          "name": "openai_responses",
+          "supports": [
+            "stream",
+            "sync",
+            "background"
+          ]
+        },
+        {
+          "name": "openai_video"
+        }
+      ],
+      "channelTypes": [
+        35
+      ],
+      "models": [
+        "MiniMax-Hailuo-2.3",
+        "MiniMax-Hailuo-2.3-Fast",
+        "MiniMax-Hailuo-02",
+        "T2V-01-Director",
+        "T2V-01",
+        "I2V-01-Director",
+        "I2V-01-live",
+        "I2V-01",
+        "S2V-01"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/hailuo/1.0.0/plugin.js",
+          "sha256": "88fa056f4e6b8119ad9f38ed85c242d355105b423c3c529bc0e595f2990382f1",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "jimeng",
+      "name": "Jimeng",
+      "icon": "Jimeng.Color",
+      "description": {
+        "en": "Volcengine Jimeng video generation (text-to-video, image-to-video, and first-and-last-frame)",
+        "zh": "火山引擎即梦视频生成（文生视频、图生视频、首尾帧）"
+      },
+      "protocols": [
+        {
+          "name": "openai_responses",
+          "supports": [
+            "stream",
+            "sync",
+            "background"
+          ]
+        },
+        {
+          "name": "openai_video"
+        }
+      ],
+      "channelTypes": [
+        51
+      ],
+      "models": [
+        "jimeng_vgfm_t2v_l20"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/jimeng/1.0.0/plugin.js",
+          "sha256": "f1927b9537ce1f11f87afd76c9221a54e88241fd7b02fb58532cacb396f0cc8e",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "kling",
+      "name": "Kling",
+      "icon": "Kling.Color",
+      "description": {
+        "en": "Kuaishou Kling video generation (text-to-video and image-to-video)",
+        "zh": "快手可灵视频生成（文生视频、图生视频）"
+      },
+      "protocols": [
+        {
+          "name": "openai_responses",
+          "supports": [
+            "stream",
+            "sync",
+            "background"
+          ]
+        },
+        {
+          "name": "openai_video"
+        }
+      ],
+      "channelTypes": [
+        50
+      ],
+      "models": [
+        "kling-v1",
+        "kling-v1-6",
+        "kling-v2-master"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/kling/1.0.0/plugin.js",
+          "sha256": "bf981a52f93f80364d8d1276e5ff1534d567194bb1f8c5b02acebbd5f1eaa821",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "sora",
+      "name": "Sora",
+      "icon": "Sora.Color",
+      "description": {
+        "en": "OpenAI Sora video generation (text-to-video, image-to-video, and remix)",
+        "zh": "OpenAI Sora 视频生成（文生视频、图生视频、remix）"
+      },
+      "protocols": [
+        {
+          "name": "openai_responses",
+          "supports": [
+            "stream",
+            "sync",
+            "background"
+          ]
+        },
+        {
+          "name": "openai_video"
+        }
+      ],
+      "channelTypes": [
+        55,
+        1
+      ],
+      "models": [
+        "sora-2",
+        "sora-2-pro"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/sora/1.0.0/plugin.js",
+          "sha256": "201e463946b25bf250aa35430636ef68dbde256a4ee24425b77fac7cf487dfb5",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "sunoapi",
+      "name": "SunoAPI",
+      "icon": "text",
+      "description": {
+        "en": "SunoAPI project music and lyrics generation",
+        "zh": "SunoAPI 项目 音乐与歌词生成"
+      },
+      "protocols": [
+        {
+          "name": "openai_responses",
+          "supports": [
+            "stream",
+            "sync",
+            "background"
+          ]
+        }
+      ],
+      "channelTypes": [
+        36
+      ],
+      "models": [
+        "suno_music",
+        "suno_lyrics"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/sunoapi/1.0.0/plugin.js",
+          "sha256": "c1c1ee257bc3c4ed21a22d04ce7a3f109a1cce49fee30d1ca31e0c8a7c986796",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "vertex-ai",
+      "name": "Google Veo (Vertex AI)",
+      "icon": "VertexAI.Color",
+      "description": {
+        "en": "Google Veo video generation on Vertex AI (text-to-video and image-to-video)",
+        "zh": "Google Veo 视频生成（文生视频、图生视频），Vertex AI 版本"
+      },
+      "protocols": [
+        {
+          "name": "openai_responses",
+          "supports": [
+            "stream",
+            "sync",
+            "background"
+          ]
+        },
+        {
+          "name": "openai_video"
+        }
+      ],
+      "channelTypes": [
+        41
+      ],
+      "models": [
+        "veo-3.0-generate-001",
+        "veo-3.0-fast-generate-001",
+        "veo-3.1-generate-preview",
+        "veo-3.1-fast-generate-preview"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/vertex-ai/1.0.0/plugin.js",
+          "sha256": "5be81dfa2de1cd15504a4afd625cad66f743857a0f892fe4ad516f2a245a371f",
+          "minApiVersion": 1,
+          "kind": "task",
+          "auth": "oauth2_jwt"
+        }
+      ]
+    },
+    {
+      "key": "vidu",
+      "name": "Vidu",
+      "icon": "Vidu.Color",
+      "description": {
+        "en": "Shengshu Vidu video generation (text-to-video, image-to-video, first-and-last-frame, and reference-to-video)",
+        "zh": "生数 Vidu 视频生成（文生视频、图生视频、首尾帧、参考生视频）"
+      },
+      "protocols": [
+        {
+          "name": "openai_responses",
+          "supports": [
+            "stream",
+            "sync",
+            "background"
+          ]
+        },
+        {
+          "name": "openai_video"
+        }
+      ],
+      "channelTypes": [
+        52
+      ],
+      "models": [
+        "viduq2",
+        "viduq1",
+        "vidu2.0",
+        "vidu1.5"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/vidu/1.0.0/plugin.js",
+          "sha256": "27f0ee130ae0f853209dbae1b4e5141f0bb4d00f5be516b218539bf5682f4976",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    }
+  ]
+}
