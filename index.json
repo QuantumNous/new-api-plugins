@@ -1,0 +1,244 @@
+{
+  "indexVersion": 1,
+  "name": "new-api Official Plugins",
+  "plugins": [
+    {
+      "key": "ali",
+      "name": "ali",
+      "channelTypes": [
+        17
+      ],
+      "models": [
+        "wan2.7-i2v",
+        "wan2.7-t2v",
+        "wan2.5-t2v-preview",
+        "wan2.5-i2v-preview",
+        "wan2.2-i2v-flash",
+        "wan2.2-i2v-plus",
+        "wanx2.1-i2v-plus",
+        "wanx2.1-i2v-turbo"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/ali/1.0.0/plugin.js",
+          "sha256": "95bed5f0c47b53ff6ec7e52c4485785a7d010cc94e365dfcbbfe33d73027e3a6",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "doubao",
+      "name": "doubao-video",
+      "channelTypes": [
+        54,
+        45
+      ],
+      "models": [
+        "doubao-seedance-1-0-pro-250528",
+        "doubao-seedance-1-0-lite-t2v",
+        "doubao-seedance-1-0-lite-i2v",
+        "doubao-seedance-1-5-pro-251215",
+        "doubao-seedance-2-0-260128",
+        "doubao-seedance-2-0-fast-260128",
+        "doubao-seedance-2-0-mini-260615",
+        "doubao-seedance-2-5-260628"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/doubao/1.0.0/plugin.js",
+          "sha256": "944a9d1330e95d23ec5dd43df73232b68a005ee31f0b8c0ff64b6ebe8ca67602",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "gemini",
+      "name": "gemini",
+      "channelTypes": [
+        24
+      ],
+      "models": [
+        "veo-3.0-generate-001",
+        "veo-3.0-fast-generate-001",
+        "veo-3.1-generate-preview",
+        "veo-3.1-fast-generate-preview"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/gemini/1.0.0/plugin.js",
+          "sha256": "ec4abe905d4be60d85b013cb8b3ac8f862d606ec539d8fb95fb2eceae61967f4",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "hailuo",
+      "name": "hailuo-video",
+      "channelTypes": [
+        35
+      ],
+      "models": [
+        "MiniMax-Hailuo-2.3",
+        "MiniMax-Hailuo-2.3-Fast",
+        "MiniMax-Hailuo-02",
+        "T2V-01-Director",
+        "T2V-01",
+        "I2V-01-Director",
+        "I2V-01-live",
+        "I2V-01",
+        "S2V-01"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/hailuo/1.0.0/plugin.js",
+          "sha256": "89d2d8592a464dfcc043b8ebb313071049cc36d466b64debfb6dc48214e3b035",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "jimeng",
+      "name": "jimeng",
+      "channelTypes": [
+        51
+      ],
+      "models": [
+        "jimeng_vgfm_t2v_l20"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/jimeng/1.0.0/plugin.js",
+          "sha256": "e75f18298a1dbf05498afc0d7326bfe4652025fbfe5eb6e2ffb03886d1e70625",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "kling",
+      "name": "kling",
+      "channelTypes": [
+        50
+      ],
+      "models": [
+        "kling-v1",
+        "kling-v1-6",
+        "kling-v2-master"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/kling/1.0.0/plugin.js",
+          "sha256": "888ebc85537eefa8212a4627dcabac4ca4f292f00a88c96eb4d5bdd5485c1830",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "sora",
+      "name": "sora",
+      "channelTypes": [
+        55,
+        1
+      ],
+      "models": [
+        "sora-2",
+        "sora-2-pro"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/sora/1.0.0/plugin.js",
+          "sha256": "1ba22d814292e349e2d3e655211cd869d1560a7f7c9f7ae25958d06a1baa8638",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "sunoapi",
+      "name": "sunoapi",
+      "channelTypes": [
+        36
+      ],
+      "models": [
+        "suno_music",
+        "suno_lyrics"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/sunoapi/1.0.0/plugin.js",
+          "sha256": "1f3de13a7c75ae5a5ccf2d54f041fde4f732f739cf8b343119b9ff2ddffde814",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "vertex",
+      "name": "vertex",
+      "channelTypes": [
+        41
+      ],
+      "models": [
+        "veo-3.0-generate-001",
+        "veo-3.0-fast-generate-001",
+        "veo-3.1-generate-preview",
+        "veo-3.1-fast-generate-preview"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/vertex/1.0.0/plugin.js",
+          "sha256": "6485e7d34bdd340fc54e87ac126ca658a5ff237294a5654d55398732fc03bde9",
+          "minApiVersion": 1,
+          "kind": "task",
+          "auth": "oauth2_jwt"
+        }
+      ]
+    },
+    {
+      "key": "vidu",
+      "name": "vidu",
+      "channelTypes": [
+        52
+      ],
+      "models": [
+        "viduq2",
+        "viduq1",
+        "vidu2.0",
+        "vidu1.5"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/vidu/1.0.0/plugin.js",
+          "sha256": "019acc66ff5ce1a55bbbe2f2f62159eab6b7fa81feb050c95440eedd133d198e",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    }
+  ]
+}
