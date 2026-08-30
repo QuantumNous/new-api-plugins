@@ -357,7 +357,7 @@ export const protocols = {
       if (!prompt && images.length === 0) throw new Error("input is required");
       const metadata = Object.assign({}, req.metadata || {});
       if (Object.prototype.hasOwnProperty.call(req, "mode")) metadata.mode = req.mode;
-      metadata.mode = resolveKlingMode(model, metadata.mode);
+      metadata.mode = resolveKlingMode(ctx.upstreamModel || model, metadata.mode);
       if (images.length > 1 && !metadata.image_tail) metadata.image_tail = images[1];
       const requestBody = { model: model, prompt: prompt, metadata: metadata };
       if (images.length) requestBody.image = images[0];
@@ -443,7 +443,7 @@ export const protocols = {
         const image = trimmed(req.input_reference || req.image);
         if (image) req.image = image;
       }
-      const model = ctx.model || req.model || "kling-v1";
+      const model = ctx.upstreamModel || ctx.model || req.model || "kling-v1";
       const metadata = req.metadata || {};
       req.mode = resolveKlingMode(model, req.mode || metadata.mode);
       const hasImage = hasKlingImage(req, hasInputReferenceFile);

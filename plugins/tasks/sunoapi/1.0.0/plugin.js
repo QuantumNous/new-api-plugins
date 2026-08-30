@@ -128,7 +128,7 @@ export function parseSubmitResponse(ctx, resp) {
 
 export function extractUsage(ctx) {
   if (ctx.usagePurpose === "billing_ratios") return null;
-  const model = trimmed(ctx.model || (ctx.requestBody || {}).model).toLowerCase();
+  const model = trimmed(ctx.upstreamModel || ctx.model || (ctx.requestBody || {}).model).toLowerCase();
   const action = actionName(ctx).toLowerCase() || (model === "suno_lyrics" ? "lyrics" : "music");
   return { clips: action === "lyrics" ? 1 : 2, action: action };
 }

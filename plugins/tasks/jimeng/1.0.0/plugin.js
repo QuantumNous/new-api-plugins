@@ -533,7 +533,10 @@ protocols.openai_video = {
     }
     const seconds = req.seconds === undefined ? req.duration : req.seconds;
     if (seconds !== undefined) {
-      req.duration = validateSecondsForReqKey(convertedReqKey(String(ctx.model || req.model || ""), decodeImageCount(req, hasInputReferenceFile)), seconds);
+      req.duration = validateSecondsForReqKey(
+        convertedReqKey(String(ctx.upstreamModel || ctx.model || req.model || ""), decodeImageCount(req, hasInputReferenceFile)),
+        seconds
+      );
     }
     return {
       kind: "submit",

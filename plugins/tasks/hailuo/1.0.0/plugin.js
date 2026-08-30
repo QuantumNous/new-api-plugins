@@ -388,7 +388,8 @@ protocols.openai_video = {
     }
     const hasImage = hasHailuoImage(req, hasInputReferenceFile);
     const duration = req.duration === undefined ? undefined : Number(req.duration);
-    validateHailuoCombo(ctx.model, duration, outboundResolution(req, ctx.model), hasImage);
+    const comboModel = ctx.upstreamModel || ctx.model;
+    validateHailuoCombo(comboModel, duration, outboundResolution(req, comboModel), hasImage);
     return {
       kind: "submit",
       model: ctx.model,

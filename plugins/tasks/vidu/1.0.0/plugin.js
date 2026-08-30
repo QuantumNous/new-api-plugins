@@ -417,7 +417,7 @@ protocols.openai_video = {
       if (req.seconds !== undefined) req.seconds = Number(req.seconds);
       else if (req.duration !== undefined) req.seconds = Number(req.duration);
     }
-    const model = ctx.model || req.model;
+    const model = ctx.upstreamModel || ctx.model || req.model;
     const seconds = req.seconds === undefined ? req.duration : req.seconds;
     if (seconds !== undefined) req.duration = Number(seconds);
     else req.duration = defaultDuration(model);

@@ -279,7 +279,7 @@ export function extractUsage(ctx) {
   const req = ctx.requestBody || {};
   const metadata = req.metadata || {};
   if (ctx.usagePurpose === "billing_ratios") {
-    const ratio = videoInputRatio(ctx.model, metadata.resolution, metadata.content);
+    const ratio = videoInputRatio(ctx.upstreamModel || ctx.model, metadata.resolution, metadata.content);
     return ratio === 1 ? null : { video_input_ratio: ratio };
   }
   let seconds = Number(req.seconds || req.duration || metadata.duration || 0);

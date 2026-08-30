@@ -87,7 +87,7 @@
         {
           "version": "1.0.0",
           "path": "plugins/tasks/doubao/1.0.0/plugin.js",
-          "sha256": "665128027af2bd5cfe48f912f3000d48545e9353fa2870b6642ed75b2dc1a95c",
+          "sha256": "89ec7e5b593c9a4e9b7807c6ed14aa8a011ce0afae420d4112e88bf5e4cb8ad6",
           "minApiVersion": 1,
           "kind": "task"
         }
@@ -174,7 +174,7 @@
         {
           "version": "1.0.0",
           "path": "plugins/tasks/hailuo/1.0.0/plugin.js",
-          "sha256": "88fa056f4e6b8119ad9f38ed85c242d355105b423c3c529bc0e595f2990382f1",
+          "sha256": "d31e0a7088e4f893010ca6d1216ef81646a1369e72316fd0c88fa77f1c65c63e",
           "minApiVersion": 1,
           "kind": "task"
         }
@@ -212,7 +212,7 @@
         {
           "version": "1.0.0",
           "path": "plugins/tasks/jimeng/1.0.0/plugin.js",
-          "sha256": "f1927b9537ce1f11f87afd76c9221a54e88241fd7b02fb58532cacb396f0cc8e",
+          "sha256": "9b8579af43c709948d89ecb7938f1240df952376919710f41973b8e73d1fa1ad",
           "minApiVersion": 1,
           "kind": "task"
         }
@@ -252,7 +252,7 @@
         {
           "version": "1.0.0",
           "path": "plugins/tasks/kling/1.0.0/plugin.js",
-          "sha256": "bf981a52f93f80364d8d1276e5ff1534d567194bb1f8c5b02acebbd5f1eaa821",
+          "sha256": "c310c3a99012eca9e86bb2d701f9937b9739be7ce10559a49a6ba529f193e48d",
           "minApiVersion": 1,
           "kind": "task"
         }
@@ -328,7 +328,7 @@
         {
           "version": "1.0.0",
           "path": "plugins/tasks/sunoapi/1.0.0/plugin.js",
-          "sha256": "c1c1ee257bc3c4ed21a22d04ce7a3f109a1cce49fee30d1ca31e0c8a7c986796",
+          "sha256": "1360070a8e397a104acc7669dd7bcb8af83c289e5829cf015a74a11a170efb63",
           "minApiVersion": 1,
           "kind": "task"
         }
@@ -411,7 +411,7 @@
         {
           "version": "1.0.0",
           "path": "plugins/tasks/vidu/1.0.0/plugin.js",
-          "sha256": "27f0ee130ae0f853209dbae1b4e5141f0bb4d00f5be516b218539bf5682f4976",
+          "sha256": "9c6dec67cb4d0585bca8f0fe406f5e40e337599b95d5b8ff480e76a75807e307",
           "minApiVersion": 1,
           "kind": "task"
         }
