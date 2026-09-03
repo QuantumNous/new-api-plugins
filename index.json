@@ -36,8 +36,15 @@
         "wanx2.1-i2v-plus",
         "wanx2.1-i2v-turbo"
       ],
-      "latest": "1.0.0",
+      "latest": "1.0.1",
       "versions": [
+        {
+          "version": "1.0.1",
+          "path": "plugins/tasks/alibaba/1.0.1/plugin.js",
+          "sha256": "336dc982f878047fa1c9dd8a31280964f9f44e158020a95c26dbbdc6e9501676",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/alibaba/1.0.0/plugin.js",
@@ -82,8 +89,15 @@
         "doubao-seedance-2-0-mini-260615",
         "doubao-seedance-2-5-260628"
       ],
-      "latest": "1.0.0",
+      "latest": "1.0.1",
       "versions": [
+        {
+          "version": "1.0.1",
+          "path": "plugins/tasks/doubao/1.0.1/plugin.js",
+          "sha256": "66d042a3c4b6fbf388ff105a9e98069e5b16db55dc0d7e4dfe3ef5efbb555913",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/doubao/1.0.0/plugin.js",
@@ -123,8 +137,15 @@
         "veo-3.1-generate-preview",
         "veo-3.1-fast-generate-preview"
       ],
-      "latest": "1.0.0",
+      "latest": "1.0.1",
       "versions": [
+        {
+          "version": "1.0.1",
+          "path": "plugins/tasks/google/1.0.1/plugin.js",
+          "sha256": "ba44b271b04a7041008d4d259189ae7fa57690c41369030380ba23fc6ec12b5f",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/google/1.0.0/plugin.js",
@@ -169,8 +190,15 @@
         "I2V-01",
         "S2V-01"
       ],
-      "latest": "1.0.0",
+      "latest": "1.1.2",
       "versions": [
+        {
+          "version": "1.1.2",
+          "path": "plugins/tasks/hailuo/1.1.2/plugin.js",
+          "sha256": "756a5c24ce77c31b73b32f1a56e010c5a2abba63a2357e8f0fc05f7015f90d9c",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/hailuo/1.0.0/plugin.js",
@@ -207,8 +235,15 @@
       "models": [
         "jimeng_vgfm_t2v_l20"
       ],
-      "latest": "1.0.0",
+      "latest": "1.0.1",
       "versions": [
+        {
+          "version": "1.0.1",
+          "path": "plugins/tasks/jimeng/1.0.1/plugin.js",
+          "sha256": "0104bcfdb4f9d125bfe0679b880278bb2f8d7cdff7cfd83c2aa4e3bee69ca9c6",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/jimeng/1.0.0/plugin.js",
@@ -247,8 +282,15 @@
         "kling-v1-6",
         "kling-v2-master"
       ],
-      "latest": "1.0.0",
+      "latest": "1.0.1",
       "versions": [
+        {
+          "version": "1.0.1",
+          "path": "plugins/tasks/kling/1.0.1/plugin.js",
+          "sha256": "dda522f2f7f7532103b02f8125192485f6c74b7dede7e243847ffbac14a7f325",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/kling/1.0.0/plugin.js",
@@ -287,8 +329,15 @@
         "sora-2",
         "sora-2-pro"
       ],
-      "latest": "1.0.0",
+      "latest": "1.0.1",
       "versions": [
+        {
+          "version": "1.0.1",
+          "path": "plugins/tasks/sora/1.0.1/plugin.js",
+          "sha256": "5362f9618e54079b0db531544274ef5131deabc727f662f3d14edb71d848c421",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/sora/1.0.0/plugin.js",
@@ -323,8 +372,15 @@
         "suno_music",
         "suno_lyrics"
       ],
-      "latest": "1.0.0",
+      "latest": "1.0.1",
       "versions": [
+        {
+          "version": "1.0.1",
+          "path": "plugins/tasks/sunoapi/1.0.1/plugin.js",
+          "sha256": "0cf08a1d8cf002be05f34068f9014078a6f6b68ee10ec9a787d8cd8e60820651",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/sunoapi/1.0.0/plugin.js",
@@ -364,8 +420,16 @@
         "veo-3.1-generate-preview",
         "veo-3.1-fast-generate-preview"
       ],
-      "latest": "1.0.0",
+      "latest": "1.0.1",
       "versions": [
+        {
+          "version": "1.0.1",
+          "path": "plugins/tasks/vertex-ai/1.0.1/plugin.js",
+          "sha256": "e87ed0014ec42f04950c3dee22b15b1b541ca549d738b4c2887fb17574601689",
+          "minApiVersion": 1,
+          "kind": "task",
+          "auth": "oauth2_jwt"
+        },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/vertex-ai/1.0.0/plugin.js",
@@ -406,8 +470,15 @@
         "vidu2.0",
         "vidu1.5"
       ],
-      "latest": "1.0.0",
+      "latest": "1.0.1",
       "versions": [
+        {
+          "version": "1.0.1",
+          "path": "plugins/tasks/vidu/1.0.1/plugin.js",
+          "sha256": "d470a15e17538262b312350892597fd3ae8707548ba7d3c46a3634fd0670105b",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/vidu/1.0.0/plugin.js",
