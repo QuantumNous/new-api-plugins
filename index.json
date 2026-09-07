@@ -27,6 +27,8 @@
         17
       ],
       "models": [
+        "wan3.0-video",
+        "wan3.0-video-prime",
         "wan2.7-i2v",
         "wan2.7-t2v",
         "wan2.5-t2v-preview",
@@ -36,8 +38,15 @@
         "wanx2.1-i2v-plus",
         "wanx2.1-i2v-turbo"
       ],
-      "latest": "1.0.1",
+      "latest": "1.1.0",
       "versions": [
+        {
+          "version": "1.1.0",
+          "path": "plugins/tasks/alibaba/1.1.0/plugin.js",
+          "sha256": "3660275c06aed454a216c5f8a32985d8d0cc138a514955f927c8b991641fb617",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/alibaba/1.0.1/plugin.js",
@@ -160,8 +169,8 @@
       "name": "Hailuo Video",
       "icon": "Hailuo.Color",
       "description": {
-        "en": "MiniMax Hailuo video generation (text-to-video and image-to-video)",
-        "zh": "MiniMax 海螺视频生成（文生视频、图生视频）"
+        "en": "MiniMax Hailuo video generation (text-to-video, image-to-video, and MiniMax-H3 multimodal reference)",
+        "zh": "MiniMax 海螺视频生成（文生视频、图生视频、MiniMax-H3 多模态参考生视频）"
       },
       "protocols": [
         {
@@ -180,6 +189,7 @@
         35
       ],
       "models": [
+        "MiniMax-H3",
         "MiniMax-Hailuo-2.3",
         "MiniMax-Hailuo-2.3-Fast",
         "MiniMax-Hailuo-02",
@@ -203,6 +213,38 @@
           "version": "1.0.0",
           "path": "plugins/tasks/hailuo/1.0.0/plugin.js",
           "sha256": "d31e0a7088e4f893010ca6d1216ef81646a1369e72316fd0c88fa77f1c65c63e",
+          "minApiVersion": 1,
+          "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "incho",
+      "name": "Incho",
+      "icon": "text",
+      "description": {
+        "en": "Incho music generation (prompt-to-song, multilingual vocals)",
+        "zh": "音潮 Incho 音乐生成（提示词生成歌曲、多语种人声）"
+      },
+      "protocols": [
+        {
+          "name": "openai_responses",
+          "supports": [
+            "stream",
+            "sync",
+            "background"
+          ]
+        }
+      ],
+      "models": [
+        "incho_music"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/incho/1.0.0/plugin.js",
+          "sha256": "d1d09bd68d8adb4e5c9f8249dea5debc0269eeea77dc53a05faa6633abd62d8a",
           "minApiVersion": 1,
           "kind": "task"
         }
@@ -372,8 +414,15 @@
         "suno_music",
         "suno_lyrics"
       ],
-      "latest": "1.0.1",
+      "latest": "1.0.2",
       "versions": [
+        {
+          "version": "1.0.2",
+          "path": "plugins/tasks/sunoapi/1.0.2/plugin.js",
+          "sha256": "9c4c37d2ac60911a1f421f9530bb12cf6454a679132a19d918eb8b14cdef087c",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/sunoapi/1.0.1/plugin.js",

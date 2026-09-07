@@ -48,15 +48,16 @@ type indexVersion struct {
 }
 
 type indexPlugin struct {
-	Key          string                   `json:"key"`
-	Name         string                   `json:"name"`
-	Icon         string                   `json:"icon,omitempty"`
-	Description  jsplugin.LocalizedText   `json:"description,omitempty"`
-	Protocols    []jsplugin.ProtocolClaim `json:"protocols,omitempty"`
-	ChannelTypes []int                    `json:"channelTypes,omitempty"`
-	Models       []string                 `json:"models,omitempty"`
-	Latest       string                   `json:"latest"`
-	Versions     []indexVersion           `json:"versions"`
+	displayVersion string                   `json:"-"`
+	Key            string                   `json:"key"`
+	Name           string                   `json:"name"`
+	Icon           string                   `json:"icon,omitempty"`
+	Description    jsplugin.LocalizedText   `json:"description,omitempty"`
+	Protocols      []jsplugin.ProtocolClaim `json:"protocols,omitempty"`
+	ChannelTypes   []int                    `json:"channelTypes,omitempty"`
+	Models         []string                 `json:"models,omitempty"`
+	Latest         string                   `json:"latest"`
+	Versions       []indexVersion           `json:"versions"`
 }
 
 type indexFile struct {
@@ -172,16 +173,19 @@ func collectPluginVersions(root, kindDir, kind, key string, byKey map[string]*in
 		digest := sha256.Sum256(source)
 		entry := byKey[key]
 		if entry == nil {
-			entry = &indexPlugin{
-				Key:          key,
-				Name:         loaded.Meta.Name,
-				Icon:         loaded.Meta.Icon,
-				Description:  loaded.Meta.Description,
-				Protocols:    loaded.Meta.Protocols,
-				ChannelTypes: loaded.Meta.ChannelTypes,
-				Models:       loaded.Meta.Models,
-			}
+			entry = &indexPlugin{Key: key}
 			byKey[key] = entry
+		}
+		// Display fields describe the latest version. ReadDir yields directories in
+		// lexical order, so the first one seen is usually the oldest release.
+		if entry.displayVersion == "" || semverLess(entry.displayVersion, version) {
+			entry.displayVersion = version
+			entry.Name = loaded.Meta.Name
+			entry.Icon = loaded.Meta.Icon
+			entry.Description = loaded.Meta.Description
+			entry.Protocols = loaded.Meta.Protocols
+			entry.ChannelTypes = loaded.Meta.ChannelTypes
+			entry.Models = loaded.Meta.Models
 		}
 		entry.Versions = append(entry.Versions, indexVersion{
 			Version:       version,
