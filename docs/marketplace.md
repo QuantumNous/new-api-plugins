@@ -12,6 +12,7 @@ A marketplace source is any HTTP(S)-reachable repository that serves a root `ind
     {
       "key": "doubao",
       "name": "doubao-video",
+      "iconFile": {"path": "plugins/tasks/doubao/icon.svg", "sha256": "<hex sha256 of the icon bytes>"},
       "channelTypes": [54, 45],
       "models": ["doubao-seedance-1-0-pro-250528"],
       "latest": "1.2.0",
@@ -23,6 +24,7 @@ A marketplace source is any HTTP(S)-reachable repository that serves a root `ind
           "minApiVersion": 1,
           "kind": "task",
           "allowedHosts": ["example.com"],
+          "baseUrl": "https://api.example.com",
           "auth": "api_key"
         }
       ]
@@ -35,7 +37,8 @@ A marketplace source is any HTTP(S)-reachable repository that serves a root `ind
 - `sha256` is verified at install time before the source enters the upload pipeline.
 - `kind` discriminates plugin kinds; `"task"` is the only kind today. Marketplace UIs filter to kinds the gateway supports.
 - `minApiVersion` is a UI hint only. Admission is always decided by the gateway's own manifest validation.
-- `allowedHosts` and `auth` are display hints for the install confirmation page, derived from compiled meta like every other index field.
+- `iconFile` points at the plugin's sidecar logo, `plugins/<kind>/<key>/icon.svg` or `icon.png`, stored once per key beside the version directories. The gateway loads it from the index origin at install time and stores it apart from the plugin source; the source itself never carries image data. `meta.icon` stays a LobeHub name or `text` fallback.
+- `allowedHosts`, `baseUrl` and `auth` are display hints for the install confirmation page, derived from compiled meta like every other index field. `baseUrl` is the default upstream address a gateway copies onto a Task Plugin channel when the administrator leaves Base URL empty; showing it before install lets the administrator see where the channel key will be sent.
 
 ## Trust model
 
@@ -49,6 +52,7 @@ The index is a **derived cache, never a trust anchor**:
 
 ```
 plugins/<kind>/<key>/<version>/plugin.js
+plugins/<kind>/<key>/icon.svg        # optional sidecar logo (or icon.png)
 index.json
 ```
 

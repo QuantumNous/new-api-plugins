@@ -222,6 +222,12 @@
       "key": "incho",
       "name": "Incho",
       "icon": "text",
+      "iconFile": {
+        "path": "plugins/tasks/incho/icon.svg",
+        "sha256": "0e78ee101737a3582e99305024f33c6e6fb1d1ca3bca701e2a6799db423a9a8e"
+      },
+      "website": "https://platform.yinchaoyongxian.com/?register_channel=new",
+      "sortPriority": 100,
       "description": {
         "en": "Incho music generation (prompt-to-song, multilingual vocals)",
         "zh": "音潮 Incho 音乐生成（提示词生成歌曲、多语种人声）"
@@ -239,8 +245,16 @@
       "models": [
         "incho_music"
       ],
-      "latest": "1.0.0",
+      "latest": "1.0.1",
       "versions": [
+        {
+          "version": "1.0.1",
+          "path": "plugins/tasks/incho/1.0.1/plugin.js",
+          "sha256": "2aea4110f45f4e0d5a0fea8b7fa0764fc3008aa89b279a5df8e25ea4f5ad5939",
+          "minApiVersion": 1,
+          "kind": "task",
+          "baseUrl": "https://open.yinchaoyongxian.com"
+        },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/incho/1.0.0/plugin.js",

@@ -44,7 +44,16 @@ type indexVersion struct {
 	MinApiVersion int      `json:"minApiVersion"`
 	Kind          string   `json:"kind"`
 	AllowedHosts  []string `json:"allowedHosts,omitempty"`
+	BaseUrl       string   `json:"baseUrl,omitempty"`
 	Auth          string   `json:"auth,omitempty"`
+}
+
+// indexIconFile points at the sidecar logo (icon.svg / icon.png) stored once
+// per plugin key, next to the version directories. Gateways fetch it from the
+// index origin and store it apart from the plugin source.
+type indexIconFile struct {
+	Path   string `json:"path"`
+	Sha256 string `json:"sha256"`
 }
 
 type indexPlugin struct {
@@ -52,6 +61,9 @@ type indexPlugin struct {
 	Key            string                   `json:"key"`
 	Name           string                   `json:"name"`
 	Icon           string                   `json:"icon,omitempty"`
+	IconFile       *indexIconFile           `json:"iconFile,omitempty"`
+	Website        string                   `json:"website,omitempty"`
+	SortPriority   int                      `json:"sortPriority,omitempty"`
 	Description    jsplugin.LocalizedText   `json:"description,omitempty"`
 	Protocols      []jsplugin.ProtocolClaim `json:"protocols,omitempty"`
 	ChannelTypes   []int                    `json:"channelTypes,omitempty"`
@@ -152,6 +164,11 @@ func collectPluginVersions(root, kindDir, kind, key string, byKey map[string]*in
 	}
 	for _, versionEntry := range versionEntries {
 		if !versionEntry.IsDir() {
+			// The sidecar logo lives once per plugin key, beside the version
+			// directories; it is picked up after the versions below.
+			if versionEntry.Name() == "icon.svg" || versionEntry.Name() == "icon.png" {
+				continue
+			}
 			return fmt.Errorf("unexpected non-directory %s under plugins/%s/%s/", versionEntry.Name(), kindDir, key)
 		}
 		version := versionEntry.Name()
@@ -182,6 +199,8 @@ func collectPluginVersions(root, kindDir, kind, key string, byKey map[string]*in
 			entry.displayVersion = version
 			entry.Name = loaded.Meta.Name
 			entry.Icon = loaded.Meta.Icon
+			entry.Website = loaded.Meta.Website
+			entry.SortPriority = loaded.Meta.SortPriority
 			entry.Description = loaded.Meta.Description
 			entry.Protocols = loaded.Meta.Protocols
 			entry.ChannelTypes = loaded.Meta.ChannelTypes
@@ -194,11 +213,32 @@ func collectPluginVersions(root, kindDir, kind, key string, byKey map[string]*in
 			MinApiVersion: loaded.Meta.APIVersion,
 			Kind:          kind,
 			AllowedHosts:  loaded.Meta.AllowedHosts,
+			BaseUrl:       loaded.Meta.BaseURL,
 			Auth:          loaded.Meta.Auth.Type,
 		})
 	}
 	if len(byKey[key].Versions) == 0 {
 		return fmt.Errorf("plugin %s has no versions", key)
+	}
+	for _, name := range []string{"icon.svg", "icon.png"} {
+		iconPath := filepath.Join(keyDir, name)
+		data, readErr := os.ReadFile(iconPath)
+		if readErr != nil {
+			continue
+		}
+		mediaType := "image/svg+xml"
+		if name == "icon.png" {
+			mediaType = "image/png"
+		}
+		if iconErr := jsplugin.ValidateIconImage(mediaType, data); iconErr != nil {
+			return fmt.Errorf("plugin %s %s: %w", key, name, iconErr)
+		}
+		if len(data) > jsplugin.MaxIconDataURIBytes {
+			return fmt.Errorf("plugin %s %s exceeds %d bytes", key, name, jsplugin.MaxIconDataURIBytes)
+		}
+		digest := sha256.Sum256(data)
+		byKey[key].IconFile = &indexIconFile{Path: filepath.ToSlash(filepath.Join("plugins", kindDir, key, name)), Sha256: fmt.Sprintf("%x", digest)}
+		break
 	}
 	return nil
 }
