@@ -38,8 +38,15 @@
         "wanx2.1-i2v-plus",
         "wanx2.1-i2v-turbo"
       ],
-      "latest": "1.1.0",
+      "latest": "1.1.1",
       "versions": [
+        {
+          "version": "1.1.1",
+          "path": "plugins/tasks/alibaba/1.1.1/plugin.js",
+          "sha256": "0f04976791a845a350af03f0d6cd85fa7ea501c822823bc46729b71cb5d11a4b",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.1.0",
           "path": "plugins/tasks/alibaba/1.1.0/plugin.js",
@@ -98,8 +105,15 @@
         "doubao-seedance-2-0-mini-260615",
         "doubao-seedance-2-5-260628"
       ],
-      "latest": "1.0.1",
+      "latest": "1.0.2",
       "versions": [
+        {
+          "version": "1.0.2",
+          "path": "plugins/tasks/doubao/1.0.2/plugin.js",
+          "sha256": "7452754c63d7c4360b8458d1715f815392d4e98d927a26f683d0e29da3d17f26",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/doubao/1.0.1/plugin.js",
@@ -146,8 +160,15 @@
         "veo-3.1-generate-preview",
         "veo-3.1-fast-generate-preview"
       ],
-      "latest": "1.0.1",
+      "latest": "1.0.2",
       "versions": [
+        {
+          "version": "1.0.2",
+          "path": "plugins/tasks/google/1.0.2/plugin.js",
+          "sha256": "11a0fa233ffbb659c64aaec57b20f4e176fc1674cd2601051e77fe797a5979c9",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/google/1.0.1/plugin.js",
@@ -200,8 +221,15 @@
         "I2V-01",
         "S2V-01"
       ],
-      "latest": "1.1.2",
+      "latest": "1.1.3",
       "versions": [
+        {
+          "version": "1.1.3",
+          "path": "plugins/tasks/hailuo/1.1.3/plugin.js",
+          "sha256": "05b920b31b0a508af18562e37cacf613836778d264994514e270f0483e8e2d2b",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.1.2",
           "path": "plugins/tasks/hailuo/1.1.2/plugin.js",
@@ -245,8 +273,16 @@
       "models": [
         "incho_music"
       ],
-      "latest": "1.0.1",
+      "latest": "1.0.2",
       "versions": [
+        {
+          "version": "1.0.2",
+          "path": "plugins/tasks/incho/1.0.2/plugin.js",
+          "sha256": "0fcda09aef4aeabc6a6a8449d4742ac887c390d49324b2d3f2083b2ca5ad1479",
+          "minApiVersion": 1,
+          "kind": "task",
+          "baseUrl": "https://open.yinchaoyongxian.com"
+        },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/incho/1.0.1/plugin.js",
@@ -291,8 +327,15 @@
       "models": [
         "jimeng_vgfm_t2v_l20"
       ],
-      "latest": "1.0.1",
+      "latest": "1.0.2",
       "versions": [
+        {
+          "version": "1.0.2",
+          "path": "plugins/tasks/jimeng/1.0.2/plugin.js",
+          "sha256": "514764004584912c24eb4023645446d5b5d143eb99d8d9060017d54e6cc31741",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/jimeng/1.0.1/plugin.js",
@@ -338,8 +381,15 @@
         "kling-v1-6",
         "kling-v2-master"
       ],
-      "latest": "1.0.1",
+      "latest": "1.0.2",
       "versions": [
+        {
+          "version": "1.0.2",
+          "path": "plugins/tasks/kling/1.0.2/plugin.js",
+          "sha256": "65df6b2771955f243d722224a0894002fb3999ec8fda7c15cc37999ca4aa7caa",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/kling/1.0.1/plugin.js",
@@ -385,8 +435,15 @@
         "sora-2",
         "sora-2-pro"
       ],
-      "latest": "1.0.1",
+      "latest": "1.0.2",
       "versions": [
+        {
+          "version": "1.0.2",
+          "path": "plugins/tasks/sora/1.0.2/plugin.js",
+          "sha256": "539078772da4f86ba812ec7144ed2bb958885331231778793616c82d1ad5f9a6",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/sora/1.0.1/plugin.js",
@@ -428,8 +485,15 @@
         "suno_music",
         "suno_lyrics"
       ],
-      "latest": "1.0.2",
+      "latest": "1.0.3",
       "versions": [
+        {
+          "version": "1.0.3",
+          "path": "plugins/tasks/sunoapi/1.0.3/plugin.js",
+          "sha256": "050210acbc3c05a65abb5caa158021ff1c6bd305238b88c3546f3ac20e05299e",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.2",
           "path": "plugins/tasks/sunoapi/1.0.2/plugin.js",
@@ -483,8 +547,16 @@
         "veo-3.1-generate-preview",
         "veo-3.1-fast-generate-preview"
       ],
-      "latest": "1.0.1",
+      "latest": "1.0.2",
       "versions": [
+        {
+          "version": "1.0.2",
+          "path": "plugins/tasks/vertex-ai/1.0.2/plugin.js",
+          "sha256": "52a50bd4b437758b7365fe5ef05e86826ce4819f951f3cdf63f2be99e3842302",
+          "minApiVersion": 1,
+          "kind": "task",
+          "auth": "oauth2_jwt"
+        },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/vertex-ai/1.0.1/plugin.js",
@@ -533,8 +605,15 @@
         "vidu2.0",
         "vidu1.5"
       ],
-      "latest": "1.0.1",
+      "latest": "1.0.2",
       "versions": [
+        {
+          "version": "1.0.2",
+          "path": "plugins/tasks/vidu/1.0.2/plugin.js",
+          "sha256": "123efbec0bea4abd662f026d416dec1b4138bb35662652a32b1f79d13a8834b2",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/vidu/1.0.1/plugin.js",
