@@ -39,6 +39,7 @@ A marketplace source is any HTTP(S)-reachable repository that serves a root `ind
 - `minApiVersion` is a UI hint only. Admission is always decided by the gateway's own manifest validation.
 - `iconFile` points at the plugin's sidecar logo, `plugins/<kind>/<key>/icon.svg` or `icon.png`, stored once per key beside the version directories. The gateway loads it from the index origin at install time and stores it apart from the plugin source; the source itself never carries image data. `meta.icon` stays a LobeHub name or `text` fallback.
 - `allowedHosts`, `baseUrl` and `auth` are display hints for the install confirmation page, derived from compiled meta like every other index field. `baseUrl` is the default upstream address a gateway copies onto a Task Plugin channel when the administrator leaves Base URL empty; showing it before install lets the administrator see where the channel key will be sent.
+- `routes`, `protocols`, `usageSchema`, `usageExamples`, and `usageProfiles` carry the latest version's compiled display metadata. Usage fields retain localized `description`, `unitLabel`, and `enumLabels`; profiles retain their model lists, complete schemas, and examples. Consumers should use these fields when present and may fall back to source parsing for older indexes. Empty or null compiled usage collections mean no entries. This preserves metadata defined through JavaScript constants or expressions without requiring consumers to execute plugin source.
 
 ## Trust model
 

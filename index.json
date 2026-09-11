@@ -7,9 +7,73 @@
       "name": "Alibaba Bailian",
       "icon": "Bailian.Color",
       "description": {
-        "en": "Alibaba Cloud Bailian Wanxiang video generation (text-to-video and image-to-video)",
-        "zh": "阿里云百炼万相视频生成（文生视频、图生视频）"
+        "en": "Alibaba Cloud Bailian Wanxiang image and video generation",
+        "zh": "阿里云百炼万相图片与视频生成"
       },
+      "routes": [
+        {
+          "method": "POST",
+          "path": "/ali/api/v1/services/aigc/multimodal-generation/generation",
+          "type": "submit",
+          "decode": "createImageTask",
+          "render": "imageCreated",
+          "models": [
+            "wan2.7-image-pro",
+            "wan2.7-image",
+            "wan2.6-image",
+            "wan2.6-t2i"
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "/ali/api/v1/services/aigc/image-generation/generation",
+          "type": "submit",
+          "decode": "createImageTask",
+          "render": "taskCreated",
+          "models": [
+            "wan2.7-image-pro",
+            "wan2.7-image",
+            "wan2.6-image",
+            "wan2.6-t2i"
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "/ali/api/v1/services/aigc/text2image/image-synthesis",
+          "type": "submit",
+          "decode": "createImageTask",
+          "render": "taskCreated",
+          "models": [
+            "wan2.5-t2i-preview",
+            "wan2.2-t2i-flash",
+            "wan2.2-t2i-plus",
+            "wanx2.1-t2i-turbo",
+            "wanx2.1-t2i-plus",
+            "wanx2.0-t2i-turbo"
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "/ali/api/v1/services/aigc/video-generation/video-synthesis",
+          "type": "submit",
+          "decode": "createVideoTask",
+          "render": "taskCreated"
+        },
+        {
+          "method": "POST",
+          "path": "/ali/api/v1/services/aigc/image2video/video-synthesis",
+          "type": "submit",
+          "decode": "createVideoTask",
+          "render": "taskCreated"
+        },
+        {
+          "method": "GET",
+          "path": "/ali/api/v1/tasks/:task_id",
+          "type": "query",
+          "render": "taskStatus",
+          "taskIdParam": "task_id"
+        }
+      ],
       "protocols": [
         {
           "name": "openai_responses",
@@ -20,7 +84,182 @@
           ]
         },
         {
-          "name": "openai_video"
+          "name": "openai_video",
+          "models": [
+            "wan3.0-video",
+            "wan3.0-video-prime",
+            "wan2.7-t2v",
+            "wan2.7-i2v",
+            "wan2.6-t2v",
+            "wan2.6-t2v-us",
+            "wan2.6-i2v",
+            "wan2.6-i2v-flash",
+            "wan2.6-i2v-us",
+            "wan2.5-t2v-preview",
+            "wan2.5-i2v-preview",
+            "wan2.2-t2v-plus",
+            "wan2.2-i2v-flash",
+            "wan2.2-i2v-plus",
+            "wan2.2-kf2v-flash",
+            "wan2.2-s2v",
+            "wanx2.1-t2v-plus",
+            "wanx2.1-t2v-turbo",
+            "wanx2.1-i2v-plus",
+            "wanx2.1-i2v-turbo",
+            "wan2.7-t2v-2026-04-25",
+            "wan2.7-t2v-2026-06-12",
+            "wan2.7-i2v-2026-04-25"
+          ]
+        }
+      ],
+      "usageSchema": {
+        "image_count": {
+          "type": "number",
+          "unit": "count",
+          "unitLabel": {
+            "en": "image",
+            "fr": "image",
+            "ja": "枚",
+            "ru": "изображение",
+            "vi": "ảnh",
+            "zh": "张",
+            "zh-TW": "張"
+          },
+          "description": {
+            "en": "Image generation unit price",
+            "zh": "图片生成单价"
+          }
+        },
+        "resolution": {
+          "enum": [
+            "480P",
+            "720P",
+            "1080P"
+          ],
+          "description": {
+            "en": "Output video resolution",
+            "zh": "输出视频分辨率"
+          },
+          "enumLabels": {
+            "1080P": {
+              "en": "1080P",
+              "zh": "1080P"
+            },
+            "480P": {
+              "en": "480P",
+              "zh": "480P"
+            },
+            "720P": {
+              "en": "720P",
+              "zh": "720P"
+            }
+          }
+        },
+        "seconds": {
+          "type": "number",
+          "unit": "second",
+          "description": {
+            "en": "Video generation unit price",
+            "zh": "视频生成单价"
+          }
+        }
+      },
+      "usageExamples": null,
+      "usageProfiles": [
+        {
+          "models": [
+            "wan2.7-image-pro",
+            "wan2.7-image",
+            "wan2.6-image",
+            "wan2.6-t2i",
+            "wan2.5-t2i-preview",
+            "wan2.2-t2i-flash",
+            "wan2.2-t2i-plus",
+            "wanx2.1-t2i-turbo",
+            "wanx2.1-t2i-plus",
+            "wanx2.0-t2i-turbo"
+          ],
+          "schema": {
+            "image_count": {
+              "type": "number",
+              "unit": "count",
+              "unitLabel": {
+                "en": "image",
+                "fr": "image",
+                "ja": "枚",
+                "ru": "изображение",
+                "vi": "ảnh",
+                "zh": "张",
+                "zh-TW": "張"
+              },
+              "description": {
+                "en": "Image generation unit price",
+                "zh": "图片生成单价"
+              }
+            }
+          }
+        },
+        {
+          "models": [
+            "wan3.0-video",
+            "wan3.0-video-prime",
+            "wan2.7-t2v",
+            "wan2.7-i2v",
+            "wan2.6-t2v",
+            "wan2.6-t2v-us",
+            "wan2.6-i2v",
+            "wan2.6-i2v-flash",
+            "wan2.6-i2v-us",
+            "wan2.5-t2v-preview",
+            "wan2.5-i2v-preview",
+            "wan2.2-t2v-plus",
+            "wan2.2-i2v-flash",
+            "wan2.2-i2v-plus",
+            "wan2.2-kf2v-flash",
+            "wan2.2-s2v",
+            "wanx2.1-t2v-plus",
+            "wanx2.1-t2v-turbo",
+            "wanx2.1-i2v-plus",
+            "wanx2.1-i2v-turbo",
+            "wan2.7-t2v-2026-04-25",
+            "wan2.7-t2v-2026-06-12",
+            "wan2.7-i2v-2026-04-25"
+          ],
+          "schema": {
+            "resolution": {
+              "enum": [
+                "480P",
+                "720P",
+                "1080P"
+              ],
+              "description": {
+                "en": "Output video resolution",
+                "zh": "输出视频分辨率"
+              },
+              "enumLabels": {
+                "1080P": {
+                  "en": "1080P",
+                  "zh": "1080P"
+                },
+                "480P": {
+                  "en": "480P",
+                  "zh": "480P"
+                },
+                "720P": {
+                  "en": "720P",
+                  "zh": "720P"
+                }
+              }
+            },
+            "seconds": {
+              "type": "number",
+              "unit": "second",
+              "description": {
+                "en": "Video generation unit price",
+                "zh": "视频生成单价"
+              }
+            }
+          }
         }
       ],
       "channelTypes": [
@@ -49,10 +288,27 @@
         "wanx2.1-t2v-plus",
         "wanx2.1-t2v-turbo",
         "wanx2.1-i2v-plus",
-        "wanx2.1-i2v-turbo"
+        "wanx2.1-i2v-turbo",
+        "wan2.7-image-pro",
+        "wan2.7-image",
+        "wan2.6-image",
+        "wan2.6-t2i",
+        "wan2.5-t2i-preview",
+        "wan2.2-t2i-flash",
+        "wan2.2-t2i-plus",
+        "wanx2.1-t2i-turbo",
+        "wanx2.1-t2i-plus",
+        "wanx2.0-t2i-turbo"
       ],
-      "latest": "1.2.0",
+      "latest": "1.3.0",
       "versions": [
+        {
+          "version": "1.3.0",
+          "path": "plugins/tasks/alibaba/1.3.0/plugin.js",
+          "sha256": "52da5d589b6e48c77991d07df4e7c54a7ea9c303d273c5951cca26f030da6b82",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.2.0",
           "path": "plugins/tasks/alibaba/1.2.0/plugin.js",
@@ -98,6 +354,22 @@
         "en": "Volcengine Doubao Seedance video generation (text-to-video, image-to-video, and video-to-video)",
         "zh": "火山引擎豆包 Seedance 视频生成（文生视频、图生视频、视频生视频）"
       },
+      "routes": [
+        {
+          "method": "POST",
+          "path": "/doubao/api/v3/contents/generations/tasks",
+          "type": "submit",
+          "decode": "createTask",
+          "render": "taskCreated"
+        },
+        {
+          "method": "GET",
+          "path": "/doubao/api/v3/contents/generations/tasks/:task_id",
+          "type": "query",
+          "render": "taskStatus",
+          "taskIdParam": "task_id"
+        }
+      ],
       "protocols": [
         {
           "name": "openai_responses",
@@ -111,6 +383,117 @@
           "name": "openai_video"
         }
       ],
+      "usageSchema": {
+        "resolution": {
+          "enum": [
+            "480p",
+            "720p",
+            "1080p",
+            "4k"
+          ],
+          "description": {
+            "en": "Output video resolution",
+            "zh": "输出视频分辨率"
+          },
+          "enumLabels": {
+            "1080p": {
+              "en": "1080p",
+              "zh": "1080p"
+            },
+            "480p": {
+              "en": "480p",
+              "zh": "480p"
+            },
+            "4k": {
+              "en": "4k",
+              "zh": "4k"
+            },
+            "720p": {
+              "en": "720p",
+              "zh": "720p"
+            }
+          }
+        },
+        "tokens": {
+          "type": "number",
+          "unit": "token",
+          "description": {
+            "en": "Billing token unit price",
+            "zh": "计费 Token 单价"
+          }
+        },
+        "video_input": {
+          "enum": [
+            "none",
+            "video"
+          ],
+          "description": {
+            "en": "Reference video input",
+            "zh": "参考视频输入"
+          },
+          "enumLabels": {
+            "none": {
+              "en": "No reference video",
+              "zh": "无参考视频"
+            },
+            "video": {
+              "en": "With reference video",
+              "zh": "有参考视频"
+            }
+          }
+        }
+      },
+      "usageExamples": [
+        {
+          "label": "480p · 5s",
+          "facts": {
+            "resolution": "480p",
+            "tokens": 48038,
+            "video_input": "none"
+          }
+        },
+        {
+          "label": "720p · 5s",
+          "facts": {
+            "resolution": "720p",
+            "tokens": 108000,
+            "video_input": "none"
+          }
+        },
+        {
+          "label": "1080p · 5s",
+          "facts": {
+            "resolution": "1080p",
+            "tokens": 243000,
+            "video_input": "none"
+          }
+        },
+        {
+          "label": "4k · 5s",
+          "facts": {
+            "resolution": "4k",
+            "tokens": 972000,
+            "video_input": "none"
+          }
+        },
+        {
+          "label": "720p · 10s",
+          "facts": {
+            "resolution": "720p",
+            "tokens": 216000,
+            "video_input": "none"
+          }
+        },
+        {
+          "label": "720p · 5s (+4s 输入视频)",
+          "facts": {
+            "resolution": "720p",
+            "tokens": 194400,
+            "video_input": "video"
+          }
+        }
+      ],
+      "usageProfiles": null,
       "channelTypes": [
         54,
         45
@@ -158,6 +541,7 @@
         "en": "Google Veo video generation on the Gemini API (text-to-video and image-to-video)",
         "zh": "Google Veo 视频生成（文生视频、图生视频），Gemini API 版本"
       },
+      "routes": [],
       "protocols": [
         {
           "name": "openai_responses",
@@ -171,6 +555,72 @@
           "name": "openai_video"
         }
       ],
+      "usageSchema": {
+        "resolution": {
+          "enum": [
+            "720p",
+            "1080p",
+            "4k"
+          ],
+          "description": {
+            "en": "Output video resolution",
+            "zh": "输出视频分辨率"
+          },
+          "enumLabels": {
+            "1080p": {
+              "en": "1080p",
+              "zh": "1080p"
+            },
+            "4k": {
+              "en": "4k",
+              "zh": "4k"
+            },
+            "720p": {
+              "en": "720p",
+              "zh": "720p"
+            }
+          }
+        },
+        "seconds": {
+          "type": "number",
+          "unit": "second",
+          "description": {
+            "en": "Video generation unit price",
+            "zh": "视频生成单价"
+          }
+        }
+      },
+      "usageExamples": [
+        {
+          "label": "8s × 720p",
+          "facts": {
+            "resolution": "720p",
+            "seconds": 8
+          }
+        },
+        {
+          "label": "8s × 1080p",
+          "facts": {
+            "resolution": "1080p",
+            "seconds": 8
+          }
+        },
+        {
+          "label": "8s × 4k",
+          "facts": {
+            "resolution": "4k",
+            "seconds": 8
+          }
+        },
+        {
+          "label": "4s × 720p",
+          "facts": {
+            "resolution": "720p",
+            "seconds": 4
+          }
+        }
+      ],
+      "usageProfiles": null,
       "channelTypes": [
         24
       ],
@@ -213,6 +663,7 @@
         "en": "MiniMax Hailuo video generation (text-to-video, image-to-video, and MiniMax-H3 multimodal reference)",
         "zh": "MiniMax 海螺视频生成（文生视频、图生视频、MiniMax-H3 多模态参考生视频）"
       },
+      "routes": [],
       "protocols": [
         {
           "name": "openai_responses",
@@ -226,6 +677,151 @@
           "name": "openai_video"
         }
       ],
+      "usageSchema": {
+        "input_images": {
+          "type": "number",
+          "unit": "count",
+          "description": {
+            "en": "Input image unit price",
+            "zh": "输入图片单价"
+          }
+        },
+        "input_video_seconds": {
+          "type": "number",
+          "unit": "second",
+          "description": {
+            "en": "Input video unit price",
+            "zh": "输入视频单价"
+          }
+        },
+        "resolution": {
+          "enum": [
+            "512P",
+            "768P",
+            "720P",
+            "1080P",
+            "2K"
+          ],
+          "description": {
+            "en": "Output video resolution",
+            "zh": "输出视频分辨率"
+          },
+          "enumLabels": {
+            "1080P": {
+              "en": "1080P",
+              "zh": "1080P"
+            },
+            "2K": {
+              "en": "2K",
+              "zh": "2K"
+            },
+            "512P": {
+              "en": "512P",
+              "zh": "512P"
+            },
+            "720P": {
+              "en": "720P",
+              "zh": "720P"
+            },
+            "768P": {
+              "en": "768P",
+              "zh": "768P"
+            }
+          }
+        },
+        "seconds": {
+          "type": "number",
+          "unit": "second",
+          "description": {
+            "en": "Video generation unit price",
+            "zh": "视频生成单价"
+          }
+        }
+      },
+      "usageExamples": [
+        {
+          "label": "2.3/02 768P 6s",
+          "facts": {
+            "input_images": 0,
+            "input_video_seconds": 0,
+            "resolution": "768P",
+            "seconds": 6
+          }
+        },
+        {
+          "label": "2.3/02 768P 10s",
+          "facts": {
+            "input_images": 0,
+            "input_video_seconds": 0,
+            "resolution": "768P",
+            "seconds": 10
+          }
+        },
+        {
+          "label": "2.3/02 1080P 6s",
+          "facts": {
+            "input_images": 0,
+            "input_video_seconds": 0,
+            "resolution": "1080P",
+            "seconds": 6
+          }
+        },
+        {
+          "label": "02 512P 6s",
+          "facts": {
+            "input_images": 0,
+            "input_video_seconds": 0,
+            "resolution": "512P",
+            "seconds": 6
+          }
+        },
+        {
+          "label": "02 512P 10s",
+          "facts": {
+            "input_images": 0,
+            "input_video_seconds": 0,
+            "resolution": "512P",
+            "seconds": 10
+          }
+        },
+        {
+          "label": "01-series 720P 6s",
+          "facts": {
+            "input_images": 0,
+            "input_video_seconds": 0,
+            "resolution": "720P",
+            "seconds": 6
+          }
+        },
+        {
+          "label": "H3 768P 5s",
+          "facts": {
+            "input_images": 0,
+            "input_video_seconds": 0,
+            "resolution": "768P",
+            "seconds": 5
+          }
+        },
+        {
+          "label": "H3 2K 5s · 9 images",
+          "facts": {
+            "input_images": 9,
+            "input_video_seconds": 0,
+            "resolution": "2K",
+            "seconds": 5
+          }
+        },
+        {
+          "label": "H3 2K 5s · input video",
+          "facts": {
+            "input_images": 0,
+            "input_video_seconds": 15,
+            "resolution": "2K",
+            "seconds": 5
+          }
+        }
+      ],
+      "usageProfiles": null,
       "channelTypes": [
         35
       ],
@@ -280,6 +876,22 @@
         "en": "Incho music generation (prompt-to-song, multilingual vocals)",
         "zh": "音潮 Incho 音乐生成（提示词生成歌曲、多语种人声）"
       },
+      "routes": [
+        {
+          "method": "POST",
+          "path": "/incho/submit/:action",
+          "type": "submit",
+          "decode": "decodeSubmit",
+          "render": "renderSubmit"
+        },
+        {
+          "method": "GET",
+          "path": "/incho/fetch/:task_id",
+          "type": "query",
+          "render": "renderTask",
+          "taskIdParam": "task_id"
+        }
+      ],
       "protocols": [
         {
           "name": "openai_responses",
@@ -290,6 +902,33 @@
           ]
         }
       ],
+      "usageSchema": {
+        "action": {
+          "enum": [
+            "music"
+          ],
+          "description": {
+            "en": "Generate songs",
+            "zh": "生成歌曲"
+          },
+          "enumLabels": {
+            "music": {
+              "en": "Generate songs",
+              "zh": "生成歌曲"
+            }
+          }
+        },
+        "clips": {
+          "type": "number",
+          "unit": "count",
+          "description": {
+            "en": "Song generation unit price",
+            "zh": "生成歌曲单价"
+          }
+        }
+      },
+      "usageExamples": null,
+      "usageProfiles": null,
       "models": [
         "incho_music"
       ],
@@ -328,6 +967,15 @@
         "en": "Volcengine Jimeng video generation (text-to-video, image-to-video, and first-and-last-frame)",
         "zh": "火山引擎即梦视频生成（文生视频、图生视频、首尾帧）"
       },
+      "routes": [
+        {
+          "method": "POST",
+          "path": "/jimeng/",
+          "type": "dynamic",
+          "decode": "decodeRequest",
+          "render": "renderTask"
+        }
+      ],
       "protocols": [
         {
           "name": "openai_responses",
@@ -341,6 +989,98 @@
           "name": "openai_video"
         }
       ],
+      "usageSchema": {
+        "product": {
+          "enum": [
+            "s2_pro",
+            "v30_720p",
+            "v30_1080p",
+            "v30_pro"
+          ],
+          "description": {
+            "en": "Product tier",
+            "zh": "产品档位"
+          },
+          "enumLabels": {
+            "s2_pro": {
+              "en": "S2.0 Pro",
+              "zh": "S2.0 Pro"
+            },
+            "v30_1080p": {
+              "en": "3.0 1080p",
+              "zh": "3.0 1080p"
+            },
+            "v30_720p": {
+              "en": "3.0 720p",
+              "zh": "3.0 720p"
+            },
+            "v30_pro": {
+              "en": "3.0 Pro",
+              "zh": "3.0 Pro"
+            }
+          }
+        },
+        "seconds": {
+          "type": "number",
+          "unit": "second",
+          "description": {
+            "en": "Video generation unit price",
+            "zh": "视频生成单价"
+          }
+        }
+      },
+      "usageExamples": [
+        {
+          "label": "S2.0 Pro 5s",
+          "facts": {
+            "product": "s2_pro",
+            "seconds": 5
+          }
+        },
+        {
+          "label": "3.0 720P 5s",
+          "facts": {
+            "product": "v30_720p",
+            "seconds": 5
+          }
+        },
+        {
+          "label": "3.0 720P 10s",
+          "facts": {
+            "product": "v30_720p",
+            "seconds": 10
+          }
+        },
+        {
+          "label": "3.0 1080P 5s",
+          "facts": {
+            "product": "v30_1080p",
+            "seconds": 5
+          }
+        },
+        {
+          "label": "3.0 1080P 10s",
+          "facts": {
+            "product": "v30_1080p",
+            "seconds": 10
+          }
+        },
+        {
+          "label": "3.0 Pro 5s",
+          "facts": {
+            "product": "v30_pro",
+            "seconds": 5
+          }
+        },
+        {
+          "label": "3.0 Pro 10s",
+          "facts": {
+            "product": "v30_pro",
+            "seconds": 10
+          }
+        }
+      ],
+      "usageProfiles": null,
       "channelTypes": [
         51
       ],
@@ -380,6 +1120,38 @@
         "en": "Kuaishou Kling video generation (text-to-video and image-to-video)",
         "zh": "快手可灵视频生成（文生视频、图生视频）"
       },
+      "routes": [
+        {
+          "method": "POST",
+          "path": "/kling/v1/videos/text2video",
+          "type": "submit",
+          "action": "text_to_video",
+          "decode": "decodeSubmit",
+          "render": "taskCreated"
+        },
+        {
+          "method": "POST",
+          "path": "/kling/v1/videos/image2video",
+          "type": "submit",
+          "action": "image_to_video",
+          "decode": "decodeSubmit",
+          "render": "taskCreated"
+        },
+        {
+          "method": "GET",
+          "path": "/kling/v1/videos/text2video/:task_id",
+          "type": "query",
+          "render": "taskStatus",
+          "taskIdParam": "task_id"
+        },
+        {
+          "method": "GET",
+          "path": "/kling/v1/videos/image2video/:task_id",
+          "type": "query",
+          "render": "taskStatus",
+          "taskIdParam": "task_id"
+        }
+      ],
       "protocols": [
         {
           "name": "openai_responses",
@@ -393,6 +1165,49 @@
           "name": "openai_video"
         }
       ],
+      "usageSchema": {
+        "units": {
+          "type": "number",
+          "unit": "credit",
+          "description": {
+            "en": "Kling credit unit price",
+            "zh": "可灵资源包单位单价"
+          }
+        }
+      },
+      "usageExamples": [
+        {
+          "label": "v1 std 5s",
+          "facts": {
+            "units": 1
+          }
+        },
+        {
+          "label": "v1 pro 5s",
+          "facts": {
+            "units": 3.5
+          }
+        },
+        {
+          "label": "v1-6 std 5s",
+          "facts": {
+            "units": 2
+          }
+        },
+        {
+          "label": "v1-6 pro 10s",
+          "facts": {
+            "units": 7
+          }
+        },
+        {
+          "label": "v2-master pro 5s",
+          "facts": {
+            "units": 10
+          }
+        }
+      ],
+      "usageProfiles": null,
       "channelTypes": [
         50
       ],
@@ -434,6 +1249,7 @@
         "en": "OpenAI Sora video generation (text-to-video, image-to-video, and remix)",
         "zh": "OpenAI Sora 视频生成（文生视频、图生视频、remix）"
       },
+      "routes": [],
       "protocols": [
         {
           "name": "openai_responses",
@@ -447,6 +1263,48 @@
           "name": "openai_video"
         }
       ],
+      "usageSchema": {
+        "seconds": {
+          "type": "number",
+          "unit": "second",
+          "description": {
+            "en": "Video generation unit price",
+            "zh": "视频生成单价"
+          }
+        },
+        "size": {
+          "enum": [
+            "720x1280",
+            "1280x720",
+            "1792x1024",
+            "1024x1792"
+          ],
+          "description": {
+            "en": "Output video dimensions",
+            "zh": "输出视频尺寸"
+          },
+          "enumLabels": {
+            "1024x1792": {
+              "en": "1024x1792",
+              "zh": "1024x1792"
+            },
+            "1280x720": {
+              "en": "1280x720",
+              "zh": "1280x720"
+            },
+            "1792x1024": {
+              "en": "1792x1024",
+              "zh": "1792x1024"
+            },
+            "720x1280": {
+              "en": "720x1280",
+              "zh": "720x1280"
+            }
+          }
+        }
+      },
+      "usageExamples": null,
+      "usageProfiles": null,
       "channelTypes": [
         55,
         1
@@ -455,8 +1313,15 @@
         "sora-2",
         "sora-2-pro"
       ],
-      "latest": "1.0.2",
+      "latest": "1.0.3",
       "versions": [
+        {
+          "version": "1.0.3",
+          "path": "plugins/tasks/sora/1.0.3/plugin.js",
+          "sha256": "a7c30f024e36a2ac430feb6ac18e7a7733ec7f7bfaf0a2beed0945a6a8cb5380",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.2",
           "path": "plugins/tasks/sora/1.0.2/plugin.js",
@@ -488,6 +1353,29 @@
         "en": "SunoAPI project music and lyrics generation",
         "zh": "SunoAPI 项目 音乐与歌词生成"
       },
+      "routes": [
+        {
+          "method": "POST",
+          "path": "/suno/submit/:action",
+          "type": "submit",
+          "decode": "decodeSubmit",
+          "render": "renderSubmit"
+        },
+        {
+          "method": "POST",
+          "path": "/suno/fetch",
+          "type": "dynamic",
+          "decode": "decodeBatch",
+          "render": "renderTasks"
+        },
+        {
+          "method": "GET",
+          "path": "/suno/fetch/:task_id",
+          "type": "query",
+          "render": "renderTask",
+          "taskIdParam": "task_id"
+        }
+      ],
       "protocols": [
         {
           "name": "openai_responses",
@@ -498,6 +1386,38 @@
           ]
         }
       ],
+      "usageSchema": {
+        "action": {
+          "enum": [
+            "music",
+            "lyrics"
+          ],
+          "description": {
+            "en": "Generate songs or lyrics",
+            "zh": "生成歌曲或歌词"
+          },
+          "enumLabels": {
+            "lyrics": {
+              "en": "Generate lyrics",
+              "zh": "生成歌词"
+            },
+            "music": {
+              "en": "Generate songs",
+              "zh": "生成歌曲"
+            }
+          }
+        },
+        "clips": {
+          "type": "number",
+          "unit": "count",
+          "description": {
+            "en": "Song or lyrics generation unit price",
+            "zh": "生成歌曲或歌词单价"
+          }
+        }
+      },
+      "usageExamples": null,
+      "usageProfiles": null,
       "channelTypes": [
         36
       ],
@@ -545,6 +1465,7 @@
         "en": "Google Veo video generation on Vertex AI (text-to-video and image-to-video)",
         "zh": "Google Veo 视频生成（文生视频、图生视频），Vertex AI 版本"
       },
+      "routes": [],
       "protocols": [
         {
           "name": "openai_responses",
@@ -558,6 +1479,83 @@
           "name": "openai_video"
         }
       ],
+      "usageSchema": {
+        "generate_audio": {
+          "type": "boolean",
+          "description": {
+            "en": "Whether audio is generated",
+            "zh": "是否生成音频"
+          }
+        },
+        "resolution": {
+          "enum": [
+            "720p",
+            "1080p",
+            "4k"
+          ],
+          "description": {
+            "en": "Output video resolution",
+            "zh": "输出视频分辨率"
+          },
+          "enumLabels": {
+            "1080p": {
+              "en": "1080p",
+              "zh": "1080p"
+            },
+            "4k": {
+              "en": "4k",
+              "zh": "4k"
+            },
+            "720p": {
+              "en": "720p",
+              "zh": "720p"
+            }
+          }
+        },
+        "seconds": {
+          "type": "number",
+          "unit": "second",
+          "description": {
+            "en": "Video generation unit price",
+            "zh": "视频生成单价"
+          }
+        }
+      },
+      "usageExamples": [
+        {
+          "label": "8s 720p audio",
+          "facts": {
+            "generate_audio": true,
+            "resolution": "720p",
+            "seconds": 8
+          }
+        },
+        {
+          "label": "8s 720p muted",
+          "facts": {
+            "generate_audio": false,
+            "resolution": "720p",
+            "seconds": 8
+          }
+        },
+        {
+          "label": "8s 1080p audio",
+          "facts": {
+            "generate_audio": true,
+            "resolution": "1080p",
+            "seconds": 8
+          }
+        },
+        {
+          "label": "8s 4k audio",
+          "facts": {
+            "generate_audio": true,
+            "resolution": "4k",
+            "seconds": 8
+          }
+        }
+      ],
+      "usageProfiles": null,
       "channelTypes": [
         41
       ],
@@ -603,6 +1601,7 @@
         "en": "Shengshu Vidu video generation (text-to-video, image-to-video, first-and-last-frame, and reference-to-video)",
         "zh": "生数 Vidu 视频生成（文生视频、图生视频、首尾帧、参考生视频）"
       },
+      "routes": [],
       "protocols": [
         {
           "name": "openai_responses",
@@ -616,6 +1615,97 @@
           "name": "openai_video"
         }
       ],
+      "usageSchema": {
+        "credits": {
+          "type": "number",
+          "unit": "credit",
+          "description": {
+            "en": "Vidu credit unit price",
+            "zh": "Vidu 积分单价"
+          }
+        },
+        "duration": {
+          "type": "number",
+          "unit": "second",
+          "description": {
+            "en": "Video generation unit price",
+            "zh": "视频生成单价"
+          }
+        },
+        "resolution": {
+          "enum": [
+            "360p",
+            "540p",
+            "720p",
+            "1080p"
+          ],
+          "description": {
+            "en": "Output video resolution",
+            "zh": "输出视频分辨率"
+          },
+          "enumLabels": {
+            "1080p": {
+              "en": "1080p",
+              "zh": "1080p"
+            },
+            "360p": {
+              "en": "360p",
+              "zh": "360p"
+            },
+            "540p": {
+              "en": "540p",
+              "zh": "540p"
+            },
+            "720p": {
+              "en": "720p",
+              "zh": "720p"
+            }
+          }
+        }
+      },
+      "usageExamples": [
+        {
+          "label": "q2 5s 720p",
+          "facts": {
+            "credits": 0,
+            "duration": 5,
+            "resolution": "720p"
+          }
+        },
+        {
+          "label": "q1 5s 1080p",
+          "facts": {
+            "credits": 0,
+            "duration": 5,
+            "resolution": "1080p"
+          }
+        },
+        {
+          "label": "2.0 4s 360p",
+          "facts": {
+            "credits": 0,
+            "duration": 4,
+            "resolution": "360p"
+          }
+        },
+        {
+          "label": "2.0 4s 720p",
+          "facts": {
+            "credits": 0,
+            "duration": 4,
+            "resolution": "720p"
+          }
+        },
+        {
+          "label": "2.0 8s 720p",
+          "facts": {
+            "credits": 0,
+            "duration": 8,
+            "resolution": "720p"
+          }
+        }
+      ],
+      "usageProfiles": null,
       "channelTypes": [
         52
       ],

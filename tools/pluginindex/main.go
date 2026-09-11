@@ -57,19 +57,23 @@ type indexIconFile struct {
 }
 
 type indexPlugin struct {
-	displayVersion string                   `json:"-"`
-	Key            string                   `json:"key"`
-	Name           string                   `json:"name"`
-	Icon           string                   `json:"icon,omitempty"`
-	IconFile       *indexIconFile           `json:"iconFile,omitempty"`
-	Website        string                   `json:"website,omitempty"`
-	SortPriority   int                      `json:"sortPriority,omitempty"`
-	Description    jsplugin.LocalizedText   `json:"description,omitempty"`
-	Protocols      []jsplugin.ProtocolClaim `json:"protocols,omitempty"`
-	ChannelTypes   []int                    `json:"channelTypes,omitempty"`
-	Models         []string                 `json:"models,omitempty"`
-	Latest         string                   `json:"latest"`
-	Versions       []indexVersion           `json:"versions"`
+	displayVersion string                               `json:"-"`
+	Key            string                               `json:"key"`
+	Name           string                               `json:"name"`
+	Icon           string                               `json:"icon,omitempty"`
+	IconFile       *indexIconFile                       `json:"iconFile,omitempty"`
+	Website        string                               `json:"website,omitempty"`
+	SortPriority   int                                  `json:"sortPriority,omitempty"`
+	Description    jsplugin.LocalizedText               `json:"description,omitempty"`
+	Routes         []jsplugin.Route                     `json:"routes"`
+	Protocols      []jsplugin.ProtocolClaim             `json:"protocols,omitempty"`
+	UsageSchema    map[string]jsplugin.UsageFieldSchema `json:"usageSchema"`
+	UsageExamples  []jsplugin.UsageExample              `json:"usageExamples"`
+	UsageProfiles  []jsplugin.UsageProfile              `json:"usageProfiles"`
+	ChannelTypes   []int                                `json:"channelTypes,omitempty"`
+	Models         []string                             `json:"models,omitempty"`
+	Latest         string                               `json:"latest"`
+	Versions       []indexVersion                       `json:"versions"`
 }
 
 type indexFile struct {
@@ -202,7 +206,11 @@ func collectPluginVersions(root, kindDir, kind, key string, byKey map[string]*in
 			entry.Website = loaded.Meta.Website
 			entry.SortPriority = loaded.Meta.SortPriority
 			entry.Description = loaded.Meta.Description
+			entry.Routes = loaded.Meta.Routes
 			entry.Protocols = loaded.Meta.Protocols
+			entry.UsageSchema = loaded.Meta.UsageSchema
+			entry.UsageExamples = loaded.Meta.UsageExamples
+			entry.UsageProfiles = loaded.Meta.UsageProfiles
 			entry.ChannelTypes = loaded.Meta.ChannelTypes
 			entry.Models = loaded.Meta.Models
 		}
