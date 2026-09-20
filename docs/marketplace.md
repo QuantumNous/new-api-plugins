@@ -108,15 +108,19 @@ default-parameter, or billing impacts only. Do not include validation or test
 reports, verification limits, generic upgrade instructions, or lists of unrelated unchanged
 behavior. Put those details in commit or PR descriptions.
 
-Include `Migration` whenever a change affects pricing, billing calculations, or
-required configuration. Start with the pricing impact: state whether prices or
-billing calculations change and whether administrators must reconfigure model
-prices, resolution tiers, billing mode, or billing expressions. Describe any
-automatic migration and give the concrete action for affected models/settings.
-If no price reconfiguration is required, say so explicitly only when supported
-by the change. This targeted compatibility statement is allowed. Put other
-required compatibility steps after pricing guidance. Do not add validation
-reports or generic release procedures.
+Write for plugin users and administrators, using natural sentences and one main
+change per bullet. Start with the feature or behavior users will notice. Include
+model names, paths, and fields when they help someone use a feature or upgrade;
+avoid internal terminology, parameter inventories, and literal translations.
+Review every language for readability as well as equivalent meaning.
+
+Include `Migration` only when users need to take action. Put required pricing
+changes first: explain the price impact, name the affected models/settings, and
+give the concrete price or expression changes. Follow with other required
+compatibility steps. Explain automatic migration only when it affects a decision
+or remaining action. Omit statements such as "no price reconfiguration is
+required", "existing settings are unchanged", or "no action is needed".
+Do not add validation reports or generic release procedures.
 
 Consumers can read the metadata first, then use a Markdown parser to extract the
 release heading and category list items. Structural keys and headings are always

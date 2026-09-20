@@ -2632,6 +2632,62 @@
       ]
     },
     {
+      "key": "typesafe",
+      "name": "TypeSafe",
+      "icon": "text:TS",
+      "website": "https://typesafe.ai",
+      "description": {
+        "en": "Typed decisions with TypeSafe Jev, input priced per million tokens and output free",
+        "zh": "TypeSafe Jev 结构化判断，输入按每百万 token 定价，输出免费"
+      },
+      "routes": [
+        {
+          "method": "POST",
+          "path": "/typesafe/v1/systemone",
+          "type": "submit",
+          "decode": "decodeSystemOne",
+          "render": "renderSystemOne",
+          "retainResult": false
+        }
+      ],
+      "usageSchema": {
+        "input_tokens": {
+          "type": "number",
+          "unit": "token",
+          "description": {
+            "en": "Input token unit price",
+            "zh": "输入 token 单价"
+          }
+        }
+      },
+      "usageExamples": [
+        {
+          "label": "Jev",
+          "facts": {
+            "input_tokens": 1000
+          }
+        }
+      ],
+      "usageProfiles": null,
+      "models": [
+        "jev-1.13.0",
+        "jev-latest",
+        "jev-preview"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/typesafe/1.0.0/plugin.js",
+          "sha256": "1471ceee1906edbb16c54a040123fd89f4a7b050799c552cbe70aef38f3195e5",
+          "minApiVersion": 1,
+          "kind": "task",
+          "baseUrl": "https://api.typesafe.ai",
+          "auth": "api_key"
+        }
+      ]
+    },
+    {
       "key": "vertex-ai",
       "name": "Google Veo (Vertex AI)",
       "icon": "VertexAI.Color",

@@ -12,23 +12,27 @@ translations:
 
 ### Added
 
-- Add Qwen-Image, Plus, Max, 2.0/2.0-Pro, 3.0/3.0-Pro, Edit, Edit-Plus, Edit-Max, their declared dated snapshots, and Z-Image-Turbo to native image generation and OpenAI Responses. These models use synchronous upstream calls; output and reference-image limits follow the selected model.
-- Add OpenAI-compatible image generation at `/v1/images/generations` and editing at `/v1/images/edits` for supported image models. Generation accepts JSON; editing accepts JSON or multipart image uploads. Requests default to one output and return the completed image list, including when the upstream uses an asynchronous task.
-- Support image URLs, Base64 data URLs, multipart reference images, and `url` or `b64_json` output on the OpenAI image endpoints. Each uploaded input image is limited to 10 MiB; unsupported streaming requests are rejected.
-- Add `wan2.5-i2i-preview` with one to three reference images and `wanx2.1-imageedit` with a single base image at the native `/ali/api/v1/services/aigc/image2image/image-synthesis` route, Responses, and the OpenAI image endpoints.
-- Support the ten `wanx2.1-imageedit` operations, including instruction editing, masked editing, stylization, expansion, super-resolution, colorization, and watermark removal. OpenAI edits default to instruction editing, or masked editing when a mask is supplied; operation-specific parameters are forwarded.
-- Accept `prompt_extend_mode` (`direct` or `agent`) and `enable_thinking` for image requests, including vendor `input` and `parameters` objects passed through the OpenAI image endpoints.
-- Support an upstream New API gateway through a type-60 channel with this plugin enabled on both gateways. Image and video requests use the plugin native routes; synchronous interleaved output is returned as complete JSON.
+- Add Qwen-Image text-to-image and editing models, including Plus, Max, 2.0/Pro, 3.0/Pro, and the Edit series. They are available through the native image API and OpenAI Responses.
+- Add Z-Image-Turbo text-to-image generation, with optional prompt rewriting.
+- Generate and edit images through the OpenAI-compatible `/v1/images/generations` and `/v1/images/edits` endpoints. Both default to one image and wait for the finished images before returning.
+- Upload reference images directly for editing, or provide image URLs or Base64 data URLs. OpenAI image requests support URL or Base64 results; uploaded images can be up to 10 MiB each.
+- Add `wan2.5-i2i-preview` image editing with one to three reference images. It works through the native image API, OpenAI Responses, and the OpenAI image endpoints.
+- Add `wanx2.1-imageedit` for editing a single image, with ten operations including masked editing, stylization, expansion, upscaling, colorization, and watermark removal. OpenAI edits use instruction editing by default and switch to masked editing when a mask is supplied.
+- Allow image requests to select direct or agent-assisted prompt rewriting and enable thinking on models that support these options.
+- Use another New API server as the upstream for image and video generation, including synchronous responses containing both text and images.
 
 ### Changed
 
-- Report Qwen-Image-3.0 output image count and 1K/2K output tier, plus input image count, using the upstream usage values when valid. Report Z-Image prompt rewriting as a billing condition; per-call pricing applies a factor of two when rewriting is enabled.
-- Report whether `wan2.6-i2v-flash` generates audio, defaulting to enabled when omitted and using the completion audio flag when provided.
-- Synchronous native image results are returned only in the create response and are no longer available through later result or artifact queries.
+- Qwen-Image-3.0 supports separate prices for 1K and 2K output images and for input images.
+- Z-Image can be priced differently when prompt rewriting is enabled. With per-call pricing, enabling rewriting doubles the image charge.
+- `wan2.6-i2v-flash` supports different prices for videos with and without audio. Audio generation is enabled by default.
+- Synchronous native image results are now returned only when the image is created. They cannot be retrieved with a later query.
 
 ### Migration
 
-- **Price configuration:** Configure prices for newly enabled image models. Qwen-Image-3.0 expressions should price `u("image_count")` by `u("output_image_type")` and account for `u("input_image_count")`; Z-Image expressions should account for `u("prompt_extend")`. Existing expressions are not automatically rewritten. Z-Image per-call pricing doubles the image charge when prompt rewriting is enabled, so verify the configured base price before enabling it.
-- **Video pricing:** To charge different rates for audio and silent `wan2.6-i2v-flash` output, update its expression to branch on `u("audio")`. Omitting the field keeps a single rate. Check saved resolution conditions against each enabled model's supported tiers; saved prices are not changed automatically.
-- **Installation and gateway connections:** Upgrade to a new-api build supporting the [current plugin contract](../../../../docs/plugin-api/v1.md) before installing 1.4.0. For a type-60 connection, enable this plugin on both gateways and configure the upstream gateway URL and token.
-- **Image requests:** Save synchronous native results from the create response. Specify `n` explicitly when relying on a particular image count: OpenAI image requests default to one, while existing native asynchronous model defaults still apply. Use `function` and a mask only with compatible editing operations.
+- Configure prices for the image models you enable. For Qwen-Image-3.0, use `u("image_count")` for output count, `u("output_image_type")` to select the 1K or 2K rate, and `u("input_image_count")` for input count.
+- For Z-Image, use `u("prompt_extend")` in billing expressions to select the prompt-rewriting rate. With per-call pricing, check the base price against the doubled charge before enabling rewriting.
+- To set separate audio and silent-video prices for `wan2.6-i2v-flash`, use `u("audio")` in its billing expression.
+- This release requires the [updated plugin API](../../../../docs/plugin-api/v1.md). Upgrade new-api to a build that supports it before installing the plugin.
+- To connect to an upstream New API server, enable this plugin on both servers and configure a type-60 channel with the upstream address and API key.
+- Save synchronous native image results from the creation response. When switching to the OpenAI image endpoints, set `n` if you need more than one image.

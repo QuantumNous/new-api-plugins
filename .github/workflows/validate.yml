@@ -40,6 +40,10 @@ jobs:
         working-directory: new-api-plugins/tools/pluginindex
         run: go run . check ../..
 
+      - name: Test plugin behavior
+        working-directory: new-api-plugins/tools/pluginindex
+        run: go test ./...
+
       - name: Published versions are immutable
         if: github.event_name == 'pull_request'
         working-directory: new-api-plugins
