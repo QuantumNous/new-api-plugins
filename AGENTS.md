@@ -1,5 +1,11 @@
 # AGENTS.md — Plugin Repository Rules
 
+## No plugin test code
+
+- Do NOT create, modify, copy, or generate plugin test code anywhere in this repository, including under `plugins/`, `tools/`, or inside CI workflows.
+- Keep plugin test fixtures, test harnesses, and dependencies or CI jobs used solely for plugin tests outside this repository. Run plugin behavior and billing tests in the host repository or a temporary directory outside this repository.
+- Existing marketplace index, schema, and changelog validation commands may still be run.
+
 ## Changelogs for new versions (required)
 
 - Every new plugin or version, including a version synchronized from another repository, MUST include `CHANGELOG.md` beside that version's `plugin.js`:

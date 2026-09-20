@@ -9,6 +9,7 @@ export const meta = {
   apiVersion: 1,
   key: "typesafe",
   name: "TypeSafe",
+  sortPriority: 90,
   version: "1.0.0",
   icon: "text:TS",
   author: { name: "QuantumNous", url: "https://github.com/QuantumNous" },

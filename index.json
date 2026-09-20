@@ -2635,6 +2635,10 @@
       "key": "typesafe",
       "name": "TypeSafe",
       "icon": "text:TS",
+      "iconFile": {
+        "path": "plugins/tasks/typesafe/icon.png",
+        "sha256": "40fe116f8438653bf6bad9b198f23371627f52b52b8654d6852e8345a014e585"
+      },
       "website": "https://typesafe.ai",
       "description": {
         "en": "Typed decisions with TypeSafe Jev, input priced per million tokens and output free",
