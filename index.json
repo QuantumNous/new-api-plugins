@@ -7,8 +7,8 @@
       "name": "Alibaba Bailian",
       "icon": "Bailian.Color",
       "description": {
-        "en": "Alibaba Cloud Bailian Wanxiang image and video generation",
-        "zh": "阿里云百炼万相图片与视频生成"
+        "en": "Alibaba Cloud Bailian image and video generation (Wan, Qwen-Image, Z-Image)",
+        "zh": "阿里云百炼图片与视频生成（万相、千问图像、Z-Image）"
       },
       "routes": [
         {
@@ -17,11 +17,32 @@
           "type": "submit",
           "decode": "createImageTask",
           "render": "imageCreated",
+          "retainResult": false,
           "models": [
             "wan2.7-image-pro",
             "wan2.7-image",
             "wan2.6-image",
-            "wan2.6-t2i"
+            "wan2.6-t2i",
+            "qwen-image",
+            "qwen-image-plus",
+            "qwen-image-max",
+            "qwen-image-2.0",
+            "qwen-image-2.0-pro",
+            "qwen-image-3.0",
+            "qwen-image-3.0-pro",
+            "qwen-image-edit",
+            "qwen-image-edit-plus",
+            "qwen-image-edit-max",
+            "z-image-turbo",
+            "qwen-image-plus-2026-01-09",
+            "qwen-image-max-2025-12-30",
+            "qwen-image-2.0-2026-03-03",
+            "qwen-image-2.0-pro-2026-03-03",
+            "qwen-image-2.0-pro-2026-04-22",
+            "qwen-image-2.0-pro-2026-06-22",
+            "qwen-image-edit-plus-2025-10-30",
+            "qwen-image-edit-plus-2025-12-15",
+            "qwen-image-edit-max-2026-01-16"
           ]
         },
         {
@@ -50,6 +71,17 @@
             "wanx2.1-t2i-turbo",
             "wanx2.1-t2i-plus",
             "wanx2.0-t2i-turbo"
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "/ali/api/v1/services/aigc/image2image/image-synthesis",
+          "type": "submit",
+          "decode": "createImageTask",
+          "render": "taskCreated",
+          "models": [
+            "wan2.5-i2i-preview",
+            "wanx2.1-imageedit"
           ]
         },
         {
@@ -109,6 +141,43 @@
             "wan2.7-t2v-2026-04-25",
             "wan2.7-t2v-2026-06-12",
             "wan2.7-i2v-2026-04-25"
+          ]
+        },
+        {
+          "name": "openai_image",
+          "models": [
+            "wan2.7-image-pro",
+            "wan2.7-image",
+            "wan2.6-image",
+            "wan2.6-t2i",
+            "wan2.5-t2i-preview",
+            "wan2.2-t2i-flash",
+            "wan2.2-t2i-plus",
+            "wanx2.1-t2i-turbo",
+            "wanx2.1-t2i-plus",
+            "wanx2.0-t2i-turbo",
+            "wan2.5-i2i-preview",
+            "wanx2.1-imageedit",
+            "qwen-image",
+            "qwen-image-plus",
+            "qwen-image-max",
+            "qwen-image-2.0",
+            "qwen-image-2.0-pro",
+            "qwen-image-3.0",
+            "qwen-image-3.0-pro",
+            "qwen-image-edit",
+            "qwen-image-edit-plus",
+            "qwen-image-edit-max",
+            "z-image-turbo",
+            "qwen-image-plus-2026-01-09",
+            "qwen-image-max-2025-12-30",
+            "qwen-image-2.0-2026-03-03",
+            "qwen-image-2.0-pro-2026-03-03",
+            "qwen-image-2.0-pro-2026-04-22",
+            "qwen-image-2.0-pro-2026-06-22",
+            "qwen-image-edit-plus-2025-10-30",
+            "qwen-image-edit-plus-2025-12-15",
+            "qwen-image-edit-max-2026-01-16"
           ]
         }
       ],
@@ -177,7 +246,26 @@
             "wan2.2-t2i-plus",
             "wanx2.1-t2i-turbo",
             "wanx2.1-t2i-plus",
-            "wanx2.0-t2i-turbo"
+            "wanx2.0-t2i-turbo",
+            "wan2.5-i2i-preview",
+            "wanx2.1-imageedit",
+            "qwen-image",
+            "qwen-image-plus",
+            "qwen-image-max",
+            "qwen-image-2.0",
+            "qwen-image-2.0-pro",
+            "qwen-image-edit",
+            "qwen-image-edit-plus",
+            "qwen-image-edit-max",
+            "qwen-image-plus-2026-01-09",
+            "qwen-image-max-2025-12-30",
+            "qwen-image-2.0-2026-03-03",
+            "qwen-image-2.0-pro-2026-03-03",
+            "qwen-image-2.0-pro-2026-04-22",
+            "qwen-image-2.0-pro-2026-06-22",
+            "qwen-image-edit-plus-2025-10-30",
+            "qwen-image-edit-plus-2025-12-15",
+            "qwen-image-edit-max-2026-01-16"
           ],
           "schema": {
             "image_count": {
@@ -201,29 +289,105 @@
         },
         {
           "models": [
+            "z-image-turbo"
+          ],
+          "schema": {
+            "image_count": {
+              "type": "number",
+              "unit": "count",
+              "unitLabel": {
+                "en": "image",
+                "fr": "image",
+                "ja": "枚",
+                "ru": "изображение",
+                "vi": "ảnh",
+                "zh": "张",
+                "zh-TW": "張"
+              },
+              "description": {
+                "en": "Image generation unit price",
+                "zh": "图片生成单价"
+              }
+            },
+            "prompt_extend": {
+              "type": "boolean",
+              "description": {
+                "en": "Whether prompt rewriting is enabled",
+                "zh": "是否开启提示词改写"
+              }
+            }
+          }
+        },
+        {
+          "models": [
+            "qwen-image-3.0",
+            "qwen-image-3.0-pro"
+          ],
+          "schema": {
+            "image_count": {
+              "type": "number",
+              "unit": "count",
+              "unitLabel": {
+                "en": "image",
+                "fr": "image",
+                "ja": "枚",
+                "ru": "изображение",
+                "vi": "ảnh",
+                "zh": "张",
+                "zh-TW": "張"
+              },
+              "description": {
+                "en": "Image generation unit price",
+                "zh": "图片生成单价"
+              }
+            },
+            "input_image_count": {
+              "type": "number",
+              "unit": "count",
+              "unitLabel": {
+                "en": "image",
+                "fr": "image",
+                "ja": "枚",
+                "ru": "изображение",
+                "vi": "ảnh",
+                "zh": "张",
+                "zh-TW": "張"
+              },
+              "description": {
+                "en": "Input image unit price",
+                "zh": "输入图片单价"
+              }
+            },
+            "output_image_type": {
+              "enum": [
+                "qima_output_1k",
+                "qima_output_2k"
+              ],
+              "description": {
+                "en": "Output image tier",
+                "zh": "输出图片档位"
+              },
+              "enumLabels": {
+                "qima_output_1k": {
+                  "en": "1K output",
+                  "zh": "1K 输出"
+                },
+                "qima_output_2k": {
+                  "en": "2K output",
+                  "zh": "2K 输出"
+                }
+              }
+            }
+          }
+        },
+        {
+          "models": [
             "wan3.0-video",
             "wan3.0-video-prime",
-            "wan2.7-t2v",
-            "wan2.7-i2v",
-            "wan2.6-t2v",
-            "wan2.6-t2v-us",
-            "wan2.6-i2v",
-            "wan2.6-i2v-flash",
-            "wan2.6-i2v-us",
             "wan2.5-t2v-preview",
             "wan2.5-i2v-preview",
-            "wan2.2-t2v-plus",
             "wan2.2-i2v-flash",
-            "wan2.2-i2v-plus",
-            "wan2.2-kf2v-flash",
-            "wan2.2-s2v",
-            "wanx2.1-t2v-plus",
-            "wanx2.1-t2v-turbo",
-            "wanx2.1-i2v-plus",
-            "wanx2.1-i2v-turbo",
-            "wan2.7-t2v-2026-04-25",
-            "wan2.7-t2v-2026-06-12",
-            "wan2.7-i2v-2026-04-25"
+            "wan2.2-kf2v-flash"
           ],
           "schema": {
             "resolution": {
@@ -245,6 +409,195 @@
                   "en": "480P",
                   "zh": "480P"
                 },
+                "720P": {
+                  "en": "720P",
+                  "zh": "720P"
+                }
+              }
+            },
+            "seconds": {
+              "type": "number",
+              "unit": "second",
+              "description": {
+                "en": "Video generation unit price",
+                "zh": "视频生成单价"
+              }
+            }
+          }
+        },
+        {
+          "models": [
+            "wan2.7-t2v",
+            "wan2.7-i2v",
+            "wan2.6-t2v",
+            "wan2.6-t2v-us",
+            "wan2.6-i2v",
+            "wan2.6-i2v-us",
+            "wan2.7-t2v-2026-04-25",
+            "wan2.7-t2v-2026-06-12",
+            "wan2.7-i2v-2026-04-25"
+          ],
+          "schema": {
+            "resolution": {
+              "enum": [
+                "720P",
+                "1080P"
+              ],
+              "description": {
+                "en": "Output video resolution",
+                "zh": "输出视频分辨率"
+              },
+              "enumLabels": {
+                "1080P": {
+                  "en": "1080P",
+                  "zh": "1080P"
+                },
+                "720P": {
+                  "en": "720P",
+                  "zh": "720P"
+                }
+              }
+            },
+            "seconds": {
+              "type": "number",
+              "unit": "second",
+              "description": {
+                "en": "Video generation unit price",
+                "zh": "视频生成单价"
+              }
+            }
+          }
+        },
+        {
+          "models": [
+            "wan2.6-i2v-flash"
+          ],
+          "schema": {
+            "audio": {
+              "type": "boolean",
+              "description": {
+                "en": "Whether audio is generated",
+                "zh": "是否生成音频"
+              }
+            },
+            "resolution": {
+              "enum": [
+                "720P",
+                "1080P"
+              ],
+              "description": {
+                "en": "Output video resolution",
+                "zh": "输出视频分辨率"
+              },
+              "enumLabels": {
+                "1080P": {
+                  "en": "1080P",
+                  "zh": "1080P"
+                },
+                "720P": {
+                  "en": "720P",
+                  "zh": "720P"
+                }
+              }
+            },
+            "seconds": {
+              "type": "number",
+              "unit": "second",
+              "description": {
+                "en": "Video generation unit price",
+                "zh": "视频生成单价"
+              }
+            }
+          }
+        },
+        {
+          "models": [
+            "wan2.2-t2v-plus",
+            "wan2.2-i2v-plus"
+          ],
+          "schema": {
+            "resolution": {
+              "enum": [
+                "480P",
+                "1080P"
+              ],
+              "description": {
+                "en": "Output video resolution",
+                "zh": "输出视频分辨率"
+              },
+              "enumLabels": {
+                "1080P": {
+                  "en": "1080P",
+                  "zh": "1080P"
+                },
+                "480P": {
+                  "en": "480P",
+                  "zh": "480P"
+                }
+              }
+            },
+            "seconds": {
+              "type": "number",
+              "unit": "second",
+              "description": {
+                "en": "Video generation unit price",
+                "zh": "视频生成单价"
+              }
+            }
+          }
+        },
+        {
+          "models": [
+            "wan2.2-s2v",
+            "wanx2.1-t2v-turbo",
+            "wanx2.1-i2v-turbo"
+          ],
+          "schema": {
+            "resolution": {
+              "enum": [
+                "480P",
+                "720P"
+              ],
+              "description": {
+                "en": "Output video resolution",
+                "zh": "输出视频分辨率"
+              },
+              "enumLabels": {
+                "480P": {
+                  "en": "480P",
+                  "zh": "480P"
+                },
+                "720P": {
+                  "en": "720P",
+                  "zh": "720P"
+                }
+              }
+            },
+            "seconds": {
+              "type": "number",
+              "unit": "second",
+              "description": {
+                "en": "Video generation unit price",
+                "zh": "视频生成单价"
+              }
+            }
+          }
+        },
+        {
+          "models": [
+            "wanx2.1-t2v-plus",
+            "wanx2.1-i2v-plus"
+          ],
+          "schema": {
+            "resolution": {
+              "enum": [
+                "720P"
+              ],
+              "description": {
+                "en": "Output video resolution",
+                "zh": "输出视频分辨率"
+              },
+              "enumLabels": {
                 "720P": {
                   "en": "720P",
                   "zh": "720P"
@@ -298,10 +651,39 @@
         "wan2.2-t2i-plus",
         "wanx2.1-t2i-turbo",
         "wanx2.1-t2i-plus",
-        "wanx2.0-t2i-turbo"
+        "wanx2.0-t2i-turbo",
+        "wan2.5-i2i-preview",
+        "wanx2.1-imageedit",
+        "qwen-image",
+        "qwen-image-plus",
+        "qwen-image-max",
+        "qwen-image-2.0",
+        "qwen-image-2.0-pro",
+        "qwen-image-3.0",
+        "qwen-image-3.0-pro",
+        "qwen-image-edit",
+        "qwen-image-edit-plus",
+        "qwen-image-edit-max",
+        "z-image-turbo",
+        "qwen-image-plus-2026-01-09",
+        "qwen-image-max-2025-12-30",
+        "qwen-image-2.0-2026-03-03",
+        "qwen-image-2.0-pro-2026-03-03",
+        "qwen-image-2.0-pro-2026-04-22",
+        "qwen-image-2.0-pro-2026-06-22",
+        "qwen-image-edit-plus-2025-10-30",
+        "qwen-image-edit-plus-2025-12-15",
+        "qwen-image-edit-max-2026-01-16"
       ],
-      "latest": "1.3.0",
+      "latest": "1.4.0",
       "versions": [
+        {
+          "version": "1.4.0",
+          "path": "plugins/tasks/alibaba/1.4.0/plugin.js",
+          "sha256": "e07d5d30ba8e6fe22e076109b4a67d4a6ddd9955d16fc91d2a1735502612823a",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.3.0",
           "path": "plugins/tasks/alibaba/1.3.0/plugin.js",
@@ -348,11 +730,11 @@
     },
     {
       "key": "doubao",
-      "name": "Doubao Video",
+      "name": "Doubao",
       "icon": "Doubao.Color",
       "description": {
-        "en": "Volcengine Doubao Seedance video generation (text-to-video, image-to-video, and video-to-video)",
-        "zh": "火山引擎豆包 Seedance 视频生成（文生视频、图生视频、视频生视频）"
+        "en": "Volcengine Doubao Seedance video generation and Seedream image generation",
+        "zh": "火山引擎豆包 Seedance 视频生成与 Seedream 图片生成"
       },
       "routes": [
         {
@@ -368,6 +750,14 @@
           "type": "query",
           "render": "taskStatus",
           "taskIdParam": "task_id"
+        },
+        {
+          "method": "POST",
+          "path": "/doubao/api/v3/images/generations",
+          "type": "submit",
+          "decode": "createImage",
+          "render": "imageCreated",
+          "retainResult": false
         }
       ],
       "protocols": [
@@ -380,7 +770,17 @@
           ]
         },
         {
-          "name": "openai_video"
+          "name": "openai_video",
+          "models": [
+            "doubao-seedance-1-0-pro-250528",
+            "doubao-seedance-1-0-lite-t2v",
+            "doubao-seedance-1-0-lite-i2v",
+            "doubao-seedance-1-5-pro-251215",
+            "doubao-seedance-2-0-260128",
+            "doubao-seedance-2-0-fast-260128",
+            "doubao-seedance-2-0-mini-260615",
+            "doubao-seedance-2-5-260628"
+          ]
         }
       ],
       "usageSchema": {
@@ -477,14 +877,6 @@
           }
         },
         {
-          "label": "720p · 10s",
-          "facts": {
-            "resolution": "720p",
-            "tokens": 216000,
-            "video_input": "none"
-          }
-        },
-        {
           "label": "720p · 5s (+4s 输入视频)",
           "facts": {
             "resolution": "720p",
@@ -493,7 +885,544 @@
           }
         }
       ],
-      "usageProfiles": null,
+      "usageProfiles": [
+        {
+          "models": [
+            "doubao-seedance-1-0-pro-250528",
+            "doubao-seedance-1-0-lite-t2v",
+            "doubao-seedance-1-0-lite-i2v"
+          ],
+          "schema": {
+            "resolution": {
+              "enum": [
+                "480p",
+                "720p",
+                "1080p"
+              ],
+              "description": {
+                "en": "Output video resolution",
+                "zh": "输出视频分辨率"
+              },
+              "enumLabels": {
+                "1080p": {
+                  "en": "1080p",
+                  "zh": "1080p"
+                },
+                "480p": {
+                  "en": "480p",
+                  "zh": "480p"
+                },
+                "720p": {
+                  "en": "720p",
+                  "zh": "720p"
+                }
+              }
+            },
+            "tokens": {
+              "type": "number",
+              "unit": "token",
+              "description": {
+                "en": "Billing token unit price",
+                "zh": "计费 Token 单价"
+              }
+            }
+          },
+          "examples": [
+            {
+              "label": "480p · 5s",
+              "facts": {
+                "resolution": "480p",
+                "tokens": 48038
+              }
+            },
+            {
+              "label": "720p · 5s",
+              "facts": {
+                "resolution": "720p",
+                "tokens": 108000
+              }
+            },
+            {
+              "label": "1080p · 5s",
+              "facts": {
+                "resolution": "1080p",
+                "tokens": 243000
+              }
+            }
+          ]
+        },
+        {
+          "models": [
+            "doubao-seedance-1-5-pro-251215"
+          ],
+          "schema": {
+            "generate_audio": {
+              "type": "boolean",
+              "description": {
+                "en": "Whether audio is generated",
+                "zh": "是否生成音频"
+              }
+            },
+            "resolution": {
+              "enum": [
+                "480p",
+                "720p",
+                "1080p"
+              ],
+              "description": {
+                "en": "Output video resolution",
+                "zh": "输出视频分辨率"
+              },
+              "enumLabels": {
+                "1080p": {
+                  "en": "1080p",
+                  "zh": "1080p"
+                },
+                "480p": {
+                  "en": "480p",
+                  "zh": "480p"
+                },
+                "720p": {
+                  "en": "720p",
+                  "zh": "720p"
+                }
+              }
+            },
+            "tokens": {
+              "type": "number",
+              "unit": "token",
+              "description": {
+                "en": "Billing token unit price",
+                "zh": "计费 Token 单价"
+              }
+            }
+          },
+          "examples": [
+            {
+              "label": "480p · 5s · 有声",
+              "facts": {
+                "generate_audio": true,
+                "resolution": "480p",
+                "tokens": 48038
+              }
+            },
+            {
+              "label": "720p · 5s · 有声",
+              "facts": {
+                "generate_audio": true,
+                "resolution": "720p",
+                "tokens": 108000
+              }
+            },
+            {
+              "label": "1080p · 5s · 有声",
+              "facts": {
+                "generate_audio": true,
+                "resolution": "1080p",
+                "tokens": 243000
+              }
+            },
+            {
+              "label": "720p · 5s · 无声",
+              "facts": {
+                "generate_audio": false,
+                "resolution": "720p",
+                "tokens": 108000
+              }
+            }
+          ]
+        },
+        {
+          "models": [
+            "doubao-seedance-2-0-260128"
+          ],
+          "schema": {
+            "resolution": {
+              "enum": [
+                "480p",
+                "720p",
+                "1080p",
+                "4k"
+              ],
+              "description": {
+                "en": "Output video resolution",
+                "zh": "输出视频分辨率"
+              },
+              "enumLabels": {
+                "1080p": {
+                  "en": "1080p",
+                  "zh": "1080p"
+                },
+                "480p": {
+                  "en": "480p",
+                  "zh": "480p"
+                },
+                "4k": {
+                  "en": "4k",
+                  "zh": "4k"
+                },
+                "720p": {
+                  "en": "720p",
+                  "zh": "720p"
+                }
+              }
+            },
+            "tokens": {
+              "type": "number",
+              "unit": "token",
+              "description": {
+                "en": "Billing token unit price",
+                "zh": "计费 Token 单价"
+              }
+            },
+            "video_input": {
+              "enum": [
+                "none",
+                "video"
+              ],
+              "description": {
+                "en": "Reference video input",
+                "zh": "参考视频输入"
+              },
+              "enumLabels": {
+                "none": {
+                  "en": "No reference video",
+                  "zh": "无参考视频"
+                },
+                "video": {
+                  "en": "With reference video",
+                  "zh": "有参考视频"
+                }
+              }
+            }
+          },
+          "examples": [
+            {
+              "label": "480p · 5s",
+              "facts": {
+                "resolution": "480p",
+                "tokens": 48038,
+                "video_input": "none"
+              }
+            },
+            {
+              "label": "720p · 5s",
+              "facts": {
+                "resolution": "720p",
+                "tokens": 108000,
+                "video_input": "none"
+              }
+            },
+            {
+              "label": "1080p · 5s",
+              "facts": {
+                "resolution": "1080p",
+                "tokens": 243000,
+                "video_input": "none"
+              }
+            },
+            {
+              "label": "4k · 5s",
+              "facts": {
+                "resolution": "4k",
+                "tokens": 972000,
+                "video_input": "none"
+              }
+            },
+            {
+              "label": "720p · 5s (+4s 输入视频)",
+              "facts": {
+                "resolution": "720p",
+                "tokens": 194400,
+                "video_input": "video"
+              }
+            }
+          ]
+        },
+        {
+          "models": [
+            "doubao-seedance-2-0-fast-260128",
+            "doubao-seedance-2-0-mini-260615"
+          ],
+          "schema": {
+            "resolution": {
+              "enum": [
+                "480p",
+                "720p"
+              ],
+              "description": {
+                "en": "Output video resolution",
+                "zh": "输出视频分辨率"
+              },
+              "enumLabels": {
+                "480p": {
+                  "en": "480p",
+                  "zh": "480p"
+                },
+                "720p": {
+                  "en": "720p",
+                  "zh": "720p"
+                }
+              }
+            },
+            "tokens": {
+              "type": "number",
+              "unit": "token",
+              "description": {
+                "en": "Billing token unit price",
+                "zh": "计费 Token 单价"
+              }
+            },
+            "video_input": {
+              "enum": [
+                "none",
+                "video"
+              ],
+              "description": {
+                "en": "Reference video input",
+                "zh": "参考视频输入"
+              },
+              "enumLabels": {
+                "none": {
+                  "en": "No reference video",
+                  "zh": "无参考视频"
+                },
+                "video": {
+                  "en": "With reference video",
+                  "zh": "有参考视频"
+                }
+              }
+            }
+          },
+          "examples": [
+            {
+              "label": "480p · 5s",
+              "facts": {
+                "resolution": "480p",
+                "tokens": 48038,
+                "video_input": "none"
+              }
+            },
+            {
+              "label": "720p · 5s",
+              "facts": {
+                "resolution": "720p",
+                "tokens": 108000,
+                "video_input": "none"
+              }
+            },
+            {
+              "label": "720p · 5s (+4s 输入视频)",
+              "facts": {
+                "resolution": "720p",
+                "tokens": 194400,
+                "video_input": "video"
+              }
+            }
+          ]
+        },
+        {
+          "models": [
+            "doubao-seedance-2-5-260628"
+          ],
+          "schema": {
+            "resolution": {
+              "enum": [
+                "480p",
+                "720p",
+                "1080p"
+              ],
+              "description": {
+                "en": "Output video resolution",
+                "zh": "输出视频分辨率"
+              },
+              "enumLabels": {
+                "1080p": {
+                  "en": "1080p",
+                  "zh": "1080p"
+                },
+                "480p": {
+                  "en": "480p",
+                  "zh": "480p"
+                },
+                "720p": {
+                  "en": "720p",
+                  "zh": "720p"
+                }
+              }
+            },
+            "tokens": {
+              "type": "number",
+              "unit": "token",
+              "description": {
+                "en": "Billing token unit price",
+                "zh": "计费 Token 单价"
+              }
+            },
+            "video_input": {
+              "enum": [
+                "none",
+                "video"
+              ],
+              "description": {
+                "en": "Reference video input",
+                "zh": "参考视频输入"
+              },
+              "enumLabels": {
+                "none": {
+                  "en": "No reference video",
+                  "zh": "无参考视频"
+                },
+                "video": {
+                  "en": "With reference video",
+                  "zh": "有参考视频"
+                }
+              }
+            }
+          },
+          "examples": [
+            {
+              "label": "480p · 5s",
+              "facts": {
+                "resolution": "480p",
+                "tokens": 48038,
+                "video_input": "none"
+              }
+            },
+            {
+              "label": "720p · 5s",
+              "facts": {
+                "resolution": "720p",
+                "tokens": 108000,
+                "video_input": "none"
+              }
+            },
+            {
+              "label": "1080p · 5s",
+              "facts": {
+                "resolution": "1080p",
+                "tokens": 243000,
+                "video_input": "none"
+              }
+            },
+            {
+              "label": "720p · 5s (+4s 输入视频)",
+              "facts": {
+                "resolution": "720p",
+                "tokens": 194400,
+                "video_input": "video"
+              }
+            }
+          ]
+        },
+        {
+          "models": [
+            "doubao-seedream-5-0-pro-260628",
+            "doubao-seedream-5-0-lite-260128",
+            "doubao-seedream-5-0-260128",
+            "doubao-seedream-4-5-251128",
+            "doubao-seedream-4-0-250828"
+          ],
+          "schema": {
+            "images_above_1_5k": {
+              "type": "number",
+              "unit": "count",
+              "unitLabel": {
+                "en": "image",
+                "fr": "image",
+                "ja": "枚",
+                "ru": "изображение",
+                "vi": "ảnh",
+                "zh": "张",
+                "zh-TW": "張"
+              },
+              "description": {
+                "en": "Image generation unit price (above 1.5K)",
+                "zh": "图片生成单价（1.5K 以上）"
+              }
+            },
+            "images_up_to_1_5k": {
+              "type": "number",
+              "unit": "count",
+              "unitLabel": {
+                "en": "image",
+                "fr": "image",
+                "ja": "枚",
+                "ru": "изображение",
+                "vi": "ảnh",
+                "zh": "张",
+                "zh-TW": "張"
+              },
+              "description": {
+                "en": "Image generation unit price (1.5K and below)",
+                "zh": "图片生成单价（1.5K 及以下）"
+              }
+            },
+            "input_images": {
+              "type": "number",
+              "unit": "count",
+              "unitLabel": {
+                "en": "image",
+                "fr": "image",
+                "ja": "枚",
+                "ru": "изображение",
+                "vi": "ảnh",
+                "zh": "张",
+                "zh-TW": "張"
+              },
+              "description": {
+                "en": "Input image unit price",
+                "zh": "输入图片单价"
+              }
+            },
+            "layer_decomposition": {
+              "type": "boolean",
+              "description": {
+                "en": "Whether layer decomposition is enabled",
+                "zh": "是否开启图层拆分"
+              }
+            }
+          },
+          "examples": [
+            {
+              "label": "2K · 1 张",
+              "facts": {
+                "images_above_1_5k": 1,
+                "images_up_to_1_5k": 0,
+                "input_images": 0,
+                "layer_decomposition": false
+              }
+            },
+            {
+              "label": "1K · 1 张 · 2 张参考图",
+              "facts": {
+                "images_above_1_5k": 0,
+                "images_up_to_1_5k": 1,
+                "input_images": 2,
+                "layer_decomposition": false
+              }
+            },
+            {
+              "label": "2K · 4 张组图",
+              "facts": {
+                "images_above_1_5k": 4,
+                "images_up_to_1_5k": 0,
+                "input_images": 0,
+                "layer_decomposition": false
+              }
+            },
+            {
+              "label": "图层拆分 · 2K 底图 + 4 层 1.5K",
+              "facts": {
+                "images_above_1_5k": 1,
+                "images_up_to_1_5k": 4,
+                "input_images": 1,
+                "layer_decomposition": true
+              }
+            }
+          ]
+        }
+      ],
       "channelTypes": [
         54,
         45
@@ -506,10 +1435,22 @@
         "doubao-seedance-2-0-260128",
         "doubao-seedance-2-0-fast-260128",
         "doubao-seedance-2-0-mini-260615",
-        "doubao-seedance-2-5-260628"
+        "doubao-seedance-2-5-260628",
+        "doubao-seedream-5-0-pro-260628",
+        "doubao-seedream-5-0-lite-260128",
+        "doubao-seedream-5-0-260128",
+        "doubao-seedream-4-5-251128",
+        "doubao-seedream-4-0-250828"
       ],
-      "latest": "1.0.2",
+      "latest": "1.1.0",
       "versions": [
+        {
+          "version": "1.1.0",
+          "path": "plugins/tasks/doubao/1.1.0/plugin.js",
+          "sha256": "d039f6aa55d42068b18a675997acce3443eb6c63bebffae40327a1b481c5b561",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.2",
           "path": "plugins/tasks/doubao/1.0.2/plugin.js",
@@ -1292,8 +2233,15 @@
       "models": [
         "jimeng_vgfm_t2v_l20"
       ],
-      "latest": "1.0.2",
+      "latest": "1.1.0",
       "versions": [
+        {
+          "version": "1.1.0",
+          "path": "plugins/tasks/jimeng/1.1.0/plugin.js",
+          "sha256": "8ca1acc9fff4abf6188234324f7e41407f037c37b098d7ff27ab9f1e5d162f67",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.2",
           "path": "plugins/tasks/jimeng/1.0.2/plugin.js",
@@ -1421,8 +2369,15 @@
         "kling-v1-6",
         "kling-v2-master"
       ],
-      "latest": "1.0.2",
+      "latest": "1.1.0",
       "versions": [
+        {
+          "version": "1.1.0",
+          "path": "plugins/tasks/kling/1.1.0/plugin.js",
+          "sha256": "c297187e42ef290bcc56564571a5cfeffc78121ae3f69029168d109b55ae5106",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.2",
           "path": "plugins/tasks/kling/1.0.2/plugin.js",
@@ -1518,8 +2473,15 @@
         "sora-2",
         "sora-2-pro"
       ],
-      "latest": "1.0.3",
+      "latest": "1.1.0",
       "versions": [
+        {
+          "version": "1.1.0",
+          "path": "plugins/tasks/sora/1.1.0/plugin.js",
+          "sha256": "0ffd66fdf389c7eff407dede145da9409b185c248e89e93e686c97ac3ba15c4e",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.3",
           "path": "plugins/tasks/sora/1.0.3/plugin.js",
@@ -1630,8 +2592,15 @@
         "suno_music",
         "suno_lyrics"
       ],
-      "latest": "1.0.3",
+      "latest": "1.1.0",
       "versions": [
+        {
+          "version": "1.1.0",
+          "path": "plugins/tasks/sunoapi/1.1.0/plugin.js",
+          "sha256": "a4679364a8a8f119ab993ae5064b727d9e0af91e4075f6d0bb32d9297ef5285a",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.0.3",
           "path": "plugins/tasks/sunoapi/1.0.3/plugin.js",
