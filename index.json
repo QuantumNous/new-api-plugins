@@ -675,8 +675,15 @@
         "qwen-image-edit-plus-2025-12-15",
         "qwen-image-edit-max-2026-01-16"
       ],
-      "latest": "1.4.0",
+      "latest": "1.4.1",
       "versions": [
+        {
+          "version": "1.4.1",
+          "path": "plugins/tasks/alibaba/1.4.1/plugin.js",
+          "sha256": "c8f217afe6fe79bb0db3e723730a86399cee74e8087f474859e39e52a6acb55d",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.4.0",
           "path": "plugins/tasks/alibaba/1.4.0/plugin.js",
