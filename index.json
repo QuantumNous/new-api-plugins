@@ -2640,6 +2640,7 @@
         "sha256": "40fe116f8438653bf6bad9b198f23371627f52b52b8654d6852e8345a014e585"
       },
       "website": "https://typesafe.ai",
+      "sortPriority": 90,
       "description": {
         "en": "Typed decisions with TypeSafe Jev, input priced per million tokens and output free",
         "zh": "TypeSafe Jev 结构化判断，输入按每百万 token 定价，输出免费"
@@ -2683,7 +2684,7 @@
         {
           "version": "1.0.0",
           "path": "plugins/tasks/typesafe/1.0.0/plugin.js",
-          "sha256": "1471ceee1906edbb16c54a040123fd89f4a7b050799c552cbe70aef38f3195e5",
+          "sha256": "80585e402c8e6709f976e6be1f0308a95d3b991370383ab984d21fe968d8e912",
           "minApiVersion": 1,
           "kind": "task",
           "baseUrl": "https://api.typesafe.ai",
