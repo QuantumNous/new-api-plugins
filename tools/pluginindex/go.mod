@@ -9,7 +9,7 @@ require (
 
 require (
 	github.com/Azure/go-ntlmssp v0.1.1 // indirect
-	github.com/Calcium-Ion/moejs v0.1.0-alpha.3 // indirect
+	github.com/Calcium-Ion/moejs v0.1.0-alpha.6 // indirect
 	github.com/QuantumNous/new-api/relaykit v0.0.0 // indirect
 	github.com/abema/go-mp4 v1.4.1 // indirect
 	github.com/boombuler/barcode v1.1.0 // indirect
@@ -20,7 +20,7 @@ require (
 	github.com/cloudwego/base64x v0.1.6 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
-	github.com/dlclark/regexp2/v2 v2.2.2 // indirect
+	github.com/dlclark/regexp2/v2 v2.5.1 // indirect
 	github.com/expr-lang/expr v1.17.8 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect

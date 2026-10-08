@@ -2850,8 +2850,17 @@
         "jev-latest",
         "jev-preview"
       ],
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "versions": [
+        {
+          "version": "1.1.0",
+          "path": "plugins/tasks/typesafe/1.1.0/plugin.js",
+          "sha256": "e16f9a947ce36e8e84444596f27bc353a3fb38c8ecd752a4a42669e2abdad461",
+          "minApiVersion": 1,
+          "kind": "task",
+          "baseUrl": "https://api.typesafe.ai",
+          "auth": "api_key"
+        },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/typesafe/1.0.0/plugin.js",
@@ -3143,6 +3152,380 @@
           "sha256": "9c6dec67cb4d0585bca8f0fe406f5e40e337599b95d5b8ff480e76a75807e307",
           "minApiVersion": 1,
           "kind": "task"
+        }
+      ]
+    },
+    {
+      "key": "xai",
+      "name": "xAI",
+      "icon": "XAI",
+      "description": {
+        "en": "xAI Grok Imagine video generation (text-to-video, image-to-video, reference-to-video, video editing, and video extension)",
+        "zh": "xAI Grok Imagine 视频生成（文生视频、图生视频、参考生视频、视频编辑、视频延长）"
+      },
+      "routes": [
+        {
+          "method": "POST",
+          "path": "/xai/v1/videos/generations",
+          "type": "submit",
+          "decode": "createGeneration",
+          "render": "videoCreated"
+        },
+        {
+          "method": "POST",
+          "path": "/xai/v1/videos/edits",
+          "type": "submit",
+          "decode": "createEdit",
+          "render": "videoCreated",
+          "models": [
+            "grok-imagine-video"
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "/xai/v1/videos/extensions",
+          "type": "submit",
+          "decode": "createExtension",
+          "render": "videoCreated",
+          "models": [
+            "grok-imagine-video"
+          ]
+        },
+        {
+          "method": "GET",
+          "path": "/xai/v1/videos/:request_id",
+          "type": "query",
+          "render": "videoStatus",
+          "taskIdParam": "request_id"
+        }
+      ],
+      "protocols": [
+        {
+          "name": "openai_responses",
+          "supports": [
+            "stream",
+            "sync",
+            "background"
+          ]
+        },
+        {
+          "name": "openai_video"
+        }
+      ],
+      "usageSchema": {
+        "input_images": {
+          "type": "number",
+          "unit": "count",
+          "unitLabel": {
+            "en": "image",
+            "zh": "张",
+            "zh-TW": "張"
+          },
+          "description": {
+            "en": "Input image unit price",
+            "zh": "输入图片单价"
+          }
+        },
+        "input_video_seconds": {
+          "type": "number",
+          "unit": "second",
+          "description": {
+            "en": "Input video unit price",
+            "zh": "输入视频单价"
+          }
+        },
+        "moderated": {
+          "type": "boolean",
+          "description": {
+            "en": "Blocked by content moderation",
+            "zh": "被内容审核拦截"
+          }
+        },
+        "resolution": {
+          "enum": [
+            "480p",
+            "720p",
+            "1080p",
+            "source"
+          ],
+          "description": {
+            "en": "Output video resolution",
+            "zh": "输出视频分辨率"
+          },
+          "enumLabels": {
+            "source": {
+              "en": "Same as input video",
+              "zh": "与输入视频相同"
+            }
+          }
+        },
+        "seconds": {
+          "type": "number",
+          "unit": "second",
+          "description": {
+            "en": "Video generation unit price",
+            "zh": "视频生成单价"
+          }
+        }
+      },
+      "usageExamples": [
+        {
+          "label": "1.5 480p 8s",
+          "facts": {
+            "input_images": 0,
+            "input_video_seconds": 0,
+            "moderated": false,
+            "resolution": "480p",
+            "seconds": 8
+          }
+        },
+        {
+          "label": "1.5 1080p 8s · image",
+          "facts": {
+            "input_images": 1,
+            "input_video_seconds": 0,
+            "moderated": false,
+            "resolution": "1080p",
+            "seconds": 8
+          }
+        },
+        {
+          "label": "edit 8s",
+          "facts": {
+            "input_images": 0,
+            "input_video_seconds": 8,
+            "moderated": false,
+            "resolution": "source",
+            "seconds": 8
+          }
+        },
+        {
+          "label": "480p 8s · blocked",
+          "facts": {
+            "input_images": 0,
+            "input_video_seconds": 0,
+            "moderated": true,
+            "resolution": "480p",
+            "seconds": 8
+          }
+        }
+      ],
+      "usageProfiles": [
+        {
+          "models": [
+            "grok-imagine-video"
+          ],
+          "schema": {
+            "input_images": {
+              "type": "number",
+              "unit": "count",
+              "unitLabel": {
+                "en": "image",
+                "zh": "张",
+                "zh-TW": "張"
+              },
+              "description": {
+                "en": "Input image unit price",
+                "zh": "输入图片单价"
+              }
+            },
+            "input_video_seconds": {
+              "type": "number",
+              "unit": "second",
+              "description": {
+                "en": "Input video unit price",
+                "zh": "输入视频单价"
+              }
+            },
+            "moderated": {
+              "type": "boolean",
+              "description": {
+                "en": "Blocked by content moderation",
+                "zh": "被内容审核拦截"
+              }
+            },
+            "resolution": {
+              "enum": [
+                "480p",
+                "720p",
+                "source"
+              ],
+              "description": {
+                "en": "Output video resolution",
+                "zh": "输出视频分辨率"
+              },
+              "enumLabels": {
+                "source": {
+                  "en": "Same as input video",
+                  "zh": "与输入视频相同"
+                }
+              }
+            },
+            "seconds": {
+              "type": "number",
+              "unit": "second",
+              "description": {
+                "en": "Video generation unit price",
+                "zh": "视频生成单价"
+              }
+            }
+          },
+          "examples": [
+            {
+              "label": "480p 8s",
+              "facts": {
+                "input_images": 0,
+                "input_video_seconds": 0,
+                "moderated": false,
+                "resolution": "480p",
+                "seconds": 8
+              }
+            },
+            {
+              "label": "720p 8s · image",
+              "facts": {
+                "input_images": 1,
+                "input_video_seconds": 0,
+                "moderated": false,
+                "resolution": "720p",
+                "seconds": 8
+              }
+            },
+            {
+              "label": "edit 8s",
+              "facts": {
+                "input_images": 0,
+                "input_video_seconds": 8,
+                "moderated": false,
+                "resolution": "source",
+                "seconds": 8
+              }
+            },
+            {
+              "label": "extend 8s + 6s",
+              "facts": {
+                "input_images": 0,
+                "input_video_seconds": 8,
+                "moderated": false,
+                "resolution": "source",
+                "seconds": 6
+              }
+            },
+            {
+              "label": "480p 8s · blocked",
+              "facts": {
+                "input_images": 0,
+                "input_video_seconds": 0,
+                "moderated": true,
+                "resolution": "480p",
+                "seconds": 8
+              }
+            }
+          ]
+        },
+        {
+          "models": [
+            "grok-imagine-video-1.5",
+            "grok-imagine-video-1.5-lite"
+          ],
+          "schema": {
+            "input_images": {
+              "type": "number",
+              "unit": "count",
+              "unitLabel": {
+                "en": "image",
+                "zh": "张",
+                "zh-TW": "張"
+              },
+              "description": {
+                "en": "Input image unit price",
+                "zh": "输入图片单价"
+              }
+            },
+            "moderated": {
+              "type": "boolean",
+              "description": {
+                "en": "Blocked by content moderation",
+                "zh": "被内容审核拦截"
+              }
+            },
+            "resolution": {
+              "enum": [
+                "480p",
+                "720p",
+                "1080p"
+              ],
+              "description": {
+                "en": "Output video resolution",
+                "zh": "输出视频分辨率"
+              }
+            },
+            "seconds": {
+              "type": "number",
+              "unit": "second",
+              "description": {
+                "en": "Video generation unit price",
+                "zh": "视频生成单价"
+              }
+            }
+          },
+          "examples": [
+            {
+              "label": "480p 8s",
+              "facts": {
+                "input_images": 0,
+                "moderated": false,
+                "resolution": "480p",
+                "seconds": 8
+              }
+            },
+            {
+              "label": "720p 8s · image",
+              "facts": {
+                "input_images": 1,
+                "moderated": false,
+                "resolution": "720p",
+                "seconds": 8
+              }
+            },
+            {
+              "label": "1080p 15s",
+              "facts": {
+                "input_images": 0,
+                "moderated": false,
+                "resolution": "1080p",
+                "seconds": 15
+              }
+            },
+            {
+              "label": "480p 8s · blocked",
+              "facts": {
+                "input_images": 0,
+                "moderated": true,
+                "resolution": "480p",
+                "seconds": 8
+              }
+            }
+          ]
+        }
+      ],
+      "channelTypes": [
+        48
+      ],
+      "models": [
+        "grok-imagine-video",
+        "grok-imagine-video-1.5",
+        "grok-imagine-video-1.5-lite"
+      ],
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/xai/1.0.0/plugin.js",
+          "sha256": "bfbf1a2f143ddb1cb8dfb345229ad6f7ca660a9ec43add9a0cd4d6c7826c52e5",
+          "minApiVersion": 1,
+          "kind": "task",
+          "baseUrl": "https://api.x.ai"
         }
       ]
     }
