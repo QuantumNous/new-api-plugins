@@ -3249,13 +3249,25 @@
             "source"
           ],
           "description": {
-            "en": "Output video resolution",
-            "zh": "输出视频分辨率"
+            "en": "Generate, edit, or extend video",
+            "zh": "生成、编辑或延长视频"
           },
           "enumLabels": {
+            "1080p": {
+              "en": "Generate 1080p video",
+              "zh": "生成 1080p 视频"
+            },
+            "480p": {
+              "en": "Generate 480p video",
+              "zh": "生成 480p 视频"
+            },
+            "720p": {
+              "en": "Generate 720p video",
+              "zh": "生成 720p 视频"
+            },
             "source": {
-              "en": "Same as input video",
-              "zh": "与输入视频相同"
+              "en": "Edit or extend video",
+              "zh": "编辑或延长视频"
             }
           }
         },
@@ -3351,13 +3363,21 @@
                 "source"
               ],
               "description": {
-                "en": "Output video resolution",
-                "zh": "输出视频分辨率"
+                "en": "Generate, edit, or extend video",
+                "zh": "生成、编辑或延长视频"
               },
               "enumLabels": {
+                "480p": {
+                  "en": "Generate 480p video",
+                  "zh": "生成 480p 视频"
+                },
+                "720p": {
+                  "en": "Generate 720p video",
+                  "zh": "生成 720p 视频"
+                },
                 "source": {
-                  "en": "Same as input video",
-                  "zh": "与输入视频相同"
+                  "en": "Edit or extend video",
+                  "zh": "编辑或延长视频"
                 }
               }
             },
@@ -3517,8 +3537,16 @@
         "grok-imagine-video-1.5",
         "grok-imagine-video-1.5-lite"
       ],
-      "latest": "1.0.0",
+      "latest": "1.0.1",
       "versions": [
+        {
+          "version": "1.0.1",
+          "path": "plugins/tasks/xai/1.0.1/plugin.js",
+          "sha256": "2cddcc2063354d9b93bcece02344ff00a1db865575a91d216c792712393dbb05",
+          "minApiVersion": 1,
+          "kind": "task",
+          "baseUrl": "https://api.x.ai"
+        },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/xai/1.0.0/plugin.js",
