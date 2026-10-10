@@ -675,8 +675,15 @@
         "qwen-image-edit-plus-2025-12-15",
         "qwen-image-edit-max-2026-01-16"
       ],
-      "latest": "1.4.1",
+      "latest": "1.4.2",
       "versions": [
+        {
+          "version": "1.4.2",
+          "path": "plugins/tasks/alibaba/1.4.2/plugin.js",
+          "sha256": "63ef98833760d0bdcdddc66ec9e1dbc12e43a1b6016cda9caa4f3d4bf329e546",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.4.1",
           "path": "plugins/tasks/alibaba/1.4.1/plugin.js",
@@ -1599,8 +1606,15 @@
         "doubao-seedream-4-5-251128",
         "doubao-seedream-4-0-250828"
       ],
-      "latest": "1.2.1",
+      "latest": "1.3.0",
       "versions": [
+        {
+          "version": "1.3.0",
+          "path": "plugins/tasks/doubao/1.3.0/plugin.js",
+          "sha256": "b3ad4a16dfbf582bb2917c7a631fc46a8b36d5a8b2ad26c6dd160fd6f9ea3f1c",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.2.1",
           "path": "plugins/tasks/doubao/1.2.1/plugin.js",
@@ -2147,8 +2161,15 @@
         "I2V-01",
         "S2V-01"
       ],
-      "latest": "1.2.0",
+      "latest": "1.2.1",
       "versions": [
+        {
+          "version": "1.2.1",
+          "path": "plugins/tasks/hailuo/1.2.1/plugin.js",
+          "sha256": "e47ca8c9ed452c92a0f21ae05cf90e151863a7a638b932937526096080fb29b4",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.2.0",
           "path": "plugins/tasks/hailuo/1.2.0/plugin.js",
@@ -3245,30 +3266,11 @@
           "enum": [
             "480p",
             "720p",
-            "1080p",
-            "source"
+            "1080p"
           ],
           "description": {
-            "en": "Generate, edit, or extend video",
-            "zh": "生成、编辑或延长视频"
-          },
-          "enumLabels": {
-            "1080p": {
-              "en": "Generate 1080p video",
-              "zh": "生成 1080p 视频"
-            },
-            "480p": {
-              "en": "Generate 480p video",
-              "zh": "生成 480p 视频"
-            },
-            "720p": {
-              "en": "Generate 720p video",
-              "zh": "生成 720p 视频"
-            },
-            "source": {
-              "en": "Edit or extend video",
-              "zh": "编辑或延长视频"
-            }
+            "en": "Output video resolution",
+            "zh": "输出视频分辨率"
           }
         },
         "seconds": {
@@ -3302,12 +3304,12 @@
           }
         },
         {
-          "label": "edit 8s",
+          "label": "edit 8s · 720p",
           "facts": {
             "input_images": 0,
             "input_video_seconds": 8,
             "moderated": false,
-            "resolution": "source",
+            "resolution": "720p",
             "seconds": 8
           }
         },
@@ -3359,26 +3361,11 @@
             "resolution": {
               "enum": [
                 "480p",
-                "720p",
-                "source"
+                "720p"
               ],
               "description": {
-                "en": "Generate, edit, or extend video",
-                "zh": "生成、编辑或延长视频"
-              },
-              "enumLabels": {
-                "480p": {
-                  "en": "Generate 480p video",
-                  "zh": "生成 480p 视频"
-                },
-                "720p": {
-                  "en": "Generate 720p video",
-                  "zh": "生成 720p 视频"
-                },
-                "source": {
-                  "en": "Edit or extend video",
-                  "zh": "编辑或延长视频"
-                }
+                "en": "Output video resolution",
+                "zh": "输出视频分辨率"
               }
             },
             "seconds": {
@@ -3412,22 +3399,22 @@
               }
             },
             {
-              "label": "edit 8s",
+              "label": "edit 8s · 720p",
               "facts": {
                 "input_images": 0,
                 "input_video_seconds": 8,
                 "moderated": false,
-                "resolution": "source",
+                "resolution": "720p",
                 "seconds": 8
               }
             },
             {
-              "label": "extend 8s + 6s",
+              "label": "extend 8s + 6s · 480p",
               "facts": {
                 "input_images": 0,
                 "input_video_seconds": 8,
                 "moderated": false,
-                "resolution": "source",
+                "resolution": "480p",
                 "seconds": 6
               }
             },
@@ -3537,8 +3524,19 @@
         "grok-imagine-video-1.5",
         "grok-imagine-video-1.5-lite"
       ],
-      "latest": "1.0.1",
+      "latest": "1.1.0",
       "versions": [
+        {
+          "version": "1.1.0",
+          "path": "plugins/tasks/xai/1.1.0/plugin.js",
+          "sha256": "9ec1f0514fae96ed945a493636ded0f280ae340a6fd493e108c7e18e665b52a7",
+          "minApiVersion": 1,
+          "kind": "task",
+          "allowedHosts": [
+            "vidgen.x.ai"
+          ],
+          "baseUrl": "https://api.x.ai"
+        },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/xai/1.0.1/plugin.js",
