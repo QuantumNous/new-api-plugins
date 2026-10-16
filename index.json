@@ -2917,6 +2917,14 @@
           "decode": "decodeSystemOne",
           "render": "renderSystemOne",
           "retainResult": false
+        },
+        {
+          "method": "POST",
+          "path": "/v1/systemone",
+          "type": "submit",
+          "decode": "decodeSystemOne",
+          "render": "renderSystemOne",
+          "retainResult": false
         }
       ],
       "usageSchema": {
@@ -2939,12 +2947,22 @@
       ],
       "usageProfiles": null,
       "models": [
+        "jev-1.14.0",
         "jev-1.13.0",
         "jev-latest",
         "jev-preview"
       ],
-      "latest": "1.1.0",
+      "latest": "1.2.0",
       "versions": [
+        {
+          "version": "1.2.0",
+          "path": "plugins/tasks/typesafe/1.2.0/plugin.js",
+          "sha256": "60828f2fc3c32dab787d7748f4f398838dff84de6dd5da438276fc3f54689310",
+          "minApiVersion": 1,
+          "kind": "task",
+          "baseUrl": "https://api.typesafe.ai",
+          "auth": "api_key"
+        },
         {
           "version": "1.1.0",
           "path": "plugins/tasks/typesafe/1.1.0/plugin.js",
