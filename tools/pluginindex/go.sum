@@ -1,7 +1,7 @@
 github.com/Azure/go-ntlmssp v0.1.1 h1:l+FM/EEMb0U9QZE7mKNEDw5Mu3mFiaa2GKOoTSsNDPw=
 github.com/Azure/go-ntlmssp v0.1.1/go.mod h1:NYqdhxd/8aAct/s4qSYZEerdPuH1liG2/X9DiVTbhpk=
-github.com/Calcium-Ion/moejs v0.1.0-alpha.6 h1:gbB/aEx2jdMm0FD+UzF2zV76HBrJxvFopSf82mz87qQ=
-github.com/Calcium-Ion/moejs v0.1.0-alpha.6/go.mod h1:9YqHj36EV7pzV/vlEYSw49f3oggeJFdmqcjM9TmDpHs=
+github.com/Calcium-Ion/moejs v0.1.0-alpha.7 h1:WddI+y1792kpl1fTFDzk5PSqcV3I+IkpOJVgHM2TpfI=
+github.com/Calcium-Ion/moejs v0.1.0-alpha.7/go.mod h1:9YqHj36EV7pzV/vlEYSw49f3oggeJFdmqcjM9TmDpHs=
 github.com/abema/go-mp4 v1.4.1 h1:YoS4VRqd+pAmddRPLFf8vMk74kuGl6ULSjzhsIqwr6M=
 github.com/abema/go-mp4 v1.4.1/go.mod h1:vPl9t5ZK7K0x68jh12/+ECWBCXoWuIDtNgPtU2f04ws=
 github.com/boombuler/barcode v1.0.1-0.20190219062509-6c824513bacc/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl3JlRe0mD8=
