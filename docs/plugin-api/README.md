@@ -54,6 +54,8 @@ query is redacted before request logging.
 The v1 reference also covers [model usage profiles](./v1.md#usage-profiles-by-model),
 [host capabilities](./v1.md#host-utilities-and-capabilities), and
 [immediate completion and submission streams](./v1.md#immediate-completion-and-submission-streams).
+Deployment boundaries and concurrency environment variables are documented in
+[v1.md](./v1.md#generic-task-management-api).
 
 The host requires `protocols.openai_video.render` to return a JSON object and
 preserves provider extensions, including output URLs and metadata. Plugins may
@@ -128,11 +130,12 @@ the plugin's declared native routes. The generic management surface remains
 ## Security boundary
 
 Plugins have no global `fetch`, filesystem, `require`, imports, async
-functions, or environment access. A few driver hooks may read upstream data
-with [`utils.fetch`](./v1.md#reading-upstream-data-with-utilsfetch): `GET` or
-`HEAD` only, to the hosts a request descriptor may address. The host limits
-execution time, concurrency, input size, allowed request hosts, and resolves
-OAuth credentials outside JavaScript.
+functions, code compiled from strings (`eval` and the `Function` constructors
+throw an `EvalError`), or environment access. A few driver hooks may read
+upstream data with [`utils.fetch`](./v1.md#reading-upstream-data-with-utilsfetch):
+`GET` or `HEAD` only, to the hosts a request descriptor may address. The host
+limits execution time, concurrency, input size, allowed request hosts, and
+resolves OAuth credentials outside JavaScript.
 Multipart files enter JavaScript only as opaque references.
 
 This is not a hard memory-isolation boundary. A plugin sees data needed for the

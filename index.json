@@ -47,7 +47,54 @@
         },
         {
           "method": "POST",
+          "path": "/api/v1/services/aigc/multimodal-generation/generation",
+          "type": "submit",
+          "decode": "createImageTask",
+          "render": "imageCreated",
+          "retainResult": false,
+          "models": [
+            "wan2.7-image-pro",
+            "wan2.7-image",
+            "wan2.6-image",
+            "wan2.6-t2i",
+            "qwen-image",
+            "qwen-image-plus",
+            "qwen-image-max",
+            "qwen-image-2.0",
+            "qwen-image-2.0-pro",
+            "qwen-image-3.0",
+            "qwen-image-3.0-pro",
+            "qwen-image-edit",
+            "qwen-image-edit-plus",
+            "qwen-image-edit-max",
+            "z-image-turbo",
+            "qwen-image-plus-2026-01-09",
+            "qwen-image-max-2025-12-30",
+            "qwen-image-2.0-2026-03-03",
+            "qwen-image-2.0-pro-2026-03-03",
+            "qwen-image-2.0-pro-2026-04-22",
+            "qwen-image-2.0-pro-2026-06-22",
+            "qwen-image-edit-plus-2025-10-30",
+            "qwen-image-edit-plus-2025-12-15",
+            "qwen-image-edit-max-2026-01-16"
+          ]
+        },
+        {
+          "method": "POST",
           "path": "/ali/api/v1/services/aigc/image-generation/generation",
+          "type": "submit",
+          "decode": "createImageTask",
+          "render": "taskCreated",
+          "models": [
+            "wan2.7-image-pro",
+            "wan2.7-image",
+            "wan2.6-image",
+            "wan2.6-t2i"
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/services/aigc/image-generation/generation",
           "type": "submit",
           "decode": "createImageTask",
           "render": "taskCreated",
@@ -75,7 +122,33 @@
         },
         {
           "method": "POST",
+          "path": "/api/v1/services/aigc/text2image/image-synthesis",
+          "type": "submit",
+          "decode": "createImageTask",
+          "render": "taskCreated",
+          "models": [
+            "wan2.5-t2i-preview",
+            "wan2.2-t2i-flash",
+            "wan2.2-t2i-plus",
+            "wanx2.1-t2i-turbo",
+            "wanx2.1-t2i-plus",
+            "wanx2.0-t2i-turbo"
+          ]
+        },
+        {
+          "method": "POST",
           "path": "/ali/api/v1/services/aigc/image2image/image-synthesis",
+          "type": "submit",
+          "decode": "createImageTask",
+          "render": "taskCreated",
+          "models": [
+            "wan2.5-i2i-preview",
+            "wanx2.1-imageedit"
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/services/aigc/image2image/image-synthesis",
           "type": "submit",
           "decode": "createImageTask",
           "render": "taskCreated",
@@ -93,7 +166,21 @@
         },
         {
           "method": "POST",
+          "path": "/api/v1/services/aigc/video-generation/video-synthesis",
+          "type": "submit",
+          "decode": "createVideoTask",
+          "render": "taskCreated"
+        },
+        {
+          "method": "POST",
           "path": "/ali/api/v1/services/aigc/image2video/video-synthesis",
+          "type": "submit",
+          "decode": "createVideoTask",
+          "render": "taskCreated"
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/services/aigc/image2video/video-synthesis",
           "type": "submit",
           "decode": "createVideoTask",
           "render": "taskCreated"
@@ -101,6 +188,13 @@
         {
           "method": "GET",
           "path": "/ali/api/v1/tasks/:task_id",
+          "type": "query",
+          "render": "taskStatus",
+          "taskIdParam": "task_id"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/tasks/:task_id",
           "type": "query",
           "render": "taskStatus",
           "taskIdParam": "task_id"
@@ -675,8 +769,15 @@
         "qwen-image-edit-plus-2025-12-15",
         "qwen-image-edit-max-2026-01-16"
       ],
-      "latest": "1.4.2",
+      "latest": "1.5.0",
       "versions": [
+        {
+          "version": "1.5.0",
+          "path": "plugins/tasks/alibaba/1.5.0/plugin.js",
+          "sha256": "c5f7397f7fa6a2062f80341a2155d7528e837f4debf1e1acc1783c9d762b41d2",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.4.2",
           "path": "plugins/tasks/alibaba/1.4.2/plugin.js",
@@ -753,21 +854,21 @@
       "routes": [
         {
           "method": "POST",
-          "path": "/doubao/api/v3/contents/generations/tasks",
+          "path": "/api/v3/contents/generations/tasks",
           "type": "submit",
           "decode": "createTask",
           "render": "taskCreated"
         },
         {
           "method": "GET",
-          "path": "/doubao/api/v3/contents/generations/tasks/:task_id",
+          "path": "/api/v3/contents/generations/tasks/:task_id",
           "type": "query",
           "render": "taskStatus",
           "taskIdParam": "task_id"
         },
         {
           "method": "POST",
-          "path": "/doubao/api/v3/images/generations",
+          "path": "/api/v3/images/generations",
           "type": "submit",
           "decode": "createImage",
           "render": "imageCreated",
@@ -1606,8 +1707,15 @@
         "doubao-seedream-4-5-251128",
         "doubao-seedream-4-0-250828"
       ],
-      "latest": "1.3.0",
+      "latest": "1.4.0",
       "versions": [
+        {
+          "version": "1.4.0",
+          "path": "plugins/tasks/doubao/1.4.0/plugin.js",
+          "sha256": "58da524648f3b43e6944c34cc14de59b7162123fe046b033037680a0fa4d182b",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.3.0",
           "path": "plugins/tasks/doubao/1.3.0/plugin.js",
@@ -1670,14 +1778,14 @@
       "routes": [
         {
           "method": "POST",
-          "path": "/google/v1beta/models/:model",
+          "path": "/v1beta/models/:model",
           "type": "submit",
           "decode": "predictLongRunning",
           "render": "operation"
         },
         {
           "method": "GET",
-          "path": "/google/v1beta/models/:model/operations/:task_id",
+          "path": "/v1beta/models/:model/operations/:task_id",
           "type": "query",
           "render": "operation",
           "taskIdParam": "task_id"
@@ -1771,8 +1879,15 @@
         "veo-3.1-generate-preview",
         "veo-3.1-fast-generate-preview"
       ],
-      "latest": "1.1.0",
+      "latest": "1.2.0",
       "versions": [
+        {
+          "version": "1.2.0",
+          "path": "plugins/tasks/google/1.2.0/plugin.js",
+          "sha256": "deb68290adbda09cf98314260df661439e35d8bd912ec42cd475dab714d00179",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.1.0",
           "path": "plugins/tasks/google/1.1.0/plugin.js",
@@ -1814,7 +1929,7 @@
       "routes": [
         {
           "method": "POST",
-          "path": "/hailuo/v1/video_generation",
+          "path": "/v1/video_generation",
           "type": "submit",
           "decode": "createTask",
           "render": "taskCreated",
@@ -1832,14 +1947,28 @@
         },
         {
           "method": "GET",
+          "path": "/v1/query/video_generation",
+          "type": "query",
+          "render": "taskStatus",
+          "taskIdParam": "task_id"
+        },
+        {
+          "method": "GET",
           "path": "/hailuo/v1/query/video_generation/:task_id",
           "type": "query",
           "render": "taskStatus",
           "taskIdParam": "task_id"
         },
         {
+          "method": "GET",
+          "path": "/v1/files/retrieve",
+          "type": "query",
+          "render": "fileRetrieve",
+          "taskIdParam": "file_id"
+        },
+        {
           "method": "POST",
-          "path": "/hailuo/v2/video_generation",
+          "path": "/v2/video_generation",
           "type": "submit",
           "decode": "createH3Task",
           "render": "taskCreated",
@@ -1849,7 +1978,7 @@
         },
         {
           "method": "GET",
-          "path": "/hailuo/v2/query/video_generation/:task_id",
+          "path": "/v2/query/video_generation/:task_id",
           "type": "query",
           "render": "h3TaskStatus",
           "taskIdParam": "task_id"
@@ -2226,8 +2355,15 @@
         "I2V-01",
         "S2V-01"
       ],
-      "latest": "1.3.0",
+      "latest": "1.4.0",
       "versions": [
+        {
+          "version": "1.4.0",
+          "path": "plugins/tasks/hailuo/1.4.0/plugin.js",
+          "sha256": "f5fed7c4c76d8f8d1a03da22f8a87fa61a28fdba577b613c045ec48e6d48b7d9",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.3.0",
           "path": "plugins/tasks/hailuo/1.3.0/plugin.js",
@@ -2380,10 +2516,17 @@
       "routes": [
         {
           "method": "POST",
-          "path": "/jimeng/",
+          "path": "/api/common/v3/submit_task_v2",
+          "type": "submit",
+          "decode": "submitTask",
+          "render": "taskSubmitted"
+        },
+        {
+          "method": "POST",
+          "path": "/api/common/v3/get_result_v2",
           "type": "dynamic",
-          "decode": "decodeRequest",
-          "render": "renderTask"
+          "decode": "getResult",
+          "render": "taskResult"
         }
       ],
       "protocols": [
@@ -2497,8 +2640,15 @@
       "models": [
         "jimeng_vgfm_t2v_l20"
       ],
-      "latest": "1.1.0",
+      "latest": "1.2.0",
       "versions": [
+        {
+          "version": "1.2.0",
+          "path": "plugins/tasks/jimeng/1.2.0/plugin.js",
+          "sha256": "ca30e406dcfeea7af6d3cb3e17b9ee7fb1b6d24164ab657489435902d5909682",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.1.0",
           "path": "plugins/tasks/jimeng/1.1.0/plugin.js",
@@ -2540,7 +2690,7 @@
       "routes": [
         {
           "method": "POST",
-          "path": "/kling/v1/videos/text2video",
+          "path": "/v1/videos/text2video",
           "type": "submit",
           "action": "text_to_video",
           "decode": "decodeSubmit",
@@ -2548,7 +2698,7 @@
         },
         {
           "method": "POST",
-          "path": "/kling/v1/videos/image2video",
+          "path": "/v1/videos/image2video",
           "type": "submit",
           "action": "image_to_video",
           "decode": "decodeSubmit",
@@ -2556,17 +2706,48 @@
         },
         {
           "method": "GET",
-          "path": "/kling/v1/videos/text2video/:task_id",
+          "path": "/v1/videos/text2video/:task_id",
           "type": "query",
           "render": "taskStatus",
           "taskIdParam": "task_id"
         },
         {
           "method": "GET",
-          "path": "/kling/v1/videos/image2video/:task_id",
+          "path": "/v1/videos/image2video/:task_id",
           "type": "query",
           "render": "taskStatus",
           "taskIdParam": "task_id"
+        },
+        {
+          "method": "POST",
+          "path": "/text-to-video/kling-4.0",
+          "type": "submit",
+          "action": "text_to_video",
+          "decode": "kling4TextToVideo",
+          "render": "kling4Created"
+        },
+        {
+          "method": "POST",
+          "path": "/image-to-video/kling-4.0",
+          "type": "submit",
+          "action": "image_to_video",
+          "decode": "kling4ImageToVideo",
+          "render": "kling4Created"
+        },
+        {
+          "method": "POST",
+          "path": "/omni-video/kling-4.0",
+          "type": "submit",
+          "action": "reference_to_video",
+          "decode": "kling4OmniVideo",
+          "render": "kling4Created"
+        },
+        {
+          "method": "GET",
+          "path": "/tasks",
+          "type": "query",
+          "render": "kling4Tasks",
+          "taskIdParam": "task_ids"
         }
       ],
       "protocols": [
@@ -2594,33 +2775,39 @@
       },
       "usageExamples": [
         {
-          "label": "v1 std 5s",
+          "label": "v2.5 turbo std 5s",
           "facts": {
-            "units": 1
+            "units": 1.5
           }
         },
         {
-          "label": "v1 pro 5s",
-          "facts": {
-            "units": 3.5
-          }
-        },
-        {
-          "label": "v1-6 std 5s",
-          "facts": {
-            "units": 2
-          }
-        },
-        {
-          "label": "v1-6 pro 10s",
-          "facts": {
-            "units": 7
-          }
-        },
-        {
-          "label": "v2-master pro 5s",
+          "label": "v2.6 pro 10s · audio",
           "facts": {
             "units": 10
+          }
+        },
+        {
+          "label": "v3 pro 5s",
+          "facts": {
+            "units": 4
+          }
+        },
+        {
+          "label": "v3 4k 5s",
+          "facts": {
+            "units": 15
+          }
+        },
+        {
+          "label": "4.0 1080p 10s",
+          "facts": {
+            "units": 15
+          }
+        },
+        {
+          "label": "4.0 1080p 10s · video input",
+          "facts": {
+            "units": 18
           }
         }
       ],
@@ -2629,12 +2816,20 @@
         50
       ],
       "models": [
-        "kling-v1",
-        "kling-v1-6",
-        "kling-v2-master"
+        "kling-v2-5-turbo",
+        "kling-v2-6",
+        "kling-v3",
+        "kling-4.0"
       ],
-      "latest": "1.1.1",
+      "latest": "1.2.0",
       "versions": [
+        {
+          "version": "1.2.0",
+          "path": "plugins/tasks/kling/1.2.0/plugin.js",
+          "sha256": "71165895cb511b0a392521d2a6a8b337086cdac12454e0f6f6e689d04ed06752",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.1.1",
           "path": "plugins/tasks/kling/1.1.1/plugin.js",
@@ -3001,7 +3196,14 @@
       "routes": [
         {
           "method": "POST",
-          "path": "/vertex-ai/v1/projects/:project/locations/:location/publishers/google/models/:model",
+          "path": "/v1/projects/:project/locations/:location/publishers/google/models/:model",
+          "type": "dynamic",
+          "decode": "modelMethod",
+          "render": "operation"
+        },
+        {
+          "method": "POST",
+          "path": "/v1beta1/projects/:project/locations/:location/publishers/google/models/:model",
           "type": "dynamic",
           "decode": "modelMethod",
           "render": "operation"
@@ -3106,8 +3308,16 @@
         "veo-3.1-generate-preview",
         "veo-3.1-fast-generate-preview"
       ],
-      "latest": "1.1.0",
+      "latest": "1.2.0",
       "versions": [
+        {
+          "version": "1.2.0",
+          "path": "plugins/tasks/vertex-ai/1.2.0/plugin.js",
+          "sha256": "f40969ba1f0165348afb59f646a7dec100a06fcd38cede08383c1532f38c7504",
+          "minApiVersion": 1,
+          "kind": "task",
+          "auth": "oauth2_jwt"
+        },
         {
           "version": "1.1.0",
           "path": "plugins/tasks/vertex-ai/1.1.0/plugin.js",
@@ -3153,35 +3363,35 @@
       "routes": [
         {
           "method": "POST",
-          "path": "/vidu/ent/v2/text2video",
+          "path": "/ent/v2/text2video",
           "type": "submit",
           "decode": "createTask",
           "render": "taskCreated"
         },
         {
           "method": "POST",
-          "path": "/vidu/ent/v2/img2video",
+          "path": "/ent/v2/img2video",
           "type": "submit",
           "decode": "createTask",
           "render": "taskCreated"
         },
         {
           "method": "POST",
-          "path": "/vidu/ent/v2/start-end2video",
+          "path": "/ent/v2/start-end2video",
           "type": "submit",
           "decode": "createTask",
           "render": "taskCreated"
         },
         {
           "method": "POST",
-          "path": "/vidu/ent/v2/reference2video",
+          "path": "/ent/v2/reference2video",
           "type": "submit",
           "decode": "createTask",
           "render": "taskCreated"
         },
         {
           "method": "GET",
-          "path": "/vidu/ent/v2/tasks/:task_id/creations",
+          "path": "/ent/v2/tasks/:task_id/creations",
           "type": "query",
           "render": "taskStatus",
           "taskIdParam": "task_id"
@@ -3222,7 +3432,9 @@
             "360p",
             "540p",
             "720p",
-            "1080p"
+            "1080p",
+            "2K",
+            "4K"
           ],
           "description": {
             "en": "Output video resolution",
@@ -3233,9 +3445,17 @@
               "en": "1080p",
               "zh": "1080p"
             },
+            "2K": {
+              "en": "2K",
+              "zh": "2K"
+            },
             "360p": {
               "en": "360p",
               "zh": "360p"
+            },
+            "4K": {
+              "en": "4K",
+              "zh": "4K"
             },
             "540p": {
               "en": "540p",
@@ -3249,6 +3469,22 @@
         }
       },
       "usageExamples": [
+        {
+          "label": "q4 5s 4K",
+          "facts": {
+            "credits": 0,
+            "duration": 5,
+            "resolution": "4K"
+          }
+        },
+        {
+          "label": "q3 pro 5s 1080p",
+          "facts": {
+            "credits": 0,
+            "duration": 5,
+            "resolution": "1080p"
+          }
+        },
         {
           "label": "q2 5s 720p",
           "facts": {
@@ -3274,14 +3510,6 @@
           }
         },
         {
-          "label": "2.0 4s 720p",
-          "facts": {
-            "credits": 0,
-            "duration": 4,
-            "resolution": "720p"
-          }
-        },
-        {
           "label": "2.0 8s 720p",
           "facts": {
             "credits": 0,
@@ -3295,13 +3523,32 @@
         52
       ],
       "models": [
+        "viduq3-pro",
+        "viduq3-turbo",
+        "viduq3-pro-fast",
+        "viduq3",
+        "viduq3-mix",
+        "viduq3-ad",
+        "viduq3-drama",
+        "viduq4-preview",
+        "viduq2-pro",
+        "viduq2-turbo",
+        "viduq2-pro-fast",
         "viduq2",
+        "viduq1-classic",
         "viduq1",
         "vidu2.0",
         "vidu1.5"
       ],
-      "latest": "1.1.0",
+      "latest": "1.2.0",
       "versions": [
+        {
+          "version": "1.2.0",
+          "path": "plugins/tasks/vidu/1.2.0/plugin.js",
+          "sha256": "102d2d8e8013870f06fd437bc5d6fb7552840344539c465254fbe90496773919",
+          "minApiVersion": 1,
+          "kind": "task"
+        },
         {
           "version": "1.1.0",
           "path": "plugins/tasks/vidu/1.1.0/plugin.js",
@@ -3343,14 +3590,14 @@
       "routes": [
         {
           "method": "POST",
-          "path": "/xai/v1/videos/generations",
+          "path": "/v1/videos/generations",
           "type": "submit",
           "decode": "createGeneration",
           "render": "videoCreated"
         },
         {
           "method": "POST",
-          "path": "/xai/v1/videos/edits",
+          "path": "/v1/videos/edits",
           "type": "submit",
           "decode": "createEdit",
           "render": "videoCreated",
@@ -3360,7 +3607,7 @@
         },
         {
           "method": "POST",
-          "path": "/xai/v1/videos/extensions",
+          "path": "/v1/videos/extensions",
           "type": "submit",
           "decode": "createExtension",
           "render": "videoCreated",
@@ -3370,7 +3617,7 @@
         },
         {
           "method": "GET",
-          "path": "/xai/v1/videos/:request_id",
+          "path": "/v1/videos/:request_id",
           "type": "query",
           "render": "videoStatus",
           "taskIdParam": "request_id"
@@ -3680,8 +3927,19 @@
         "grok-imagine-video-1.5",
         "grok-imagine-video-1.5-lite"
       ],
-      "latest": "1.1.0",
+      "latest": "1.2.0",
       "versions": [
+        {
+          "version": "1.2.0",
+          "path": "plugins/tasks/xai/1.2.0/plugin.js",
+          "sha256": "74aa8a13b63f6a9130372bcd6b26aa3cf20e2b01019973315d454666ed915ce4",
+          "minApiVersion": 1,
+          "kind": "task",
+          "allowedHosts": [
+            "vidgen.x.ai"
+          ],
+          "baseUrl": "https://api.x.ai"
+        },
         {
           "version": "1.1.0",
           "path": "plugins/tasks/xai/1.1.0/plugin.js",
