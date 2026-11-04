@@ -12,7 +12,7 @@ locale: "zh-CN"
 
 - 新增 `kling-v2-5-turbo`、`kling-v2-6` 和 `kling-v3`。按模式以可灵资源包单位按秒计费，开启原生音频（`sound: "on"`）或使用参考音色（`voice_list`）时按可灵规定的更高单价计费。
 - 新增可灵 4.0（`kling-4.0`），可以直接调用可灵官方路径 `POST /text-to-video/kling-4.0`、`POST /image-to-video/kling-4.0` 和 `POST /omni-video/kling-4.0`，用 `GET /tasks?task_ids=` 查询。也可以通过 OpenAI Responses 和 OpenAI 视频接口调用。
-- 可灵 4.0 的消耗为 720p 每秒 1.0 单位、1080p 每秒 1.5 单位。带输入视频时为每秒 0.6 或 0.9 单位，时长按输出的两倍计算；输入视频比输出长时，按输入加输出计算。未指定时长的请求先按 30 秒预扣，再按可灵扣除的单位结算，没有扣除数据时按可灵报告的时长结算。
+- 可灵 4.0 的消耗为 720p 每秒 1.0 单位、1080p 每秒 1.5 单位。带输入视频时为每秒 0.6 或 0.9 单位，时长按输出的两倍计算；输入视频比输出长时，按输入加输出计算。未指定时长的请求先按 30 秒预扣。结算按可灵的扣费：资源包扣的单位数，或现金支付的原价（list_price）。没有扣费数据时按可灵报告的时长结算。
 - 其他模型也可以在网关上直接调用可灵官方路径：`POST /v1/videos/text2video` 和 `POST /v1/videos/image2video`，用 `GET /v1/videos/text2video/{task_id}` 和 `GET /v1/videos/image2video/{task_id}` 查询。网关同时在 `/kling` 下提供每个路径，原来的 `/kling/v1/videos/...` 地址继续可用。
 
 ### Changed

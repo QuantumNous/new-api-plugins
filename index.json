@@ -2826,7 +2826,7 @@
         {
           "version": "1.2.0",
           "path": "plugins/tasks/kling/1.2.0/plugin.js",
-          "sha256": "71165895cb511b0a392521d2a6a8b337086cdac12454e0f6f6e689d04ed06752",
+          "sha256": "f4b949679dba31e287d2b21d4b3b4c09980c9bb744da9ede5153f1801cf84240",
           "minApiVersion": 1,
           "kind": "task"
         },
@@ -3187,11 +3187,11 @@
     },
     {
       "key": "vertex-ai",
-      "name": "Google Veo (Vertex AI)",
+      "name": "Google Veo \u0026 Gemini Omni (Vertex AI)",
       "icon": "VertexAI.Color",
       "description": {
-        "en": "Google Veo video generation on Vertex AI (text-to-video and image-to-video)",
-        "zh": "Google Veo 视频生成（文生视频、图生视频），Vertex AI 版本"
+        "en": "Google Veo and Gemini Omni Flash video generation on Vertex AI (text-to-video and image-to-video)",
+        "zh": "Google Veo 与 Gemini Omni Flash 视频生成（文生视频、图生视频），Vertex AI 版本"
       },
       "routes": [
         {
@@ -3298,7 +3298,74 @@
           }
         }
       ],
-      "usageProfiles": null,
+      "usageProfiles": [
+        {
+          "models": [
+            "gemini-omni-1.1-flash-preview",
+            "gemini-omni-flash-preview"
+          ],
+          "schema": {
+            "input_tokens": {
+              "type": "number",
+              "unit": "token",
+              "description": {
+                "en": "Input token unit price",
+                "zh": "输入 Token 单价"
+              }
+            },
+            "output_tokens": {
+              "type": "number",
+              "unit": "token",
+              "description": {
+                "en": "Text output token unit price",
+                "zh": "文本输出 Token 单价"
+              }
+            },
+            "video_tokens": {
+              "type": "number",
+              "unit": "token",
+              "description": {
+                "en": "Video output token unit price",
+                "zh": "视频输出 Token 单价"
+              }
+            }
+          },
+          "examples": [
+            {
+              "label": "3s 360p",
+              "facts": {
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "video_tokens": 5793
+              }
+            },
+            {
+              "label": "8s 720p",
+              "facts": {
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "video_tokens": 46336
+              }
+            },
+            {
+              "label": "8s 1080p",
+              "facts": {
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "video_tokens": 69504
+              }
+            },
+            {
+              "label": "10s 4k",
+              "facts": {
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "video_tokens": 173760
+              }
+            }
+          ]
+        }
+      ],
       "channelTypes": [
         41
       ],
@@ -3306,14 +3373,16 @@
         "veo-3.0-generate-001",
         "veo-3.0-fast-generate-001",
         "veo-3.1-generate-preview",
-        "veo-3.1-fast-generate-preview"
+        "veo-3.1-fast-generate-preview",
+        "gemini-omni-1.1-flash-preview",
+        "gemini-omni-flash-preview"
       ],
       "latest": "1.2.0",
       "versions": [
         {
           "version": "1.2.0",
           "path": "plugins/tasks/vertex-ai/1.2.0/plugin.js",
-          "sha256": "f40969ba1f0165348afb59f646a7dec100a06fcd38cede08383c1532f38c7504",
+          "sha256": "90a40af64d7617614b2327f480c8a67b7d22630011f659890b496395d573d910",
           "minApiVersion": 1,
           "kind": "task",
           "auth": "oauth2_jwt"

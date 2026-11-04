@@ -11,6 +11,7 @@ locale: "zh-CN"
 ### Added
 
 - 可以在网关上直接调用 Vertex AI 官方路径：用 `POST /v1/projects/{project}/locations/{location}/publishers/google/models/{model}:predictLongRunning` 发起 Veo 视频生成，在同一路径上用 `:fetchPredictOperation` 查询结果。`/v1beta1` 下的同名路径同样可用；网关也在 `/vertex-ai` 下提供每个路径，原来的 `/vertex-ai/v1/...` 地址继续可用。
+- 新增 Gemini Omni Flash 视频生成（`gemini-omni-1.1-flash-preview` 和 `gemini-omni-flash-preview`），可以通过 OpenAI Responses 和 OpenAI 视频接口用文字或首帧图片生成。视频时长 3 到 10 秒，清晰度可选 360p、720p、1080p 或 4k。任务按 Vertex AI 报告的 token 计费，分为输入、文本输出（含思考）和视频输出。New API 上游渠道不支持 Gemini Omni。
 
 ### Changed
 
@@ -23,4 +24,6 @@ locale: "zh-CN"
 
 ### Migration
 
+- **价格配置：**启用 `gemini-omni-1.1-flash-preview` 和 `gemini-omni-flash-preview` 前，请设置输入、文本输出和视频输出的 token 单价。Vertex AI 的标价为每百万 token 1.50、9 和 17.50 美元。提交时按请求的时长和清晰度预扣视频输出费用。
+- **渠道：**Gemini Omni 需要服务账号 JSON 密钥，渠道 API 地址填 `https://aiplatform.googleapis.com`。
 - **安装要求：**1.2.0 需要安装在 v1.0.0-rc.47 之后发布的 new-api 版本上。旧版本会拒绝该插件，或无法提供它的 Vertex AI 路径。

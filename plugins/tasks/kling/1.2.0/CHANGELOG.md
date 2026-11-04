@@ -14,7 +14,7 @@ translations:
 
 - Add `kling-v2-5-turbo`, `kling-v2-6` and `kling-v3`. They are charged in Kling resource units per second by mode, with the higher rates Kling sets for native audio (`sound: "on"`) and reference voices (`voice_list`).
 - Add Kling 4.0 (`kling-4.0`) at Kling's own paths: `POST /text-to-video/kling-4.0`, `POST /image-to-video/kling-4.0` and `POST /omni-video/kling-4.0`, queried at `GET /tasks?task_ids=`. It is also available through OpenAI Responses and the OpenAI video API.
-- Kling 4.0 costs 1.0 units per second at 720p and 1.5 at 1080p. With an input video it costs 0.6 or 0.9 units per second of twice the output length, or of input plus output when the input is longer. A request without a duration reserves 30 seconds, and the task settles on the units Kling deducts, or else on the durations Kling reports.
+- Kling 4.0 costs 1.0 units per second at 720p and 1.5 at 1080p. With an input video it costs 0.6 or 0.9 units per second of twice the output length, or of input plus output when the input is longer. A request without a duration reserves 30 seconds. The task settles on what Kling deducts: the units taken from a resource package, or the list price of a cash payment. Without a deduction it settles on the durations Kling reports.
 - Call Kling's own paths for the other models on the gateway: `POST /v1/videos/text2video` and `POST /v1/videos/image2video`, queried at `GET /v1/videos/text2video/{task_id}` and `GET /v1/videos/image2video/{task_id}`. The gateway also serves each path under `/kling`, so existing `/kling/v1/videos/...` addresses keep working.
 
 ### Changed

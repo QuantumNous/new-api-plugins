@@ -404,21 +404,19 @@ function reportedSeconds(value) {
   return Number.isFinite(seconds) && seconds > 0 ? Math.min(seconds, 3600) : 0;
 }
 
-// The units Kling deducted from resource packages. A task paid in cash, wholly
-// or in part, gets the units of the durations Kling reports instead.
+// The units Kling deducted. A cash deduction counts its list_price, not its
+// amount, which is the discounted price; the durations Kling reports run
+// slightly longer than the requested duration it bills.
 function kling4CompletedUnits(ctx, body) {
   const entry = kling4Entry(body, ctx && ctx.taskId);
   if (entry.status !== "succeeded") return null;
   const deductions = Array.isArray(entry.billing) ? entry.billing : [];
-  const inUnits = deductions.every(function (item) {
-    return item && item.charge_type === "unit";
-  });
-  if (deductions.length && inUnits) {
-    const units = deductions.reduce(function (sum, item) {
-      return sum + Number.parseFloat(item.amount);
-    }, 0);
-    return Number.isFinite(units) && units >= 0 ? { units: units } : null;
-  }
+  const deducted = deductions.reduce(function (sum, item) {
+    const type = item && item.charge_type;
+    const units = Number.parseFloat(type === "unit" ? item.amount : type === "cash" ? item.list_price : "");
+    return units >= 0 ? sum + units : Number.NaN;
+  }, 0);
+  if (deductions.length && Number.isFinite(deducted)) return { units: deducted };
   const videos = kling4Videos(entry);
   const output = reportedSeconds(videos.length ? videos[0].duration : "");
   if (!output) return null;
