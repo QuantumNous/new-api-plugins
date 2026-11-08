@@ -15,6 +15,9 @@ A marketplace source is any HTTP(S)-reachable repository that serves a root `ind
       "iconFile": {"path": "plugins/tasks/doubao/icon.svg", "sha256": "<hex sha256 of the icon bytes>"},
       "channelTypes": [54, 45],
       "models": ["doubao-seedance-1-0-pro-250528"],
+      "task": true,
+      "provider": false,
+      "transform": false,
       "latest": "1.2.0",
       "versions": [
         {
@@ -37,6 +40,7 @@ A marketplace source is any HTTP(S)-reachable repository that serves a root `ind
 - `sha256` is verified at install time before the source enters the upload pipeline.
 - `kind` discriminates plugin kinds; `"task"` is the only kind today. Marketplace UIs filter to kinds the gateway supports.
 - `minApiVersion` is a UI hint only. Admission is always decided by the gateway's own manifest validation.
+- `task`, `provider` and `transform` say which parts the latest version has, detected the way the gateway detects them from the compiled manifest and exports: `task` when the plugin exports `buildSubmitRequest`, `provider` when `meta.relay` is not empty, and `transform` (request processing) when it exports `ingress`, `request`, `outbound`, `egress` or `report`. A plugin may have several parts; marketplace UIs list it under each one, and list an entry that names none as a task plugin. Parts are independent of `kind`: a provider or request processing plugin still publishes its versions as `"task"`.
 - `iconFile` points at the plugin's sidecar logo, `plugins/<kind>/<key>/icon.svg` or `icon.png`, stored once per key beside the version directories. The gateway loads it from the index origin at install time and stores it apart from the plugin source; the source itself never carries image data. `meta.icon` stays a LobeHub name or `text` fallback.
 - `allowedHosts`, `baseUrl` and `auth` are display hints for the install confirmation page, derived from compiled meta like every other index field. `baseUrl` is the default upstream address a gateway copies onto a Task Plugin channel when the administrator leaves Base URL empty; showing it before install lets the administrator see where the channel key will be sent.
 - `routes`, `protocols`, `usageSchema`, `usageExamples`, and `usageProfiles` carry the latest version's compiled display metadata. Usage fields retain localized `description`, `unitLabel`, and `enumLabels`; profiles retain their model lists, complete schemas, and examples. Consumers should use these fields when present and may fall back to source parsing for older indexes. Empty or null compiled usage collections mean no entries. This preserves metadata defined through JavaScript constants or expressions without requiring consumers to execute plugin source.

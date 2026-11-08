@@ -54,8 +54,8 @@ query is redacted before request logging.
 The v1 reference also covers [model usage profiles](./v1.md#usage-profiles-by-model),
 [host capabilities](./v1.md#host-utilities-and-capabilities), and
 [immediate completion and submission streams](./v1.md#immediate-completion-and-submission-streams).
-Deployment boundaries and concurrency environment variables are documented in
-[v1.md](./v1.md#generic-task-management-api).
+The [upload and release guide](#upload-and-release) lists the generic task
+management endpoints.
 
 The host requires `protocols.openai_video.render` to return a JSON object and
 preserves provider extensions, including output URLs and metadata. Plugins may

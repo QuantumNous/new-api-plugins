@@ -72,6 +72,9 @@ type indexPlugin struct {
 	UsageProfiles  []jsplugin.UsageProfile              `json:"usageProfiles"`
 	ChannelTypes   []int                                `json:"channelTypes,omitempty"`
 	Models         []string                             `json:"models,omitempty"`
+	Task           bool                                 `json:"task"`
+	Provider       bool                                 `json:"provider"`
+	Transform      bool                                 `json:"transform"`
 	Latest         string                               `json:"latest"`
 	Versions       []indexVersion                       `json:"versions"`
 }
@@ -213,6 +216,18 @@ func collectPluginVersions(root, kindDir, kind, key string, byKey map[string]*in
 			entry.UsageProfiles = loaded.Meta.UsageProfiles
 			entry.ChannelTypes = loaded.Meta.ChannelTypes
 			entry.Models = loaded.Meta.Models
+			// Task-only hosts require buildSubmitRequest during compilation.
+			// Use the host's part metadata when it exposes that interface.
+			entry.Task, entry.Provider, entry.Transform = true, false, false
+			if parts, ok := any(&loaded.Meta).(interface {
+				HasTaskPart() bool
+				HasProviderPart() bool
+				HasTransformPart() bool
+			}); ok {
+				entry.Task = parts.HasTaskPart()
+				entry.Provider = parts.HasProviderPart()
+				entry.Transform = parts.HasTransformPart()
+			}
 		}
 		entry.Versions = append(entry.Versions, indexVersion{
 			Version:       version,
