@@ -20,9 +20,12 @@ package main
 import (
 	"bytes"
 	"crypto/sha256"
+	"errors"
 	"fmt"
+	"io/fs"
 	"os"
 	"path/filepath"
+	"regexp"
 	"sort"
 	"strconv"
 	"strings"
@@ -30,6 +33,7 @@ import (
 	"encoding/json"
 
 	"github.com/QuantumNous/new-api/pkg/jsplugin"
+	"gopkg.in/yaml.v3"
 )
 
 // kindDirs maps a repository layout directory to the plugin kind it declares.
@@ -38,15 +42,40 @@ import (
 var kindDirs = map[string]string{"tasks": "task"}
 
 type indexVersion struct {
-	Version       string   `json:"version"`
-	Path          string   `json:"path"`
-	Sha256        string   `json:"sha256"`
-	MinApiVersion int      `json:"minApiVersion"`
-	Kind          string   `json:"kind"`
-	AllowedHosts  []string `json:"allowedHosts,omitempty"`
-	BaseUrl       string   `json:"baseUrl,omitempty"`
-	Auth          string   `json:"auth,omitempty"`
+	Version       string        `json:"version"`
+	Path          string        `json:"path"`
+	Sha256        string        `json:"sha256"`
+	MinApiVersion int           `json:"minApiVersion"`
+	Kind          string        `json:"kind"`
+	AllowedHosts  []string      `json:"allowedHosts,omitempty"`
+	BaseUrl       string        `json:"baseUrl,omitempty"`
+	Auth          string        `json:"auth,omitempty"`
+	Readme        *indexDocFile `json:"readme,omitempty"`
+	Changelog     *indexDocFile `json:"changelog,omitempty"`
 }
+
+// indexDocFile points at a version's usage guide (README.md) or release notes
+// (CHANGELOG.md) and the translations its front matter lists. Paths are
+// repository-relative, like the version path.
+type indexDocFile struct {
+	Path         string                       `json:"path"`
+	Sha256       string                       `json:"sha256"`
+	Translations map[string]indexDocFileEntry `json:"translations,omitempty"`
+}
+
+type indexDocFileEntry struct {
+	Path   string `json:"path"`
+	Sha256 string `json:"sha256"`
+}
+
+// maxDocTranslations bounds the translations map of a README or CHANGELOG.
+const maxDocTranslations = 10
+
+// localeTagPattern matches the locale tags plugin metadata accepts.
+var localeTagPattern = regexp.MustCompile(`^[a-zA-Z]{2,3}(-[a-zA-Z0-9]{2,8})*$`)
+
+// pluginReadmePattern matches the plugin-level usage guide and its translations.
+var pluginReadmePattern = regexp.MustCompile(`^README(\.[a-zA-Z]{2,3}(-[a-zA-Z0-9]{2,8})*)?\.md$`)
 
 // indexIconFile points at the sidecar logo (icon.svg / icon.png) stored once
 // per plugin key, next to the version directories. Gateways fetch it from the
@@ -169,14 +198,21 @@ func collectPluginVersions(root, kindDir, kind, key string, byKey map[string]*in
 	if err != nil {
 		return err
 	}
+	// The plugin-level README serves every version without its own README.
+	pluginReadme, err := loadDocFile(root, filepath.ToSlash(filepath.Join("plugins", kindDir, key)), "README")
+	if err != nil {
+		return err
+	}
 	for _, versionEntry := range versionEntries {
 		if !versionEntry.IsDir() {
-			// The sidecar logo lives once per plugin key, beside the version
-			// directories; it is picked up after the versions below.
-			if versionEntry.Name() == "icon.svg" || versionEntry.Name() == "icon.png" {
+			// The sidecar logo and the usage guide live once per plugin key,
+			// beside the version directories. The logo is picked up after the
+			// versions below.
+			name := versionEntry.Name()
+			if name == "icon.svg" || name == "icon.png" || pluginReadmePattern.MatchString(name) {
 				continue
 			}
-			return fmt.Errorf("unexpected non-directory %s under plugins/%s/%s/", versionEntry.Name(), kindDir, key)
+			return fmt.Errorf("unexpected non-directory %s under plugins/%s/%s/", name, kindDir, key)
 		}
 		version := versionEntry.Name()
 		relativePath := filepath.ToSlash(filepath.Join("plugins", kindDir, key, version, "plugin.js"))
@@ -193,6 +229,18 @@ func collectPluginVersions(root, kindDir, kind, key string, byKey map[string]*in
 		}
 		if loaded.Meta.Version != version {
 			return fmt.Errorf("plugin %s/%s declares version %q; the directory and meta must agree", key, version, loaded.Meta.Version)
+		}
+		versionDir := filepath.ToSlash(filepath.Join("plugins", kindDir, key, version))
+		readme, docErr := loadDocFile(root, versionDir, "README")
+		if docErr != nil {
+			return docErr
+		}
+		if readme == nil {
+			readme = pluginReadme
+		}
+		changelog, docErr := loadDocFile(root, versionDir, "CHANGELOG")
+		if docErr != nil {
+			return docErr
 		}
 		digest := sha256.Sum256(source)
 		entry := byKey[key]
@@ -238,6 +286,8 @@ func collectPluginVersions(root, kindDir, kind, key string, byKey map[string]*in
 			AllowedHosts:  loaded.Meta.AllowedHosts,
 			BaseUrl:       loaded.Meta.BaseURL,
 			Auth:          loaded.Meta.Auth.Type,
+			Readme:        readme,
+			Changelog:     changelog,
 		})
 	}
 	if len(byKey[key].Versions) == 0 {
@@ -264,6 +314,99 @@ func collectPluginVersions(root, kindDir, kind, key string, byKey map[string]*in
 		break
 	}
 	return nil
+}
+
+// loadDocFile describes <dir>/<base>.md and the translations listed in its
+// front matter. It returns nil when the file does not exist. The Markdown body
+// is not checked here; the spec's README and CHANGELOG rules apply to it.
+func loadDocFile(root, dir, base string) (*indexDocFile, error) {
+	relativePath := dir + "/" + base + ".md"
+	data, err := os.ReadFile(filepath.Join(root, filepath.FromSlash(relativePath)))
+	if errors.Is(err, fs.ErrNotExist) {
+		return nil, nil
+	}
+	if err != nil {
+		return nil, err
+	}
+	translations, err := frontMatterTranslations(data)
+	if err != nil {
+		return nil, fmt.Errorf("%s: %w", relativePath, err)
+	}
+	if len(translations) > maxDocTranslations {
+		return nil, fmt.Errorf("%s: translations lists %d files; at most %d are allowed", relativePath, len(translations), maxDocTranslations)
+	}
+	doc := &indexDocFile{Path: relativePath, Sha256: fmt.Sprintf("%x", sha256.Sum256(data))}
+	tags := make([]string, 0, len(translations))
+	for tag := range translations {
+		tags = append(tags, tag)
+	}
+	sort.Strings(tags)
+	for _, tag := range tags {
+		if !localeTagPattern.MatchString(tag) || canonicalLocaleTag(tag) != tag {
+			return nil, fmt.Errorf("%s: translation tag %q is not a canonical BCP 47 tag", relativePath, tag)
+		}
+		if tag == "en" {
+			return nil, fmt.Errorf("%s: translation tag \"en\" is not allowed; %s.md is the English file", relativePath, base)
+		}
+		expected := base + "." + tag + ".md"
+		if translations[tag] != expected {
+			return nil, fmt.Errorf("%s: translation %q must be the sibling file %s, not %q", relativePath, tag, expected, translations[tag])
+		}
+		translationPath := dir + "/" + expected
+		translated, readErr := os.ReadFile(filepath.Join(root, filepath.FromSlash(translationPath)))
+		if errors.Is(readErr, fs.ErrNotExist) {
+			return nil, fmt.Errorf("%s: listed translation %s does not exist", relativePath, translationPath)
+		}
+		if readErr != nil {
+			return nil, readErr
+		}
+		if doc.Translations == nil {
+			doc.Translations = make(map[string]indexDocFileEntry, len(tags))
+		}
+		doc.Translations[tag] = indexDocFileEntry{Path: translationPath, Sha256: fmt.Sprintf("%x", sha256.Sum256(translated))}
+	}
+	return doc, nil
+}
+
+// frontMatterTranslations reads the translations map from optional YAML front
+// matter: a first line of exactly "---" up to the next line of exactly "---".
+func frontMatterTranslations(data []byte) (map[string]string, error) {
+	lines := strings.Split(string(data), "\n")
+	if strings.TrimSuffix(lines[0], "\r") != "---" {
+		return nil, nil
+	}
+	for index := 1; index < len(lines); index++ {
+		if strings.TrimSuffix(lines[index], "\r") != "---" {
+			continue
+		}
+		var matter struct {
+			Translations map[string]string `yaml:"translations"`
+		}
+		if err := yaml.Unmarshal([]byte(strings.Join(lines[1:index], "\n")), &matter); err != nil {
+			return nil, fmt.Errorf("invalid front matter: %w", err)
+		}
+		return matter.Translations, nil
+	}
+	return nil, errors.New("front matter has no closing --- line")
+}
+
+// canonicalLocaleTag applies the BCP 47 casing plugin metadata uses: language
+// lowercase, 2-letter region uppercase, 4-letter script title case.
+func canonicalLocaleTag(tag string) string {
+	parts := strings.Split(tag, "-")
+	parts[0] = strings.ToLower(parts[0])
+	for index := 1; index < len(parts); index++ {
+		switch len(parts[index]) {
+		case 2:
+			parts[index] = strings.ToUpper(parts[index])
+		case 4:
+			lowered := strings.ToLower(parts[index])
+			parts[index] = strings.ToUpper(lowered[:1]) + lowered[1:]
+		default:
+			parts[index] = strings.ToLower(parts[index])
+		}
+	}
+	return strings.Join(parts, "-")
 }
 
 // semverLess orders release versions numerically; prerelease/build suffixes

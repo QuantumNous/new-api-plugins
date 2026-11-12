@@ -779,70 +779,230 @@
           "path": "plugins/tasks/alibaba/1.5.0/plugin.js",
           "sha256": "c5f7397f7fa6a2062f80341a2155d7528e837f4debf1e1acc1783c9d762b41d2",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/alibaba/README.md",
+            "sha256": "1faf5269da869d788e6c37ee8d3b8f8304cfde0bdac15e672aa9a7826b7421a7",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/README.zh-CN.md",
+                "sha256": "8d9d7cce8e988b15a4bf1a8c35ad022fe9efeac021bedd0fcea95e57187c62cf"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/alibaba/1.5.0/CHANGELOG.md",
+            "sha256": "7a6e698eb76d5368794846d55fe44828954a66fca9d773edacc7b34c331e45a1",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/1.5.0/CHANGELOG.zh-CN.md",
+                "sha256": "4fa5004a46089b5a8d2239b0f66f75c548f6eb52c76cd5225347bfd6fc3e15d5"
+              }
+            }
+          }
         },
         {
           "version": "1.4.2",
           "path": "plugins/tasks/alibaba/1.4.2/plugin.js",
           "sha256": "63ef98833760d0bdcdddc66ec9e1dbc12e43a1b6016cda9caa4f3d4bf329e546",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/alibaba/README.md",
+            "sha256": "1faf5269da869d788e6c37ee8d3b8f8304cfde0bdac15e672aa9a7826b7421a7",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/README.zh-CN.md",
+                "sha256": "8d9d7cce8e988b15a4bf1a8c35ad022fe9efeac021bedd0fcea95e57187c62cf"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/alibaba/1.4.2/CHANGELOG.md",
+            "sha256": "97fb9a48771f2fcc6ba6fa2fdf0a54e7ef73b9622a9a45de7b0cb6fa1524b78c",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/1.4.2/CHANGELOG.zh-CN.md",
+                "sha256": "41f38cecd86157debd6d88521b2f4bbab1dda432a8ccf4a3603d700ec0d51196"
+              }
+            }
+          }
         },
         {
           "version": "1.4.1",
           "path": "plugins/tasks/alibaba/1.4.1/plugin.js",
           "sha256": "c8f217afe6fe79bb0db3e723730a86399cee74e8087f474859e39e52a6acb55d",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/alibaba/README.md",
+            "sha256": "1faf5269da869d788e6c37ee8d3b8f8304cfde0bdac15e672aa9a7826b7421a7",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/README.zh-CN.md",
+                "sha256": "8d9d7cce8e988b15a4bf1a8c35ad022fe9efeac021bedd0fcea95e57187c62cf"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/alibaba/1.4.1/CHANGELOG.md",
+            "sha256": "c32f2ac1699337a1cf43d4fc26be6d593503b3676a71f4dd157d3c1f2d34e933",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/1.4.1/CHANGELOG.zh-CN.md",
+                "sha256": "c8a0b7ab87cf145928d12ad01b4f977550bad465ec08e0022ac6cba740a591f1"
+              }
+            }
+          }
         },
         {
           "version": "1.4.0",
           "path": "plugins/tasks/alibaba/1.4.0/plugin.js",
           "sha256": "e07d5d30ba8e6fe22e076109b4a67d4a6ddd9955d16fc91d2a1735502612823a",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/alibaba/README.md",
+            "sha256": "1faf5269da869d788e6c37ee8d3b8f8304cfde0bdac15e672aa9a7826b7421a7",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/README.zh-CN.md",
+                "sha256": "8d9d7cce8e988b15a4bf1a8c35ad022fe9efeac021bedd0fcea95e57187c62cf"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/alibaba/1.4.0/CHANGELOG.md",
+            "sha256": "fbfd42d366353b4b8c3df71f9886cb1eb3bc0d48e8ad3429db76196618af9420",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/1.4.0/CHANGELOG.zh-CN.md",
+                "sha256": "b0b5e988f2d59560f0021bcdb146a413282674fd33a44adb6f31c83d9c5e449d"
+              }
+            }
+          }
         },
         {
           "version": "1.3.0",
           "path": "plugins/tasks/alibaba/1.3.0/plugin.js",
           "sha256": "52da5d589b6e48c77991d07df4e7c54a7ea9c303d273c5951cca26f030da6b82",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/alibaba/README.md",
+            "sha256": "1faf5269da869d788e6c37ee8d3b8f8304cfde0bdac15e672aa9a7826b7421a7",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/README.zh-CN.md",
+                "sha256": "8d9d7cce8e988b15a4bf1a8c35ad022fe9efeac021bedd0fcea95e57187c62cf"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/alibaba/1.3.0/CHANGELOG.md",
+            "sha256": "bc3d82ac5234a89488fbc6caee168e7d9e570f36e54799393f8c674d31535232",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/1.3.0/CHANGELOG.zh-CN.md",
+                "sha256": "657249b1f6c94dda9ba06c97f0973000cf1c968c03bfb2f7c4d64dbc12f27194"
+              }
+            }
+          }
         },
         {
           "version": "1.2.0",
           "path": "plugins/tasks/alibaba/1.2.0/plugin.js",
           "sha256": "15167fe8bafbc045b994586e438a9dab770d9c2322949634e6f487649d4b8758",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/alibaba/README.md",
+            "sha256": "1faf5269da869d788e6c37ee8d3b8f8304cfde0bdac15e672aa9a7826b7421a7",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/README.zh-CN.md",
+                "sha256": "8d9d7cce8e988b15a4bf1a8c35ad022fe9efeac021bedd0fcea95e57187c62cf"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/alibaba/1.2.0/CHANGELOG.md",
+            "sha256": "67b3c7cf3db8325517e24926fe33ef391ab5be829ab52cc736bfefe94ed11679",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/1.2.0/CHANGELOG.zh-CN.md",
+                "sha256": "8809a3fbeaaf9a44a5fa70f049be31886846522f03c33413927096872407c188"
+              }
+            }
+          }
         },
         {
           "version": "1.1.1",
           "path": "plugins/tasks/alibaba/1.1.1/plugin.js",
           "sha256": "0f04976791a845a350af03f0d6cd85fa7ea501c822823bc46729b71cb5d11a4b",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/alibaba/README.md",
+            "sha256": "1faf5269da869d788e6c37ee8d3b8f8304cfde0bdac15e672aa9a7826b7421a7",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/README.zh-CN.md",
+                "sha256": "8d9d7cce8e988b15a4bf1a8c35ad022fe9efeac021bedd0fcea95e57187c62cf"
+              }
+            }
+          }
         },
         {
           "version": "1.1.0",
           "path": "plugins/tasks/alibaba/1.1.0/plugin.js",
           "sha256": "3660275c06aed454a216c5f8a32985d8d0cc138a514955f927c8b991641fb617",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/alibaba/README.md",
+            "sha256": "1faf5269da869d788e6c37ee8d3b8f8304cfde0bdac15e672aa9a7826b7421a7",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/README.zh-CN.md",
+                "sha256": "8d9d7cce8e988b15a4bf1a8c35ad022fe9efeac021bedd0fcea95e57187c62cf"
+              }
+            }
+          }
         },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/alibaba/1.0.1/plugin.js",
           "sha256": "336dc982f878047fa1c9dd8a31280964f9f44e158020a95c26dbbdc6e9501676",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/alibaba/README.md",
+            "sha256": "1faf5269da869d788e6c37ee8d3b8f8304cfde0bdac15e672aa9a7826b7421a7",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/README.zh-CN.md",
+                "sha256": "8d9d7cce8e988b15a4bf1a8c35ad022fe9efeac021bedd0fcea95e57187c62cf"
+              }
+            }
+          }
         },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/alibaba/1.0.0/plugin.js",
           "sha256": "b93da331068f04e6c4a0eaed0cec910bbb5cdeae30a522abbdf8e6874348754a",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/alibaba/README.md",
+            "sha256": "1faf5269da869d788e6c37ee8d3b8f8304cfde0bdac15e672aa9a7826b7421a7",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/alibaba/README.zh-CN.md",
+                "sha256": "8d9d7cce8e988b15a4bf1a8c35ad022fe9efeac021bedd0fcea95e57187c62cf"
+              }
+            }
+          }
         }
       ]
     },
@@ -1720,56 +1880,186 @@
           "path": "plugins/tasks/doubao/1.4.0/plugin.js",
           "sha256": "58da524648f3b43e6944c34cc14de59b7162123fe046b033037680a0fa4d182b",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/doubao/README.md",
+            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/README.zh-CN.md",
+                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/doubao/1.4.0/CHANGELOG.md",
+            "sha256": "33de550d2692988281a9db9fcf381cf1b12d2e5b383229ea52b7724be3bfe51e",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/1.4.0/CHANGELOG.zh-CN.md",
+                "sha256": "ad4aff425405ae980e6574f008279857d96f6babef3e1fd07ae80c52c33c49ca"
+              }
+            }
+          }
         },
         {
           "version": "1.3.0",
           "path": "plugins/tasks/doubao/1.3.0/plugin.js",
           "sha256": "b3ad4a16dfbf582bb2917c7a631fc46a8b36d5a8b2ad26c6dd160fd6f9ea3f1c",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/doubao/README.md",
+            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/README.zh-CN.md",
+                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/doubao/1.3.0/CHANGELOG.md",
+            "sha256": "a8b94ce84ece64d94b604d190746a4cb84bf1740f67654256035c0636e5344c0",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/1.3.0/CHANGELOG.zh-CN.md",
+                "sha256": "3943ee0763817966bd9b663e7d28f4c8b315c655b496345f9414356666b0c614"
+              }
+            }
+          }
         },
         {
           "version": "1.2.1",
           "path": "plugins/tasks/doubao/1.2.1/plugin.js",
           "sha256": "c6a4bf535f1506f10ac7e174155504435514e834c11becdc457ce5422b6dd98f",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/doubao/README.md",
+            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/README.zh-CN.md",
+                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/doubao/1.2.1/CHANGELOG.md",
+            "sha256": "4e18754857d20116bfc8ad611a3d178a6c3817707ed4fe20b511ff4b3acbaef1",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/1.2.1/CHANGELOG.zh-CN.md",
+                "sha256": "fd728754cdade2ff170fecaa3b2746b0ed67ba2e4563dd69595a4e46e94fd5b8"
+              }
+            }
+          }
         },
         {
           "version": "1.2.0",
           "path": "plugins/tasks/doubao/1.2.0/plugin.js",
           "sha256": "31635f2e9dc9f54d03b50027b0da5cff3c25254e008b29c5107da0110a25b0bb",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/doubao/README.md",
+            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/README.zh-CN.md",
+                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/doubao/1.2.0/CHANGELOG.md",
+            "sha256": "53583dbb91a3339ed5f3d63b8d51f3b1bb16211805cc3cabce211fec55a19b6e",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/1.2.0/CHANGELOG.zh-CN.md",
+                "sha256": "71c5d95f98a4e28e9b3ba0bda9174c5e3fb920eb25f3498baabcec18626314fc"
+              }
+            }
+          }
         },
         {
           "version": "1.1.0",
           "path": "plugins/tasks/doubao/1.1.0/plugin.js",
           "sha256": "d039f6aa55d42068b18a675997acce3443eb6c63bebffae40327a1b481c5b561",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/doubao/README.md",
+            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/README.zh-CN.md",
+                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/doubao/1.1.0/CHANGELOG.md",
+            "sha256": "c84c9bdd6d06867618aac986c97bda76b7cc052f683bddb7167e7241529133ff",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/1.1.0/CHANGELOG.zh-CN.md",
+                "sha256": "4611dc7fdb2f461df617b4e5601a445a71f3afde42727edae62d4e8f86e738fe"
+              }
+            }
+          }
         },
         {
           "version": "1.0.2",
           "path": "plugins/tasks/doubao/1.0.2/plugin.js",
           "sha256": "7452754c63d7c4360b8458d1715f815392d4e98d927a26f683d0e29da3d17f26",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/doubao/README.md",
+            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/README.zh-CN.md",
+                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+              }
+            }
+          }
         },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/doubao/1.0.1/plugin.js",
           "sha256": "66d042a3c4b6fbf388ff105a9e98069e5b16db55dc0d7e4dfe3ef5efbb555913",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/doubao/README.md",
+            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/README.zh-CN.md",
+                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+              }
+            }
+          }
         },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/doubao/1.0.0/plugin.js",
           "sha256": "89ec7e5b593c9a4e9b7807c6ed14aa8a011ce0afae420d4112e88bf5e4cb8ad6",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/doubao/README.md",
+            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/README.zh-CN.md",
+                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+              }
+            }
+          }
         }
       ]
     },
@@ -1895,35 +2185,105 @@
           "path": "plugins/tasks/google/1.2.0/plugin.js",
           "sha256": "deb68290adbda09cf98314260df661439e35d8bd912ec42cd475dab714d00179",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/google/README.md",
+            "sha256": "9e53b5ba9cdcb1d4eb02c2cd4a3d6ad22eccdcfed733a1c88f821cf50f54516f",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/google/README.zh-CN.md",
+                "sha256": "90d408a96c1536a2369521bd05cb70a6f16a833e13cf754e0c238191564bb856"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/google/1.2.0/CHANGELOG.md",
+            "sha256": "01990a9c04e62d99f3fdcc1938703ba0351af9567d5f2f08a82276573e87d9a8",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/google/1.2.0/CHANGELOG.zh-CN.md",
+                "sha256": "8cf1d92764688794a0c6b640139e91a134677b95d0d50798e44feb326e3b7fc2"
+              }
+            }
+          }
         },
         {
           "version": "1.1.0",
           "path": "plugins/tasks/google/1.1.0/plugin.js",
           "sha256": "edb5107d2798d55028331f5d804976e1c8c12576eafea266fa8ae1b57b20d2c5",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/google/README.md",
+            "sha256": "9e53b5ba9cdcb1d4eb02c2cd4a3d6ad22eccdcfed733a1c88f821cf50f54516f",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/google/README.zh-CN.md",
+                "sha256": "90d408a96c1536a2369521bd05cb70a6f16a833e13cf754e0c238191564bb856"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/google/1.1.0/CHANGELOG.md",
+            "sha256": "ab6fa3feb30846f5afcc25a9accfb839835f6bf2f66e6cf9fc33eef03957cbc4",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/google/1.1.0/CHANGELOG.zh-CN.md",
+                "sha256": "ef497d6e802ed68caad920bed4aa6babd1e94c86596ae013d082be0096c10443"
+              }
+            }
+          }
         },
         {
           "version": "1.0.2",
           "path": "plugins/tasks/google/1.0.2/plugin.js",
           "sha256": "11a0fa233ffbb659c64aaec57b20f4e176fc1674cd2601051e77fe797a5979c9",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/google/README.md",
+            "sha256": "9e53b5ba9cdcb1d4eb02c2cd4a3d6ad22eccdcfed733a1c88f821cf50f54516f",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/google/README.zh-CN.md",
+                "sha256": "90d408a96c1536a2369521bd05cb70a6f16a833e13cf754e0c238191564bb856"
+              }
+            }
+          }
         },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/google/1.0.1/plugin.js",
           "sha256": "ba44b271b04a7041008d4d259189ae7fa57690c41369030380ba23fc6ec12b5f",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/google/README.md",
+            "sha256": "9e53b5ba9cdcb1d4eb02c2cd4a3d6ad22eccdcfed733a1c88f821cf50f54516f",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/google/README.zh-CN.md",
+                "sha256": "90d408a96c1536a2369521bd05cb70a6f16a833e13cf754e0c238191564bb856"
+              }
+            }
+          }
         },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/google/1.0.0/plugin.js",
           "sha256": "20be7f6ea5b04799d67cc563750993f3737b33c6c9cdb69f6d012efca1dd6813",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/google/README.md",
+            "sha256": "9e53b5ba9cdcb1d4eb02c2cd4a3d6ad22eccdcfed733a1c88f821cf50f54516f",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/google/README.zh-CN.md",
+                "sha256": "90d408a96c1536a2369521bd05cb70a6f16a833e13cf754e0c238191564bb856"
+              }
+            }
+          }
         }
       ]
     },
@@ -2374,49 +2734,159 @@
           "path": "plugins/tasks/hailuo/1.4.0/plugin.js",
           "sha256": "f5fed7c4c76d8f8d1a03da22f8a87fa61a28fdba577b613c045ec48e6d48b7d9",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/hailuo/README.md",
+            "sha256": "18164561fc9877f5c81d034e3a72ddf865f0cabb0c3c6726f8d2964ae8fbf2c4",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/hailuo/README.zh-CN.md",
+                "sha256": "e442aa06232181aa854b32871239054d5946d1651d770bf96a3516e8510ae15e"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/hailuo/1.4.0/CHANGELOG.md",
+            "sha256": "7f885a39c27b24027f1b8936169fbab48562ba5d2f53cfaf44d8ccf6f0104078",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/hailuo/1.4.0/CHANGELOG.zh-CN.md",
+                "sha256": "85fee0137cccaec6681e71c809db18184e7641b94ca0cb618e753bd90810f35b"
+              }
+            }
+          }
         },
         {
           "version": "1.3.0",
           "path": "plugins/tasks/hailuo/1.3.0/plugin.js",
           "sha256": "773b9aa3449dcab67890e2ddad9530b8951f32026114d1abd4100469e0917324",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/hailuo/README.md",
+            "sha256": "18164561fc9877f5c81d034e3a72ddf865f0cabb0c3c6726f8d2964ae8fbf2c4",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/hailuo/README.zh-CN.md",
+                "sha256": "e442aa06232181aa854b32871239054d5946d1651d770bf96a3516e8510ae15e"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/hailuo/1.3.0/CHANGELOG.md",
+            "sha256": "2906f1e7c782f11c780834e1973a5e586fe11703e7762240c64a2749fb8b5429",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/hailuo/1.3.0/CHANGELOG.zh-CN.md",
+                "sha256": "e039c45e21b9f40e67049521018888cd4adb85f4216a2bb79d2092ad520b0128"
+              }
+            }
+          }
         },
         {
           "version": "1.2.1",
           "path": "plugins/tasks/hailuo/1.2.1/plugin.js",
           "sha256": "e47ca8c9ed452c92a0f21ae05cf90e151863a7a638b932937526096080fb29b4",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/hailuo/README.md",
+            "sha256": "18164561fc9877f5c81d034e3a72ddf865f0cabb0c3c6726f8d2964ae8fbf2c4",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/hailuo/README.zh-CN.md",
+                "sha256": "e442aa06232181aa854b32871239054d5946d1651d770bf96a3516e8510ae15e"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/hailuo/1.2.1/CHANGELOG.md",
+            "sha256": "df52a967b860ad289feafae463cab8ed5d9f9239d12d8cc55fa4a0b7de04e62b",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/hailuo/1.2.1/CHANGELOG.zh-CN.md",
+                "sha256": "79c671f428fc9b6eea4fd85fe0a98b2cbe53efe916bb16970d9f652765e0b097"
+              }
+            }
+          }
         },
         {
           "version": "1.2.0",
           "path": "plugins/tasks/hailuo/1.2.0/plugin.js",
           "sha256": "8ea8df89b98862081155d649b1fe06bb7dd3a03d2b8f4ef794f74aa5a4376795",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/hailuo/README.md",
+            "sha256": "18164561fc9877f5c81d034e3a72ddf865f0cabb0c3c6726f8d2964ae8fbf2c4",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/hailuo/README.zh-CN.md",
+                "sha256": "e442aa06232181aa854b32871239054d5946d1651d770bf96a3516e8510ae15e"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/hailuo/1.2.0/CHANGELOG.md",
+            "sha256": "22bb1632895888c64804f6137b6f76cd55d41a69cefb028f70a3a5c8f4e957e5",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/hailuo/1.2.0/CHANGELOG.zh-CN.md",
+                "sha256": "ead83dc1de7c895faad08c64ea2ddfaba68a4070c880d9cb713ebfd29ab1336d"
+              }
+            }
+          }
         },
         {
           "version": "1.1.3",
           "path": "plugins/tasks/hailuo/1.1.3/plugin.js",
           "sha256": "05b920b31b0a508af18562e37cacf613836778d264994514e270f0483e8e2d2b",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/hailuo/README.md",
+            "sha256": "18164561fc9877f5c81d034e3a72ddf865f0cabb0c3c6726f8d2964ae8fbf2c4",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/hailuo/README.zh-CN.md",
+                "sha256": "e442aa06232181aa854b32871239054d5946d1651d770bf96a3516e8510ae15e"
+              }
+            }
+          }
         },
         {
           "version": "1.1.2",
           "path": "plugins/tasks/hailuo/1.1.2/plugin.js",
           "sha256": "756a5c24ce77c31b73b32f1a56e010c5a2abba63a2357e8f0fc05f7015f90d9c",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/hailuo/README.md",
+            "sha256": "18164561fc9877f5c81d034e3a72ddf865f0cabb0c3c6726f8d2964ae8fbf2c4",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/hailuo/README.zh-CN.md",
+                "sha256": "e442aa06232181aa854b32871239054d5946d1651d770bf96a3516e8510ae15e"
+              }
+            }
+          }
         },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/hailuo/1.0.0/plugin.js",
           "sha256": "d31e0a7088e4f893010ca6d1216ef81646a1369e72316fd0c88fa77f1c65c63e",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/hailuo/README.md",
+            "sha256": "18164561fc9877f5c81d034e3a72ddf865f0cabb0c3c6726f8d2964ae8fbf2c4",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/hailuo/README.zh-CN.md",
+                "sha256": "e442aa06232181aa854b32871239054d5946d1651d770bf96a3516e8510ae15e"
+              }
+            }
+          }
         }
       ]
     },
@@ -2501,7 +2971,17 @@
           "sha256": "0fcda09aef4aeabc6a6a8449d4742ac887c390d49324b2d3f2083b2ca5ad1479",
           "minApiVersion": 1,
           "kind": "task",
-          "baseUrl": "https://open.yinchaoyongxian.com"
+          "baseUrl": "https://open.yinchaoyongxian.com",
+          "readme": {
+            "path": "plugins/tasks/incho/README.md",
+            "sha256": "d8777b357d5f213ab712aa6d9e0c5af7d1dcd966b7c0df207f2a57fc51e83c41",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/incho/README.zh-CN.md",
+                "sha256": "0440434ae624adce033744a4552a55949d5d126d25d7cb9dd0f0be505299a6d2"
+              }
+            }
+          }
         },
         {
           "version": "1.0.1",
@@ -2509,14 +2989,34 @@
           "sha256": "2aea4110f45f4e0d5a0fea8b7fa0764fc3008aa89b279a5df8e25ea4f5ad5939",
           "minApiVersion": 1,
           "kind": "task",
-          "baseUrl": "https://open.yinchaoyongxian.com"
+          "baseUrl": "https://open.yinchaoyongxian.com",
+          "readme": {
+            "path": "plugins/tasks/incho/README.md",
+            "sha256": "d8777b357d5f213ab712aa6d9e0c5af7d1dcd966b7c0df207f2a57fc51e83c41",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/incho/README.zh-CN.md",
+                "sha256": "0440434ae624adce033744a4552a55949d5d126d25d7cb9dd0f0be505299a6d2"
+              }
+            }
+          }
         },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/incho/1.0.0/plugin.js",
           "sha256": "d1d09bd68d8adb4e5c9f8249dea5debc0269eeea77dc53a05faa6633abd62d8a",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/incho/README.md",
+            "sha256": "d8777b357d5f213ab712aa6d9e0c5af7d1dcd966b7c0df207f2a57fc51e83c41",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/incho/README.zh-CN.md",
+                "sha256": "0440434ae624adce033744a4552a55949d5d126d25d7cb9dd0f0be505299a6d2"
+              }
+            }
+          }
         }
       ]
     },
@@ -2665,35 +3165,105 @@
           "path": "plugins/tasks/jimeng/1.2.0/plugin.js",
           "sha256": "ca30e406dcfeea7af6d3cb3e17b9ee7fb1b6d24164ab657489435902d5909682",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/jimeng/README.md",
+            "sha256": "52d873befb98b80d7e92f7c58dffa4b178aaf0a076f531ad660482703648d085",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/jimeng/README.zh-CN.md",
+                "sha256": "9770628f6a4e8afb9e1df16a9698a45d05f5a4dfb44111a2bacddada734223c0"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/jimeng/1.2.0/CHANGELOG.md",
+            "sha256": "982845f037bd7de00b94d53c0a8ce786b4f4353d519eaff40d623084730d9d87",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/jimeng/1.2.0/CHANGELOG.zh-CN.md",
+                "sha256": "e6be3bcb69b839d80fa796befa2b6acba37a11a90551d77b00e44df4ebf93537"
+              }
+            }
+          }
         },
         {
           "version": "1.1.0",
           "path": "plugins/tasks/jimeng/1.1.0/plugin.js",
           "sha256": "8ca1acc9fff4abf6188234324f7e41407f037c37b098d7ff27ab9f1e5d162f67",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/jimeng/README.md",
+            "sha256": "52d873befb98b80d7e92f7c58dffa4b178aaf0a076f531ad660482703648d085",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/jimeng/README.zh-CN.md",
+                "sha256": "9770628f6a4e8afb9e1df16a9698a45d05f5a4dfb44111a2bacddada734223c0"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/jimeng/1.1.0/CHANGELOG.md",
+            "sha256": "ce6d92954c1a9a1b1199298e2fdf270d12d2c00cc922e6f6c5285cd584cc2cd8",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/jimeng/1.1.0/CHANGELOG.zh-CN.md",
+                "sha256": "2460a75da4f3196c462a6de53763e2e67d51d654e921de16f25cbe30c388d62f"
+              }
+            }
+          }
         },
         {
           "version": "1.0.2",
           "path": "plugins/tasks/jimeng/1.0.2/plugin.js",
           "sha256": "514764004584912c24eb4023645446d5b5d143eb99d8d9060017d54e6cc31741",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/jimeng/README.md",
+            "sha256": "52d873befb98b80d7e92f7c58dffa4b178aaf0a076f531ad660482703648d085",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/jimeng/README.zh-CN.md",
+                "sha256": "9770628f6a4e8afb9e1df16a9698a45d05f5a4dfb44111a2bacddada734223c0"
+              }
+            }
+          }
         },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/jimeng/1.0.1/plugin.js",
           "sha256": "0104bcfdb4f9d125bfe0679b880278bb2f8d7cdff7cfd83c2aa4e3bee69ca9c6",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/jimeng/README.md",
+            "sha256": "52d873befb98b80d7e92f7c58dffa4b178aaf0a076f531ad660482703648d085",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/jimeng/README.zh-CN.md",
+                "sha256": "9770628f6a4e8afb9e1df16a9698a45d05f5a4dfb44111a2bacddada734223c0"
+              }
+            }
+          }
         },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/jimeng/1.0.0/plugin.js",
           "sha256": "9b8579af43c709948d89ecb7938f1240df952376919710f41973b8e73d1fa1ad",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/jimeng/README.md",
+            "sha256": "52d873befb98b80d7e92f7c58dffa4b178aaf0a076f531ad660482703648d085",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/jimeng/README.zh-CN.md",
+                "sha256": "9770628f6a4e8afb9e1df16a9698a45d05f5a4dfb44111a2bacddada734223c0"
+              }
+            }
+          }
         }
       ]
     },
@@ -2849,42 +3419,132 @@
           "path": "plugins/tasks/kling/1.2.0/plugin.js",
           "sha256": "f4b949679dba31e287d2b21d4b3b4c09980c9bb744da9ede5153f1801cf84240",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/kling/README.md",
+            "sha256": "1d3e218368a45e218d5caaebf6e717a694aa6e5d486c8345f8cd361aeba7da74",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/kling/README.zh-CN.md",
+                "sha256": "cf8cbbde81f83c13d9df4b0d16c679a160c9e95668a17fcbb72adeda4c005cbf"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/kling/1.2.0/CHANGELOG.md",
+            "sha256": "4fa4651f7f2ad4a9bd4433e3d435c7a50ff706f3a62278355e906e205f5b192e",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/kling/1.2.0/CHANGELOG.zh-CN.md",
+                "sha256": "adcd77e833bbac29848974724b1e505670f793dfea99ff14520d949b539fd2dc"
+              }
+            }
+          }
         },
         {
           "version": "1.1.1",
           "path": "plugins/tasks/kling/1.1.1/plugin.js",
           "sha256": "ea55677447688900074b524ace51060e1ddb31a8b7af6ba98f319954ed683371",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/kling/README.md",
+            "sha256": "1d3e218368a45e218d5caaebf6e717a694aa6e5d486c8345f8cd361aeba7da74",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/kling/README.zh-CN.md",
+                "sha256": "cf8cbbde81f83c13d9df4b0d16c679a160c9e95668a17fcbb72adeda4c005cbf"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/kling/1.1.1/CHANGELOG.md",
+            "sha256": "df71500618a2823e25a72082e68b0e4b48c0a94d03465c9af8f78737aada9707",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/kling/1.1.1/CHANGELOG.zh-CN.md",
+                "sha256": "0549a0cb845eb0a23e79be52ec92fb03f8c1c4fc93205a0002b4eaf245e1e84c"
+              }
+            }
+          }
         },
         {
           "version": "1.1.0",
           "path": "plugins/tasks/kling/1.1.0/plugin.js",
           "sha256": "c297187e42ef290bcc56564571a5cfeffc78121ae3f69029168d109b55ae5106",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/kling/README.md",
+            "sha256": "1d3e218368a45e218d5caaebf6e717a694aa6e5d486c8345f8cd361aeba7da74",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/kling/README.zh-CN.md",
+                "sha256": "cf8cbbde81f83c13d9df4b0d16c679a160c9e95668a17fcbb72adeda4c005cbf"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/kling/1.1.0/CHANGELOG.md",
+            "sha256": "c60c66d003292930ec9aa591a5f53f79910dc6097aac7d8d3bd06fa5ebe00a19",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/kling/1.1.0/CHANGELOG.zh-CN.md",
+                "sha256": "62eef311a10980afa5770b8f527b6136761dee4faa1a40e5a599cef5d519b089"
+              }
+            }
+          }
         },
         {
           "version": "1.0.2",
           "path": "plugins/tasks/kling/1.0.2/plugin.js",
           "sha256": "65df6b2771955f243d722224a0894002fb3999ec8fda7c15cc37999ca4aa7caa",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/kling/README.md",
+            "sha256": "1d3e218368a45e218d5caaebf6e717a694aa6e5d486c8345f8cd361aeba7da74",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/kling/README.zh-CN.md",
+                "sha256": "cf8cbbde81f83c13d9df4b0d16c679a160c9e95668a17fcbb72adeda4c005cbf"
+              }
+            }
+          }
         },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/kling/1.0.1/plugin.js",
           "sha256": "dda522f2f7f7532103b02f8125192485f6c74b7dede7e243847ffbac14a7f325",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/kling/README.md",
+            "sha256": "1d3e218368a45e218d5caaebf6e717a694aa6e5d486c8345f8cd361aeba7da74",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/kling/README.zh-CN.md",
+                "sha256": "cf8cbbde81f83c13d9df4b0d16c679a160c9e95668a17fcbb72adeda4c005cbf"
+              }
+            }
+          }
         },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/kling/1.0.0/plugin.js",
           "sha256": "c310c3a99012eca9e86bb2d701f9937b9739be7ce10559a49a6ba529f193e48d",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/kling/README.md",
+            "sha256": "1d3e218368a45e218d5caaebf6e717a694aa6e5d486c8345f8cd361aeba7da74",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/kling/README.zh-CN.md",
+                "sha256": "cf8cbbde81f83c13d9df4b0d16c679a160c9e95668a17fcbb72adeda4c005cbf"
+              }
+            }
+          }
         }
       ]
     },
@@ -2970,35 +3630,105 @@
           "path": "plugins/tasks/sora/1.1.0/plugin.js",
           "sha256": "0ffd66fdf389c7eff407dede145da9409b185c248e89e93e686c97ac3ba15c4e",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/sora/README.md",
+            "sha256": "63cb6145577ed94e3eff3cfcd011f4682b16ebc902f0fa0c8744051dd82a3531",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/sora/README.zh-CN.md",
+                "sha256": "23075195919e05e356f7f2090b411b165f5ada3c716b143d59e41713676c8bab"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/sora/1.1.0/CHANGELOG.md",
+            "sha256": "54c8d62eb5999d201c82dd046d1d3d55d5f6d4a1e4ff1142858f1efbea0b3628",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/sora/1.1.0/CHANGELOG.zh-CN.md",
+                "sha256": "aa1e3e8328ed3a5cc39240ac798f1ab43ce785e790b87b41119771ddaadc1637"
+              }
+            }
+          }
         },
         {
           "version": "1.0.3",
           "path": "plugins/tasks/sora/1.0.3/plugin.js",
           "sha256": "a7c30f024e36a2ac430feb6ac18e7a7733ec7f7bfaf0a2beed0945a6a8cb5380",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/sora/README.md",
+            "sha256": "63cb6145577ed94e3eff3cfcd011f4682b16ebc902f0fa0c8744051dd82a3531",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/sora/README.zh-CN.md",
+                "sha256": "23075195919e05e356f7f2090b411b165f5ada3c716b143d59e41713676c8bab"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/sora/1.0.3/CHANGELOG.md",
+            "sha256": "18711063c30213fe737d16777eb4ae40d2897a78b4d0fd7741f0e4d0def8db22",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/sora/1.0.3/CHANGELOG.zh-CN.md",
+                "sha256": "4dd1dabc7babc34a615774d8dc6654d72da64213f8136d4968b0468916528482"
+              }
+            }
+          }
         },
         {
           "version": "1.0.2",
           "path": "plugins/tasks/sora/1.0.2/plugin.js",
           "sha256": "539078772da4f86ba812ec7144ed2bb958885331231778793616c82d1ad5f9a6",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/sora/README.md",
+            "sha256": "63cb6145577ed94e3eff3cfcd011f4682b16ebc902f0fa0c8744051dd82a3531",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/sora/README.zh-CN.md",
+                "sha256": "23075195919e05e356f7f2090b411b165f5ada3c716b143d59e41713676c8bab"
+              }
+            }
+          }
         },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/sora/1.0.1/plugin.js",
           "sha256": "5362f9618e54079b0db531544274ef5131deabc727f662f3d14edb71d848c421",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/sora/README.md",
+            "sha256": "63cb6145577ed94e3eff3cfcd011f4682b16ebc902f0fa0c8744051dd82a3531",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/sora/README.zh-CN.md",
+                "sha256": "23075195919e05e356f7f2090b411b165f5ada3c716b143d59e41713676c8bab"
+              }
+            }
+          }
         },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/sora/1.0.0/plugin.js",
           "sha256": "201e463946b25bf250aa35430636ef68dbde256a4ee24425b77fac7cf487dfb5",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/sora/README.md",
+            "sha256": "63cb6145577ed94e3eff3cfcd011f4682b16ebc902f0fa0c8744051dd82a3531",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/sora/README.zh-CN.md",
+                "sha256": "23075195919e05e356f7f2090b411b165f5ada3c716b143d59e41713676c8bab"
+              }
+            }
+          }
         }
       ]
     },
@@ -3092,35 +3822,95 @@
           "path": "plugins/tasks/sunoapi/1.1.0/plugin.js",
           "sha256": "a4679364a8a8f119ab993ae5064b727d9e0af91e4075f6d0bb32d9297ef5285a",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/sunoapi/README.md",
+            "sha256": "760efa7346143824046cd0ebb0eb5b963b25b8f267bba19f6ecb80dde93de13e",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/sunoapi/README.zh-CN.md",
+                "sha256": "f6ba41a8204ea71b545525b42d48887710e0f49def7f75c49b94584b6d6599a6"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/sunoapi/1.1.0/CHANGELOG.md",
+            "sha256": "28297f08320e28480ca3003d3933d8c33fac1651e96bb5d0ff00805903758c60",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/sunoapi/1.1.0/CHANGELOG.zh-CN.md",
+                "sha256": "b82dcbede3fcc2b5a5ada2fed3d8d3b53372acdb5dfe4e3386dd852a72d2e678"
+              }
+            }
+          }
         },
         {
           "version": "1.0.3",
           "path": "plugins/tasks/sunoapi/1.0.3/plugin.js",
           "sha256": "050210acbc3c05a65abb5caa158021ff1c6bd305238b88c3546f3ac20e05299e",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/sunoapi/README.md",
+            "sha256": "760efa7346143824046cd0ebb0eb5b963b25b8f267bba19f6ecb80dde93de13e",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/sunoapi/README.zh-CN.md",
+                "sha256": "f6ba41a8204ea71b545525b42d48887710e0f49def7f75c49b94584b6d6599a6"
+              }
+            }
+          }
         },
         {
           "version": "1.0.2",
           "path": "plugins/tasks/sunoapi/1.0.2/plugin.js",
           "sha256": "9c4c37d2ac60911a1f421f9530bb12cf6454a679132a19d918eb8b14cdef087c",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/sunoapi/README.md",
+            "sha256": "760efa7346143824046cd0ebb0eb5b963b25b8f267bba19f6ecb80dde93de13e",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/sunoapi/README.zh-CN.md",
+                "sha256": "f6ba41a8204ea71b545525b42d48887710e0f49def7f75c49b94584b6d6599a6"
+              }
+            }
+          }
         },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/sunoapi/1.0.1/plugin.js",
           "sha256": "0cf08a1d8cf002be05f34068f9014078a6f6b68ee10ec9a787d8cd8e60820651",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/sunoapi/README.md",
+            "sha256": "760efa7346143824046cd0ebb0eb5b963b25b8f267bba19f6ecb80dde93de13e",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/sunoapi/README.zh-CN.md",
+                "sha256": "f6ba41a8204ea71b545525b42d48887710e0f49def7f75c49b94584b6d6599a6"
+              }
+            }
+          }
         },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/sunoapi/1.0.0/plugin.js",
           "sha256": "1360070a8e397a104acc7669dd7bcb8af83c289e5829cf015a74a11a170efb63",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/sunoapi/README.md",
+            "sha256": "760efa7346143824046cd0ebb0eb5b963b25b8f267bba19f6ecb80dde93de13e",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/sunoapi/README.zh-CN.md",
+                "sha256": "f6ba41a8204ea71b545525b42d48887710e0f49def7f75c49b94584b6d6599a6"
+              }
+            }
+          }
         }
       ]
     },
@@ -3193,7 +3983,27 @@
           "minApiVersion": 1,
           "kind": "task",
           "baseUrl": "https://api.typesafe.ai",
-          "auth": "api_key"
+          "auth": "api_key",
+          "readme": {
+            "path": "plugins/tasks/typesafe/README.md",
+            "sha256": "30edd32d3732ffdacb9c96e9dffcd4dd850b0515a9d94e472958d90d07815309",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/typesafe/README.zh-CN.md",
+                "sha256": "ea11d0468bec5d7a8af9e65bb841b2b7f004f21eb02e8c32d4e40d7e2e6d9664"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/typesafe/1.2.0/CHANGELOG.md",
+            "sha256": "95289a60a24f4365e2723c1289a61a8f5bef6af97b69b2360b81c1decc6bdeb4",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/typesafe/1.2.0/CHANGELOG.zh-CN.md",
+                "sha256": "e4f65310725c4bc68971eac6ce6693643e2147fef6c0ce9af4b68d28a84fb230"
+              }
+            }
+          }
         },
         {
           "version": "1.1.0",
@@ -3202,7 +4012,27 @@
           "minApiVersion": 1,
           "kind": "task",
           "baseUrl": "https://api.typesafe.ai",
-          "auth": "api_key"
+          "auth": "api_key",
+          "readme": {
+            "path": "plugins/tasks/typesafe/README.md",
+            "sha256": "30edd32d3732ffdacb9c96e9dffcd4dd850b0515a9d94e472958d90d07815309",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/typesafe/README.zh-CN.md",
+                "sha256": "ea11d0468bec5d7a8af9e65bb841b2b7f004f21eb02e8c32d4e40d7e2e6d9664"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/typesafe/1.1.0/CHANGELOG.md",
+            "sha256": "46cbd9d54ffbda51c894201190d81f8b416b2fcbcddc57ea6a9833d846977e06",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/typesafe/1.1.0/CHANGELOG.zh-CN.md",
+                "sha256": "362fc5aa89732811522db1c4b098c3deca2f073d45df464c73ce29ab64e387c1"
+              }
+            }
+          }
         },
         {
           "version": "1.0.0",
@@ -3211,7 +4041,27 @@
           "minApiVersion": 1,
           "kind": "task",
           "baseUrl": "https://api.typesafe.ai",
-          "auth": "api_key"
+          "auth": "api_key",
+          "readme": {
+            "path": "plugins/tasks/typesafe/README.md",
+            "sha256": "30edd32d3732ffdacb9c96e9dffcd4dd850b0515a9d94e472958d90d07815309",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/typesafe/README.zh-CN.md",
+                "sha256": "ea11d0468bec5d7a8af9e65bb841b2b7f004f21eb02e8c32d4e40d7e2e6d9664"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/typesafe/1.0.0/CHANGELOG.md",
+            "sha256": "545d8d4076dd38bdfb374dbcfe29b95d5c77eea74c1409b40fb6c8df65a49466",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/typesafe/1.0.0/CHANGELOG.zh-CN.md",
+                "sha256": "8f13fc32f85e9594cc6ab2168ce3161f03678a40a4118f21166b93fd8c69870b"
+              }
+            }
+          }
         }
       ]
     },
@@ -3420,7 +4270,27 @@
           "sha256": "e4e6813db6c5d77fe8f41eee5607b668deb20c6f1d70f3d710ac74260e5f80b7",
           "minApiVersion": 1,
           "kind": "task",
-          "auth": "oauth2_jwt"
+          "auth": "oauth2_jwt",
+          "readme": {
+            "path": "plugins/tasks/vertex-ai/README.md",
+            "sha256": "2eb3852b82cf77e4763929695d01c1f2087a3cb03c47390fdac69e3f177080bb",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vertex-ai/README.zh-CN.md",
+                "sha256": "10a4f2fe941410fca6a6b8826ded5fdae7474ed341dd412118079ed4f83e9e36"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/vertex-ai/1.3.0/CHANGELOG.md",
+            "sha256": "536d240b225336ff11d892070c8fd335162dfedc61c71d1e48f30fea8261fd2a",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vertex-ai/1.3.0/CHANGELOG.zh-CN.md",
+                "sha256": "5ccb8779efd929ad3f66a4efe3a2f6660ccc01a724c904172eb2181b84108efe"
+              }
+            }
+          }
         },
         {
           "version": "1.2.0",
@@ -3428,7 +4298,27 @@
           "sha256": "90a40af64d7617614b2327f480c8a67b7d22630011f659890b496395d573d910",
           "minApiVersion": 1,
           "kind": "task",
-          "auth": "oauth2_jwt"
+          "auth": "oauth2_jwt",
+          "readme": {
+            "path": "plugins/tasks/vertex-ai/README.md",
+            "sha256": "2eb3852b82cf77e4763929695d01c1f2087a3cb03c47390fdac69e3f177080bb",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vertex-ai/README.zh-CN.md",
+                "sha256": "10a4f2fe941410fca6a6b8826ded5fdae7474ed341dd412118079ed4f83e9e36"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/vertex-ai/1.2.0/CHANGELOG.md",
+            "sha256": "89a9fea98f23b75368f671d29581dc42cc518c927cd53358a03599db6408c4a7",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vertex-ai/1.2.0/CHANGELOG.zh-CN.md",
+                "sha256": "8e549c62d80b61cce234252908593e2a649ccdff93f54c73fdc958b4dd1ee967"
+              }
+            }
+          }
         },
         {
           "version": "1.1.0",
@@ -3436,7 +4326,27 @@
           "sha256": "084e70d7578ad965f730741375d99f9c8ca2df81e64086c6e0b1ff7b145e84a6",
           "minApiVersion": 1,
           "kind": "task",
-          "auth": "oauth2_jwt"
+          "auth": "oauth2_jwt",
+          "readme": {
+            "path": "plugins/tasks/vertex-ai/README.md",
+            "sha256": "2eb3852b82cf77e4763929695d01c1f2087a3cb03c47390fdac69e3f177080bb",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vertex-ai/README.zh-CN.md",
+                "sha256": "10a4f2fe941410fca6a6b8826ded5fdae7474ed341dd412118079ed4f83e9e36"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/vertex-ai/1.1.0/CHANGELOG.md",
+            "sha256": "43d6a2d23b734a23de4fed90abf206a320141541e5969bc129f14f905bf62411",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vertex-ai/1.1.0/CHANGELOG.zh-CN.md",
+                "sha256": "bc86fd2eeb40f897efed9fd45e6041757e5cb56678244e43301bb3416b64e38d"
+              }
+            }
+          }
         },
         {
           "version": "1.0.2",
@@ -3444,7 +4354,17 @@
           "sha256": "52a50bd4b437758b7365fe5ef05e86826ce4819f951f3cdf63f2be99e3842302",
           "minApiVersion": 1,
           "kind": "task",
-          "auth": "oauth2_jwt"
+          "auth": "oauth2_jwt",
+          "readme": {
+            "path": "plugins/tasks/vertex-ai/README.md",
+            "sha256": "2eb3852b82cf77e4763929695d01c1f2087a3cb03c47390fdac69e3f177080bb",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vertex-ai/README.zh-CN.md",
+                "sha256": "10a4f2fe941410fca6a6b8826ded5fdae7474ed341dd412118079ed4f83e9e36"
+              }
+            }
+          }
         },
         {
           "version": "1.0.1",
@@ -3452,7 +4372,17 @@
           "sha256": "e87ed0014ec42f04950c3dee22b15b1b541ca549d738b4c2887fb17574601689",
           "minApiVersion": 1,
           "kind": "task",
-          "auth": "oauth2_jwt"
+          "auth": "oauth2_jwt",
+          "readme": {
+            "path": "plugins/tasks/vertex-ai/README.md",
+            "sha256": "2eb3852b82cf77e4763929695d01c1f2087a3cb03c47390fdac69e3f177080bb",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vertex-ai/README.zh-CN.md",
+                "sha256": "10a4f2fe941410fca6a6b8826ded5fdae7474ed341dd412118079ed4f83e9e36"
+              }
+            }
+          }
         },
         {
           "version": "1.0.0",
@@ -3460,7 +4390,17 @@
           "sha256": "5be81dfa2de1cd15504a4afd625cad66f743857a0f892fe4ad516f2a245a371f",
           "minApiVersion": 1,
           "kind": "task",
-          "auth": "oauth2_jwt"
+          "auth": "oauth2_jwt",
+          "readme": {
+            "path": "plugins/tasks/vertex-ai/README.md",
+            "sha256": "2eb3852b82cf77e4763929695d01c1f2087a3cb03c47390fdac69e3f177080bb",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vertex-ai/README.zh-CN.md",
+                "sha256": "10a4f2fe941410fca6a6b8826ded5fdae7474ed341dd412118079ed4f83e9e36"
+              }
+            }
+          }
         }
       ]
     },
@@ -3662,35 +4602,105 @@
           "path": "plugins/tasks/vidu/1.2.0/plugin.js",
           "sha256": "102d2d8e8013870f06fd437bc5d6fb7552840344539c465254fbe90496773919",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/vidu/README.md",
+            "sha256": "2b70b479add4e2ed550ec28186a6060f401b3ccf27045c8dbc7f7210b9f340a1",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vidu/README.zh-CN.md",
+                "sha256": "e680e2b92fe7afd55310843c6fa8b6165efaab3d5fa461aa3acd6c3b9dc534fb"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/vidu/1.2.0/CHANGELOG.md",
+            "sha256": "b4caa49cb62886e29b6f9805eb1f1c269af99e9dca1cdda528f2c08f2ccc606d",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vidu/1.2.0/CHANGELOG.zh-CN.md",
+                "sha256": "0a2e5f7f28e2cca06f8afe22f5468165b1b040f8d48fccf24fc1d8f990cda791"
+              }
+            }
+          }
         },
         {
           "version": "1.1.0",
           "path": "plugins/tasks/vidu/1.1.0/plugin.js",
           "sha256": "d7252585c1de4caf3a255aff7c92ff27b54ddaaea27077cca3b72149642d2c5f",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/vidu/README.md",
+            "sha256": "2b70b479add4e2ed550ec28186a6060f401b3ccf27045c8dbc7f7210b9f340a1",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vidu/README.zh-CN.md",
+                "sha256": "e680e2b92fe7afd55310843c6fa8b6165efaab3d5fa461aa3acd6c3b9dc534fb"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/vidu/1.1.0/CHANGELOG.md",
+            "sha256": "03e4011e05c8fefa5c27e8132ab4b11e3d13c3b64ef1e03f9fe97f0cf09c3e3b",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vidu/1.1.0/CHANGELOG.zh-CN.md",
+                "sha256": "be7f8180cd898db2e0b57d419992ea863358681a04927c21f8a41f1b2f5567ea"
+              }
+            }
+          }
         },
         {
           "version": "1.0.2",
           "path": "plugins/tasks/vidu/1.0.2/plugin.js",
           "sha256": "123efbec0bea4abd662f026d416dec1b4138bb35662652a32b1f79d13a8834b2",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/vidu/README.md",
+            "sha256": "2b70b479add4e2ed550ec28186a6060f401b3ccf27045c8dbc7f7210b9f340a1",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vidu/README.zh-CN.md",
+                "sha256": "e680e2b92fe7afd55310843c6fa8b6165efaab3d5fa461aa3acd6c3b9dc534fb"
+              }
+            }
+          }
         },
         {
           "version": "1.0.1",
           "path": "plugins/tasks/vidu/1.0.1/plugin.js",
           "sha256": "d470a15e17538262b312350892597fd3ae8707548ba7d3c46a3634fd0670105b",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/vidu/README.md",
+            "sha256": "2b70b479add4e2ed550ec28186a6060f401b3ccf27045c8dbc7f7210b9f340a1",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vidu/README.zh-CN.md",
+                "sha256": "e680e2b92fe7afd55310843c6fa8b6165efaab3d5fa461aa3acd6c3b9dc534fb"
+              }
+            }
+          }
         },
         {
           "version": "1.0.0",
           "path": "plugins/tasks/vidu/1.0.0/plugin.js",
           "sha256": "9c6dec67cb4d0585bca8f0fe406f5e40e337599b95d5b8ff480e76a75807e307",
           "minApiVersion": 1,
-          "kind": "task"
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/vidu/README.md",
+            "sha256": "2b70b479add4e2ed550ec28186a6060f401b3ccf27045c8dbc7f7210b9f340a1",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vidu/README.zh-CN.md",
+                "sha256": "e680e2b92fe7afd55310843c6fa8b6165efaab3d5fa461aa3acd6c3b9dc534fb"
+              }
+            }
+          }
         }
       ]
     },
@@ -4056,7 +5066,27 @@
           "allowedHosts": [
             "vidgen.x.ai"
           ],
-          "baseUrl": "https://api.x.ai"
+          "baseUrl": "https://api.x.ai",
+          "readme": {
+            "path": "plugins/tasks/xai/README.md",
+            "sha256": "c153b4433636f48f80065bb9f1a13929dee66ed0d300d601836f7e66d85205b9",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/xai/README.zh-CN.md",
+                "sha256": "79055e07e4669c13ea4de349f0f3c3fba6a42efe8c56c1a1c3bde8e3b6767dc3"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/xai/1.2.0/CHANGELOG.md",
+            "sha256": "132da7a219e9012e19426930acfbd17342919ff99a614ea47e14adfd00f165e2",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/xai/1.2.0/CHANGELOG.zh-CN.md",
+                "sha256": "7f5f8833586590051831b7f975e7863692e5f2a1fb5e7be81ee39e5e3644d570"
+              }
+            }
+          }
         },
         {
           "version": "1.1.0",
@@ -4067,7 +5097,27 @@
           "allowedHosts": [
             "vidgen.x.ai"
           ],
-          "baseUrl": "https://api.x.ai"
+          "baseUrl": "https://api.x.ai",
+          "readme": {
+            "path": "plugins/tasks/xai/README.md",
+            "sha256": "c153b4433636f48f80065bb9f1a13929dee66ed0d300d601836f7e66d85205b9",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/xai/README.zh-CN.md",
+                "sha256": "79055e07e4669c13ea4de349f0f3c3fba6a42efe8c56c1a1c3bde8e3b6767dc3"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/xai/1.1.0/CHANGELOG.md",
+            "sha256": "845046cd309f5b3be5a8043c324679482c428e88d08200c398d8d53b015f0253",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/xai/1.1.0/CHANGELOG.zh-CN.md",
+                "sha256": "a9f4529c90793021dc51fb5a201517ebfb9e749af6ce49f7df5ee89b93fbfb65"
+              }
+            }
+          }
         },
         {
           "version": "1.0.1",
@@ -4075,7 +5125,27 @@
           "sha256": "2cddcc2063354d9b93bcece02344ff00a1db865575a91d216c792712393dbb05",
           "minApiVersion": 1,
           "kind": "task",
-          "baseUrl": "https://api.x.ai"
+          "baseUrl": "https://api.x.ai",
+          "readme": {
+            "path": "plugins/tasks/xai/README.md",
+            "sha256": "c153b4433636f48f80065bb9f1a13929dee66ed0d300d601836f7e66d85205b9",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/xai/README.zh-CN.md",
+                "sha256": "79055e07e4669c13ea4de349f0f3c3fba6a42efe8c56c1a1c3bde8e3b6767dc3"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/xai/1.0.1/CHANGELOG.md",
+            "sha256": "b7438c809e8282db48c7ff326056cc4edb43a7ec45c18369f4eeca0651bf254d",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/xai/1.0.1/CHANGELOG.zh-CN.md",
+                "sha256": "5aa413ddc5a2a208777f2e1ac644b14c4106c68dbd7a15988e8520b443c18228"
+              }
+            }
+          }
         },
         {
           "version": "1.0.0",
@@ -4083,7 +5153,27 @@
           "sha256": "bfbf1a2f143ddb1cb8dfb345229ad6f7ca660a9ec43add9a0cd4d6c7826c52e5",
           "minApiVersion": 1,
           "kind": "task",
-          "baseUrl": "https://api.x.ai"
+          "baseUrl": "https://api.x.ai",
+          "readme": {
+            "path": "plugins/tasks/xai/README.md",
+            "sha256": "c153b4433636f48f80065bb9f1a13929dee66ed0d300d601836f7e66d85205b9",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/xai/README.zh-CN.md",
+                "sha256": "79055e07e4669c13ea4de349f0f3c3fba6a42efe8c56c1a1c3bde8e3b6767dc3"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/xai/1.0.0/CHANGELOG.md",
+            "sha256": "528849706a3dae36db129feca78f6eb36a7342ad579bcbb1831aa81fe01e20a5",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/xai/1.0.0/CHANGELOG.zh-CN.md",
+                "sha256": "1b01a010e281e07e6e1856f7b5c4f64a0da7c6ac3bd896091f62095769352980"
+              }
+            }
+          }
         }
       ]
     }

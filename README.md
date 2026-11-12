@@ -5,9 +5,10 @@ Official task-plugin marketplace for [new-api](https://github.com/QuantumNous/ne
 ## Layout
 
 ```
+plugins/<kind>/<key>/README.md               # usage guide for every version, plus README.zh-CN.md
 plugins/<kind>/<key>/<version>/plugin.js     # immutable once published
 plugins/<kind>/<key>/<version>/CHANGELOG.md  # required for every new version
-index.json                                 # generated — never edit by hand
+index.json                                   # generated — never edit by hand
 ```
 
 - `<kind>` — plugin kind directory. Currently only `tasks` (async task plugins: video/music generation). The directory is organization; the compiled plugin meta is the declaration.
@@ -36,14 +37,15 @@ CI runs `pluginindex check` on every PR and fails if `index.json` is stale, any 
 ## Documentation
 
 - [Task plugin API v1](docs/plugin-api/README.md) — synchronized from `new-api/docs/plugin-api/`, including the [API reference](docs/plugin-api/v1.md), [TypeScript declarations](docs/plugin-api/v1.d.ts), and [JSON Schema](docs/plugin-api/v1.schema.json).
-- [Marketplace index format](docs/marketplace.md) — repository layout, version catalog, and installation integrity checks.
+- [Marketplace index format](docs/marketplace.md) — repository layout, version catalog, usage guides and release notes, and installation integrity checks.
 
 ## Contributing a plugin
 
 1. Add `plugins/tasks/<key>/<version>/plugin.js` (single file, synchronous, no imports — see the [plugin API contract](https://github.com/QuantumNous/new-api/blob/main/docs/plugin-api/v1.md)).
-2. Write an English `CHANGELOG.md` beside that version's `plugin.js`, including for an initial release. Follow the [release notes format](docs/marketplace.md#release-notes): YAML metadata, a matching version heading, and fixed English change categories. Optional translations use separate locale files linked from the English changelog. Use plain, natural language to explain what users can do after upgrading and what behavior changes. Use `Migration` only for actions users need to take, with required pricing changes first. Omit test reports, generic release instructions, unchanged behavior, and statements about actions users do not need to perform. When syncing a plugin, sync its changelog too, or write one from verified changes. This applies to new and unpublished versions; do not backfill immutable published directories.
-3. Regenerate `index.json` (command above), run `go run . check ../..` from `tools/pluginindex`, and commit the plugin, its changelog, and the index together.
-4. Open a PR. Review = code review of the plugin source. Note that installed plugins run with administrator-level trust on the gateway (they can see channel credentials and construct upstream requests), so reviews are strict about `allowedHosts`, credential handling, and request construction.
+2. Write an English `CHANGELOG.md` beside that version's `plugin.js`, including for an initial release. Follow the [changelog format](https://github.com/QuantumNous/new-api/blob/main/docs/plugin-api/v1.md#changelog). Optional translations use separate locale files listed in the English changelog. Use plain, natural language to explain what users can do after upgrading and what behavior changes. Use `Migration` only for actions users need to take, with required pricing changes first. Omit test reports, generic release instructions, unchanged behavior, and statements about actions users do not need to perform. When syncing a plugin, sync its changelog too, or write one from verified changes. This applies to new and unpublished versions; do not backfill immutable published directories.
+3. Write or update the plugin's usage guide, `plugins/tasks/<key>/README.md` and `README.zh-CN.md`, following the [usage guide format](https://github.com/QuantumNous/new-api/blob/main/docs/plugin-api/v1.md#usage-guide-readme). A new plugin needs both. A version that changes channel setup, models, endpoints or billing updates them.
+4. Regenerate `index.json` (command above), run `go run . check ../..` from `tools/pluginindex`, and commit the plugin, its changelog, README changes and the index together.
+5. Open a PR. Review = code review of the plugin source. Note that installed plugins run with administrator-level trust on the gateway (they can see channel credentials and construct upstream requests), so reviews are strict about `allowedHosts`, credential handling, and request construction.
 
 ## Installing
 

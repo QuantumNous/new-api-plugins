@@ -28,7 +28,21 @@ A marketplace source is any HTTP(S)-reachable repository that serves a root `ind
           "kind": "task",
           "allowedHosts": ["example.com"],
           "baseUrl": "https://api.example.com",
-          "auth": "api_key"
+          "auth": "api_key",
+          "readme": {
+            "path": "plugins/tasks/doubao/README.md",
+            "sha256": "<hex sha256 of the README bytes>",
+            "translations": {
+              "zh-CN": {"path": "plugins/tasks/doubao/README.zh-CN.md", "sha256": "<hex sha256>"}
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/doubao/1.2.0/CHANGELOG.md",
+            "sha256": "<hex sha256 of the CHANGELOG bytes>",
+            "translations": {
+              "zh-CN": {"path": "plugins/tasks/doubao/1.2.0/CHANGELOG.zh-CN.md", "sha256": "<hex sha256>"}
+            }
+          }
         }
       ]
     }
@@ -43,6 +57,7 @@ A marketplace source is any HTTP(S)-reachable repository that serves a root `ind
 - `task`, `provider` and `transform` say which parts the latest version has, detected the way the gateway detects them from the compiled manifest and exports: `task` when the plugin exports `buildSubmitRequest`, `provider` when `meta.relay` is not empty, and `transform` (request processing) when it exports `ingress`, `request`, `outbound`, `egress` or `report`. A plugin may have several parts; marketplace UIs list it under each one, and list an entry that names none as a task plugin. Parts are independent of `kind`: a provider or request processing plugin still publishes its versions as `"task"`.
 - `iconFile` points at the plugin's sidecar logo, `plugins/<kind>/<key>/icon.svg` or `icon.png`, stored once per key beside the version directories. The gateway loads it from the index origin at install time and stores it apart from the plugin source; the source itself never carries image data. `meta.icon` stays a LobeHub name or `text` fallback.
 - `allowedHosts`, `baseUrl` and `auth` are display hints for the install confirmation page, derived from compiled meta like every other index field. `baseUrl` is the default upstream address a gateway copies onto a Task Plugin channel when the administrator leaves Base URL empty; showing it before install lets the administrator see where the channel key will be sent.
+- `readme` and `changelog` point at the version's usage guide and release notes. Each has a `path`, resolved like the version `path`, the file's `sha256`, and an optional `translations` map from a language tag to the translated file's `path` and `sha256`. A version without the file has no field. Other marketplaces may add `sourceUrl`, a page where readers can see the file. This repository leaves it out. Gateways that find no `changelog` look for `CHANGELOG.md` beside `plugin.js`.
 - `routes`, `protocols`, `usageSchema`, `usageExamples`, and `usageProfiles` carry the latest version's compiled display metadata. Usage fields retain localized `description`, `unitLabel`, and `enumLabels`; profiles retain their model lists, complete schemas, and examples. Consumers should use these fields when present and may fall back to source parsing for older indexes. Empty or null compiled usage collections mean no entries. This preserves metadata defined through JavaScript constants or expressions without requiring consumers to execute plugin source.
 
 ## Trust model
@@ -57,88 +72,30 @@ The index is a **derived cache, never a trust anchor**:
 
 ```
 plugins/<kind>/<key>/<version>/plugin.js
-plugins/<kind>/<key>/icon.svg        # optional sidecar logo (or icon.png)
+plugins/<kind>/<key>/<version>/CHANGELOG.md        # release notes for this version
+plugins/<kind>/<key>/<version>/CHANGELOG.zh-CN.md  # optional translation
+plugins/<kind>/<key>/README.md                     # usage guide for every version
+plugins/<kind>/<key>/README.zh-CN.md               # optional translation
+plugins/<kind>/<key>/icon.svg                      # optional sidecar logo (or icon.png)
 index.json
 ```
 
 Directory names are organization; the compiled meta is the declaration. `tools/pluginindex` enforces that directory `<key>`/`<version>` agree with `meta.key`/`meta.version`, and that the kind directory matches the plugin kind (task plugins never declare `meta.kind`; the default is exactly the `tasks/` directory). Published version directories are immutable — ship changes as a new version.
 
-## Release notes
+## Usage guide and release notes
 
-Every new or unpublished plugin version has an English `CHANGELOG.md` next to
-`plugin.js`. The path is derived from the version's `path` in `index.json` by
-replacing the final `plugin.js` filename with `CHANGELOG.md`. Historical published
-versions may have no changelog; consumers must tolerate a missing file for them.
+The plugin API spec defines both file formats:
 
-Use UTF-8 Markdown with YAML front matter:
+- [Usage guide (README)](https://github.com/QuantumNous/new-api/blob/main/docs/plugin-api/v1.md#usage-guide-readme)
+- [Changelog](https://github.com/QuantumNous/new-api/blob/main/docs/plugin-api/v1.md#changelog)
 
-```markdown
----
-changelogVersion: 1
-plugin: "example"
-version: "1.2.0"
-locale: "en"
----
-# Changelog
+This repository adds three rules:
 
-## [1.2.0]
+- Each plugin has one usage guide, `plugins/<kind>/<key>/README.md`, beside the version directories. `tools/pluginindex` attaches it to every version. A `README.md` inside a version directory replaces it for that version.
+- Each new version has its own `CHANGELOG.md` beside `plugin.js`. Older versions published without one stay as they are.
+- Published version directories are immutable. Update the plugin-level README in place, and ship release notes only with a new version.
 
-### Fixed
-
-- Preserve an explicitly supplied zero seed in upstream requests.
-```
-
-The front matter starts at the first line with `---` and ends at the next
-standalone `---`. Parse it as YAML data, without custom tags or executable
-constructors. `changelogVersion: 1` identifies this format. Reject unsupported
-format versions rather than guessing their structure.
-
-| Field | Type | Requirement |
-| --- | --- | --- |
-| `changelogVersion` | integer | Required; `1`. |
-| `plugin` | string | Required; matches the plugin directory and `meta.key`. |
-| `version` | string | Required; matches the version directory and `meta.version`. |
-| `locale` | string | Required BCP 47 language tag; `en` for the canonical file. |
-| `translations` | object | Optional, canonical English file only; maps language tags to sibling filenames, such as `zh-CN: CHANGELOG.zh-CN.md`. |
-
-The body has exactly one `# Changelog` heading and one release heading:
-`## [<version>]`, matching the metadata. Categories use these exact level-three headings, in this order
-when present: `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`, `Migration`. Omit empty categories. Each category contains an
-unordered list of concrete entries. Inline Markdown and wrapped entry text are
-allowed; do not use tables, nested lists, or additional headings for entries.
-At least one of `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, or `Security`
-must contain a change. Entries describe actual changes and their compatibility,
-default-parameter, or billing impacts only. Do not include validation or test
-reports, verification limits, generic upgrade instructions, or lists of unrelated unchanged
-behavior. Put those details in commit or PR descriptions.
-
-Write for plugin users and administrators, using natural sentences and one main
-change per bullet. Start with the feature or behavior users will notice. Include
-model names, paths, and fields when they help someone use a feature or upgrade;
-avoid internal terminology, parameter inventories, and literal translations.
-Review every language for readability as well as equivalent meaning.
-
-Include `Migration` only when users need to take action. Put required pricing
-changes first: explain the price impact, name the affected models/settings, and
-give the concrete price or expression changes. Follow with other required
-compatibility steps. Explain automatic migration only when it affects a decision
-or remaining action. Omit statements such as "no price reconfiguration is
-required", "existing settings are unchanged", or "no action is needed".
-Do not add validation reports or generic release procedures.
-
-Consumers can read the metadata first, then use a Markdown parser to extract the
-release heading and category list items. Structural keys and headings are always
-English. Optional translated prose belongs in `CHANGELOG.<locale>.md` in the
-same directory and must be discoverable through the canonical file's
-`translations` map. Translations use the same plugin/version and
-categories, with their own `locale`. Translation filenames must be basenames
-matching `CHANGELOG.<locale>.md`, not URLs or paths outside the version directory.
-English remains the fallback when a translation is absent or unavailable.
-
-New plugin versions, their changelogs, and the generated index are committed
-together. Do not rewrite an immutable published release solely to add or translate
-release notes. The current `pluginindex check` validates the plugin catalog;
-changelog metadata and structure require a separate validation step.
+`tools/pluginindex` fails when a translation listed in the front matter is missing or is not named `README.<tag>.md` or `CHANGELOG.<tag>.md` with a canonical tag other than `en`. It does not check the Markdown body.
 
 ## Tooling
 
