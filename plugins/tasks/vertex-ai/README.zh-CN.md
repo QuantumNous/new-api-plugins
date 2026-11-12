@@ -9,7 +9,8 @@ locale: zh-CN
 
 - 渠道类型选 Vertex AI (41)，Vertex AI 密钥格式选 JSON。
 - 密钥填服务账号的 JSON 密钥，在 Google Cloud 控制台为已启用 Vertex AI 的项目创建。请求在密钥里的 `project_id` 项目下运行。
-- API 地址留空时使用 `https://aiplatform.googleapis.com`。只有通过其他地址访问 Vertex AI 时才需要填写，填写时去掉末尾的 `/v1`。
+- 部署地区决定请求在哪个地区运行，例如 `us-central1`。也可以填 JSON，把模型名对应到地区，其余模型用 `default`，按客户端请求的模型名查找。这需要插件 1.3.1 及以上版本，并且 new-api 是 v1.0.0-rc.49 之后发布的版本；更早的版本所有请求都在 `global` 运行。
+- API 地址留空时使用该地区的 Vertex AI 地址，`global` 对应 `https://aiplatform.googleapis.com`。只有通过其他地址访问 Vertex AI 时才需要填写，填写时去掉末尾的 `/v1`。
 - 如果上游是另一台 New API 网关，渠道类型选 New API (60)，填写该网关的地址和它的令牌。上游网关也需要安装本插件。
 
 ## 模型与接口
@@ -63,7 +64,6 @@ curl -o video.mp4 https://your-gateway.example.com/v1/videos/{task_id}/content \
 ## 限制
 
 - 密钥格式为 API Key 的渠道无法使用本插件，请求会失败。
-- 请求都在 `global` 区域运行，渠道的部署区域对本插件无效。
 - Veo 支持 4、6、8 秒，分辨率 `720p`、`1080p` 和 `4k`，可以带一张输入图片。每次请求生成一个视频。
 - Gemini Omni 支持 3 到 15 秒的整数时长，分辨率 `360p`、`720p`、`1080p` 和 `4k`。在 `/v1/responses` 上可以带多张图片：两张时作为首帧和尾帧，更多时作为主体参考图。
 - 输入图片须为 JPEG 或 PNG，用 base64 或 data URL 传入。上传的文件最大 20 MiB。

@@ -4262,8 +4262,36 @@
       "task": true,
       "provider": false,
       "transform": false,
-      "latest": "1.3.0",
+      "latest": "1.3.1",
       "versions": [
+        {
+          "version": "1.3.1",
+          "path": "plugins/tasks/vertex-ai/1.3.1/plugin.js",
+          "sha256": "6efae5949e8f5ab8225c9a900c24d8daae34688c45505290a1d3dae3d7bb9257",
+          "minApiVersion": 1,
+          "kind": "task",
+          "auth": "oauth2_jwt",
+          "readme": {
+            "path": "plugins/tasks/vertex-ai/README.md",
+            "sha256": "a6ac183a44e83b62c458eb575d7076cb8a57eee12872443fe683b2fdc10e08c2",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vertex-ai/README.zh-CN.md",
+                "sha256": "fefcd9a5248a40dfc5a54cf198e4471d0afa2e41240361dfd911abf8e7ba57d3"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/vertex-ai/1.3.1/CHANGELOG.md",
+            "sha256": "9da864402acfbc89049abe1018be0feeb856d0e84ed5f5bc67ee6c16bbfd99b0",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/vertex-ai/1.3.1/CHANGELOG.zh-CN.md",
+                "sha256": "2cf916c41bcba57e46c6e6e04bee47bc5a914f4f35ea0349ab66edfd90678db8"
+              }
+            }
+          }
+        },
         {
           "version": "1.3.0",
           "path": "plugins/tasks/vertex-ai/1.3.0/plugin.js",
@@ -4273,11 +4301,11 @@
           "auth": "oauth2_jwt",
           "readme": {
             "path": "plugins/tasks/vertex-ai/README.md",
-            "sha256": "2eb3852b82cf77e4763929695d01c1f2087a3cb03c47390fdac69e3f177080bb",
+            "sha256": "a6ac183a44e83b62c458eb575d7076cb8a57eee12872443fe683b2fdc10e08c2",
             "translations": {
               "zh-CN": {
                 "path": "plugins/tasks/vertex-ai/README.zh-CN.md",
-                "sha256": "10a4f2fe941410fca6a6b8826ded5fdae7474ed341dd412118079ed4f83e9e36"
+                "sha256": "fefcd9a5248a40dfc5a54cf198e4471d0afa2e41240361dfd911abf8e7ba57d3"
               }
             }
           },
@@ -4301,11 +4329,11 @@
           "auth": "oauth2_jwt",
           "readme": {
             "path": "plugins/tasks/vertex-ai/README.md",
-            "sha256": "2eb3852b82cf77e4763929695d01c1f2087a3cb03c47390fdac69e3f177080bb",
+            "sha256": "a6ac183a44e83b62c458eb575d7076cb8a57eee12872443fe683b2fdc10e08c2",
             "translations": {
               "zh-CN": {
                 "path": "plugins/tasks/vertex-ai/README.zh-CN.md",
-                "sha256": "10a4f2fe941410fca6a6b8826ded5fdae7474ed341dd412118079ed4f83e9e36"
+                "sha256": "fefcd9a5248a40dfc5a54cf198e4471d0afa2e41240361dfd911abf8e7ba57d3"
               }
             }
           },
@@ -4329,11 +4357,11 @@
           "auth": "oauth2_jwt",
           "readme": {
             "path": "plugins/tasks/vertex-ai/README.md",
-            "sha256": "2eb3852b82cf77e4763929695d01c1f2087a3cb03c47390fdac69e3f177080bb",
+            "sha256": "a6ac183a44e83b62c458eb575d7076cb8a57eee12872443fe683b2fdc10e08c2",
             "translations": {
               "zh-CN": {
                 "path": "plugins/tasks/vertex-ai/README.zh-CN.md",
-                "sha256": "10a4f2fe941410fca6a6b8826ded5fdae7474ed341dd412118079ed4f83e9e36"
+                "sha256": "fefcd9a5248a40dfc5a54cf198e4471d0afa2e41240361dfd911abf8e7ba57d3"
               }
             }
           },
@@ -4357,11 +4385,11 @@
           "auth": "oauth2_jwt",
           "readme": {
             "path": "plugins/tasks/vertex-ai/README.md",
-            "sha256": "2eb3852b82cf77e4763929695d01c1f2087a3cb03c47390fdac69e3f177080bb",
+            "sha256": "a6ac183a44e83b62c458eb575d7076cb8a57eee12872443fe683b2fdc10e08c2",
             "translations": {
               "zh-CN": {
                 "path": "plugins/tasks/vertex-ai/README.zh-CN.md",
-                "sha256": "10a4f2fe941410fca6a6b8826ded5fdae7474ed341dd412118079ed4f83e9e36"
+                "sha256": "fefcd9a5248a40dfc5a54cf198e4471d0afa2e41240361dfd911abf8e7ba57d3"
               }
             }
           }
@@ -4375,11 +4403,11 @@
           "auth": "oauth2_jwt",
           "readme": {
             "path": "plugins/tasks/vertex-ai/README.md",
-            "sha256": "2eb3852b82cf77e4763929695d01c1f2087a3cb03c47390fdac69e3f177080bb",
+            "sha256": "a6ac183a44e83b62c458eb575d7076cb8a57eee12872443fe683b2fdc10e08c2",
             "translations": {
               "zh-CN": {
                 "path": "plugins/tasks/vertex-ai/README.zh-CN.md",
-                "sha256": "10a4f2fe941410fca6a6b8826ded5fdae7474ed341dd412118079ed4f83e9e36"
+                "sha256": "fefcd9a5248a40dfc5a54cf198e4471d0afa2e41240361dfd911abf8e7ba57d3"
               }
             }
           }
@@ -4393,11 +4421,11 @@
           "auth": "oauth2_jwt",
           "readme": {
             "path": "plugins/tasks/vertex-ai/README.md",
-            "sha256": "2eb3852b82cf77e4763929695d01c1f2087a3cb03c47390fdac69e3f177080bb",
+            "sha256": "a6ac183a44e83b62c458eb575d7076cb8a57eee12872443fe683b2fdc10e08c2",
             "translations": {
               "zh-CN": {
                 "path": "plugins/tasks/vertex-ai/README.zh-CN.md",
-                "sha256": "10a4f2fe941410fca6a6b8826ded5fdae7474ed341dd412118079ed4f83e9e36"
+                "sha256": "fefcd9a5248a40dfc5a54cf198e4471d0afa2e41240361dfd911abf8e7ba57d3"
               }
             }
           }

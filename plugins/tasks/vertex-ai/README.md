@@ -10,7 +10,8 @@ Generates videos from text or images with Google Veo and Gemini Omni Flash on Go
 
 - Choose the Vertex AI (41) channel type and set the Vertex AI key format to JSON.
 - The key is a service account key in JSON form, created in the Google Cloud console for a project with Vertex AI enabled. Requests run in the key's `project_id`.
-- Leave the API address empty to use `https://aiplatform.googleapis.com`. Enter another address only when you reach Vertex AI through a different host, and leave `/v1` off the end.
+- The deployment region sets where requests run, for example `us-central1`. It can also be JSON that maps model names to regions, with `default` for the rest; the lookup uses the model name the client sent. This needs plugin 1.3.1 or later on a new-api release after v1.0.0-rc.49. Earlier versions run every request in `global`.
+- Leave the API address empty to use the Vertex AI address of the region, `https://aiplatform.googleapis.com` for `global`. Enter another address only when you reach Vertex AI through a different host, and leave `/v1` off the end.
 - To use another New API gateway as the upstream, choose New API (60) and enter that gateway's address and one of its tokens. That gateway needs this plugin too.
 
 ## Models and endpoints
@@ -64,7 +65,6 @@ curl -o video.mp4 https://your-gateway.example.com/v1/videos/{task_id}/content \
 ## Limits
 
 - Requests fail on a channel whose key format is API Key.
-- Requests run in the `global` location. The channel's deployment region does not change it.
 - Veo takes 4, 6 or 8 seconds, the resolutions `720p`, `1080p` and `4k`, and one input image. Each request generates one video.
 - Gemini Omni takes whole seconds from 3 to 15 and the resolutions `360p`, `720p`, `1080p` and `4k`. On `/v1/responses` it takes several images: two set the first and last frames, and more act as subject references.
 - Input images are JPEG or PNG, sent as base64 or data URLs. An uploaded file is at most 20 MiB.
