@@ -10,7 +10,7 @@ require (
 require (
 	github.com/Azure/go-ntlmssp v0.1.1 // indirect
 	github.com/Calcium-Ion/go-epay v0.0.6 // indirect
-	github.com/MoeForge/moego v0.1.0-alpha.2 // indirect
+	github.com/MoeForge/moego v0.1.0-alpha.3 // indirect
 	github.com/MoeForge/moejs v0.1.0 // indirect
 	github.com/QuantumNous/new-api/relaykit v0.0.0 // indirect
 	github.com/abema/go-mp4 v1.4.1 // indirect
