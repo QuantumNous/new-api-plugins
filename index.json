@@ -1007,6 +1007,104 @@
       ]
     },
     {
+      "key": "auto-reasoning",
+      "name": "Automatic reasoning effort",
+      "iconFile": {
+        "path": "plugins/tasks/auto-reasoning/icon.svg",
+        "sha256": "32dafc5f3574fa2b2e2c36387f2894f7d10b583f6adf6c27b46207491d761022"
+      },
+      "description": {
+        "en": "Sets the reasoning effort from the size of each request; under Where it runs, choose models that support reasoning, as other models may refuse the request",
+        "zh": "根据每个请求的规模设置推理强度；请在“用在哪里”指定支持推理的模型，其他模型可能拒绝请求"
+      },
+      "routes": [],
+      "usageSchema": null,
+      "usageExamples": null,
+      "usageProfiles": null,
+      "task": false,
+      "provider": false,
+      "transform": true,
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/auto-reasoning/1.0.0/plugin.js",
+          "sha256": "9cdcd8c5a89670172d155c53c4135b48d5848c4b83683ba017f7434de2d44b1a",
+          "minApiVersion": 1,
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/auto-reasoning/README.md",
+            "sha256": "fca822ebfeb9a34394e856cc25d57df83ed7031c3d717ecff8335fdcffdeebf9",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/auto-reasoning/README.zh-CN.md",
+                "sha256": "2a997fbfb0f6746a43bdf26138d996640059797c6254fccc8f6b669a329c63d4"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/auto-reasoning/1.0.0/CHANGELOG.md",
+            "sha256": "0f6a808996a2f79753adec98a60c5f13d50fe6f454fa6cb0a78281f69ac0ec4c",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/auto-reasoning/1.0.0/CHANGELOG.zh-CN.md",
+                "sha256": "bcf5d8aa2390efb1f9794937b496dfec24b78dde4e2d0aecc635f25939f79a7f"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "content-moderation",
+      "name": "Content moderation",
+      "iconFile": {
+        "path": "plugins/tasks/content-moderation/icon.svg",
+        "sha256": "0b9b979ca60a42521ebf78233b07b92a4a509c21e0e3379259a0e9c1b344f193"
+      },
+      "description": {
+        "en": "Checks user text with an OpenAI-compatible moderation API and rejects flagged requests",
+        "zh": "使用 OpenAI 兼容的审核接口检查用户文本，拒绝被标记的请求"
+      },
+      "routes": [],
+      "usageSchema": null,
+      "usageExamples": null,
+      "usageProfiles": null,
+      "task": false,
+      "provider": false,
+      "transform": true,
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/content-moderation/1.0.0/plugin.js",
+          "sha256": "898ccc77ca26668d9a8eb970894ab9ddbb32ec17aa5721becab67f39f890df0e",
+          "minApiVersion": 1,
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/content-moderation/README.md",
+            "sha256": "c9a739f8b5e2382c1d05b28b45ccc6d987a5a5e808e6c0055484a778c792a2d2",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/content-moderation/README.zh-CN.md",
+                "sha256": "12f00167e1c7d6275317cfd5473a986d1bafb7015b0e0815139f6a1ebc797dbd"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/content-moderation/1.0.0/CHANGELOG.md",
+            "sha256": "8f0ed9a14aa774d8ee7e9a122b0344a16b1aa30db34d42db93961e783f0fc24d",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/content-moderation/1.0.0/CHANGELOG.zh-CN.md",
+                "sha256": "02d2507e6b9fb19c02e4256525ef105b0d515da0aa14055b2b53f895f50752c2"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
       "key": "doubao",
       "name": "Doubao",
       "icon": "Doubao.Color",
@@ -1063,6 +1161,7 @@
         {
           "name": "openai_image",
           "models": [
+            "doubao-seedream-5-5-261028",
             "doubao-seedream-5-0-pro-260628",
             "doubao-seedream-5-0-flash-260915",
             "doubao-seedream-5-0-lite-260128",
@@ -1606,6 +1705,7 @@
         },
         {
           "models": [
+            "doubao-seedream-5-5-261028",
             "doubao-seedream-5-0-pro-260628",
             "doubao-seedream-5-0-flash-260915"
           ],
@@ -1863,6 +1963,7 @@
         "doubao-seedance-2-0-fast-260128",
         "doubao-seedance-2-0-mini-260615",
         "doubao-seedance-2-5-260628",
+        "doubao-seedream-5-5-261028",
         "doubao-seedream-5-0-pro-260628",
         "doubao-seedream-5-0-flash-260915",
         "doubao-seedream-5-0-lite-260128",
@@ -1873,8 +1974,35 @@
       "task": true,
       "provider": false,
       "transform": false,
-      "latest": "1.4.0",
+      "latest": "1.5.0",
       "versions": [
+        {
+          "version": "1.5.0",
+          "path": "plugins/tasks/doubao/1.5.0/plugin.js",
+          "sha256": "8b3c9de6b03dc4ca4aff2e2848f60563aa9f07d020449211903de056c85dbfa6",
+          "minApiVersion": 1,
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/doubao/README.md",
+            "sha256": "e74e72f4ef2a3ceac21b32148147dd410825ddee818abcd5996100f85c83acae",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/README.zh-CN.md",
+                "sha256": "f491bb6fbfa457f52bae40561592e41d98d70a54041e7b33e3cf905ea739b0c1"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/doubao/1.5.0/CHANGELOG.md",
+            "sha256": "c783a8119e451ee3aaec4d88fd466bb709f1375ceb29a08547efbd7e4c61923e",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/doubao/1.5.0/CHANGELOG.zh-CN.md",
+                "sha256": "f17d5f030065b2402a7bd1d45ca373099b69d74a4d63496099476762ee06809e"
+              }
+            }
+          }
+        },
         {
           "version": "1.4.0",
           "path": "plugins/tasks/doubao/1.4.0/plugin.js",
@@ -1883,11 +2011,11 @@
           "kind": "task",
           "readme": {
             "path": "plugins/tasks/doubao/README.md",
-            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "sha256": "e74e72f4ef2a3ceac21b32148147dd410825ddee818abcd5996100f85c83acae",
             "translations": {
               "zh-CN": {
                 "path": "plugins/tasks/doubao/README.zh-CN.md",
-                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+                "sha256": "f491bb6fbfa457f52bae40561592e41d98d70a54041e7b33e3cf905ea739b0c1"
               }
             }
           },
@@ -1910,11 +2038,11 @@
           "kind": "task",
           "readme": {
             "path": "plugins/tasks/doubao/README.md",
-            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "sha256": "e74e72f4ef2a3ceac21b32148147dd410825ddee818abcd5996100f85c83acae",
             "translations": {
               "zh-CN": {
                 "path": "plugins/tasks/doubao/README.zh-CN.md",
-                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+                "sha256": "f491bb6fbfa457f52bae40561592e41d98d70a54041e7b33e3cf905ea739b0c1"
               }
             }
           },
@@ -1937,11 +2065,11 @@
           "kind": "task",
           "readme": {
             "path": "plugins/tasks/doubao/README.md",
-            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "sha256": "e74e72f4ef2a3ceac21b32148147dd410825ddee818abcd5996100f85c83acae",
             "translations": {
               "zh-CN": {
                 "path": "plugins/tasks/doubao/README.zh-CN.md",
-                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+                "sha256": "f491bb6fbfa457f52bae40561592e41d98d70a54041e7b33e3cf905ea739b0c1"
               }
             }
           },
@@ -1964,11 +2092,11 @@
           "kind": "task",
           "readme": {
             "path": "plugins/tasks/doubao/README.md",
-            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "sha256": "e74e72f4ef2a3ceac21b32148147dd410825ddee818abcd5996100f85c83acae",
             "translations": {
               "zh-CN": {
                 "path": "plugins/tasks/doubao/README.zh-CN.md",
-                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+                "sha256": "f491bb6fbfa457f52bae40561592e41d98d70a54041e7b33e3cf905ea739b0c1"
               }
             }
           },
@@ -1991,11 +2119,11 @@
           "kind": "task",
           "readme": {
             "path": "plugins/tasks/doubao/README.md",
-            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "sha256": "e74e72f4ef2a3ceac21b32148147dd410825ddee818abcd5996100f85c83acae",
             "translations": {
               "zh-CN": {
                 "path": "plugins/tasks/doubao/README.zh-CN.md",
-                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+                "sha256": "f491bb6fbfa457f52bae40561592e41d98d70a54041e7b33e3cf905ea739b0c1"
               }
             }
           },
@@ -2018,11 +2146,11 @@
           "kind": "task",
           "readme": {
             "path": "plugins/tasks/doubao/README.md",
-            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "sha256": "e74e72f4ef2a3ceac21b32148147dd410825ddee818abcd5996100f85c83acae",
             "translations": {
               "zh-CN": {
                 "path": "plugins/tasks/doubao/README.zh-CN.md",
-                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+                "sha256": "f491bb6fbfa457f52bae40561592e41d98d70a54041e7b33e3cf905ea739b0c1"
               }
             }
           }
@@ -2035,11 +2163,11 @@
           "kind": "task",
           "readme": {
             "path": "plugins/tasks/doubao/README.md",
-            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "sha256": "e74e72f4ef2a3ceac21b32148147dd410825ddee818abcd5996100f85c83acae",
             "translations": {
               "zh-CN": {
                 "path": "plugins/tasks/doubao/README.zh-CN.md",
-                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+                "sha256": "f491bb6fbfa457f52bae40561592e41d98d70a54041e7b33e3cf905ea739b0c1"
               }
             }
           }
@@ -2052,11 +2180,11 @@
           "kind": "task",
           "readme": {
             "path": "plugins/tasks/doubao/README.md",
-            "sha256": "fbe49f8074864485463a428b7c827c8a65b54cc06a486956fabbafdbf987c6b3",
+            "sha256": "e74e72f4ef2a3ceac21b32148147dd410825ddee818abcd5996100f85c83acae",
             "translations": {
               "zh-CN": {
                 "path": "plugins/tasks/doubao/README.zh-CN.md",
-                "sha256": "840f5b6ed0b03752a3834c2744e1377937fc8bfb303972e1b0fce3647f605c82"
+                "sha256": "f491bb6fbfa457f52bae40561592e41d98d70a54041e7b33e3cf905ea739b0c1"
               }
             }
           }
@@ -2891,6 +3019,55 @@
       ]
     },
     {
+      "key": "image-compress",
+      "name": "Image compression",
+      "iconFile": {
+        "path": "plugins/tasks/image-compress/icon.svg",
+        "sha256": "9817d76fd4af0d5d018ea4be403869a7a0f774b865730956390ca8fbf3896f81"
+      },
+      "description": {
+        "en": "Compresses large images in requests before they are sent upstream",
+        "zh": "发送到上游前压缩请求中的大图片"
+      },
+      "routes": [],
+      "usageSchema": null,
+      "usageExamples": null,
+      "usageProfiles": null,
+      "task": false,
+      "provider": false,
+      "transform": true,
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/image-compress/1.0.0/plugin.js",
+          "sha256": "c3ad30dbcb9676cbce6aaa20a5bb24c372e918525db33adb037f707ec7cd5f77",
+          "minApiVersion": 1,
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/image-compress/README.md",
+            "sha256": "2d7da67ec1fed113e17ba963fc3c27f69c9064470f9d4d9f34fc21d07d4f6ca5",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/image-compress/README.zh-CN.md",
+                "sha256": "1be7ed7ed929559b4db5f05f374a3c836b480f70fda08513127640ca02c32988"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/image-compress/1.0.0/CHANGELOG.md",
+            "sha256": "786b115128d1c38c39ae0cdc0774b369dc8d9bc07994d34d4c39ab65d5b4ad4b",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/image-compress/1.0.0/CHANGELOG.zh-CN.md",
+                "sha256": "92cbe98ab29f24c594c0207fcebb5fd5bf925e6baa6225bf77faef5521f6d37b"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
       "key": "incho",
       "name": "Incho",
       "icon": "text",
@@ -3542,6 +3719,153 @@
               "zh-CN": {
                 "path": "plugins/tasks/kling/README.zh-CN.md",
                 "sha256": "cf8cbbde81f83c13d9df4b0d16c679a160c9e95668a17fcbb72adeda4c005cbf"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "param-override",
+      "name": "Global parameter override",
+      "iconFile": {
+        "path": "plugins/tasks/param-override/icon.svg",
+        "sha256": "ae8bddd8f22197d8def73e217a2b650c2231726cd2064e59bc9589f96064908c"
+      },
+      "description": {
+        "en": "Applies parameter override rules to all requests or to chosen groups, with the same syntax as a channel's parameter override. To change a single channel, use that channel's own parameter override; on the same parameter, the channel's setting wins",
+        "zh": "对全部请求或指定分组应用参数覆盖规则，语法与渠道的参数覆盖相同。只修改单个渠道时，请使用该渠道自己的参数覆盖；同一参数以渠道的设置为准"
+      },
+      "routes": [],
+      "usageSchema": null,
+      "usageExamples": null,
+      "usageProfiles": null,
+      "task": false,
+      "provider": false,
+      "transform": true,
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/param-override/1.0.0/plugin.js",
+          "sha256": "eebca4cd4863597ad0646d3d56f82c7d96a0d9cf92d98363eec2188e1662f20f",
+          "minApiVersion": 1,
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/param-override/README.md",
+            "sha256": "ee4e066bb129224423ee5546191ec07a9b94ea55e53df2b0604b0cfdd0020119",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/param-override/README.zh-CN.md",
+                "sha256": "e1e8f9a940cc8785ff5bd2e11394014a00ebccec4262a1bc143c6fa642863db8"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/param-override/1.0.0/CHANGELOG.md",
+            "sha256": "0040ba8d8cbb61d78f45fc39a977008ae7e7a1fc16b9498bded7197a192c7e66",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/param-override/1.0.0/CHANGELOG.zh-CN.md",
+                "sha256": "1eb7d0d5c0a3234731f99755b089c315fc8203f9f4030da9b2d38553b6eb833f"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "request-filter",
+      "name": "Request filter",
+      "iconFile": {
+        "path": "plugins/tasks/request-filter/icon.svg",
+        "sha256": "b65d1d2553a64421bdac8eb0e3275520c850643fea5113a194505c4c25e5cf5a"
+      },
+      "description": {
+        "en": "Rejects requests whose text matches a keyword or regular expression",
+        "zh": "拒绝文本命中关键词或正则表达式的请求"
+      },
+      "routes": [],
+      "usageSchema": null,
+      "usageExamples": null,
+      "usageProfiles": null,
+      "task": false,
+      "provider": false,
+      "transform": true,
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/request-filter/1.0.0/plugin.js",
+          "sha256": "db47c87a60f813cdeb2d4fbf7b933fc1424fa5b62ff6a85fcdfa58323b0bdb17",
+          "minApiVersion": 1,
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/request-filter/README.md",
+            "sha256": "385be0d4232191b393c7e4670e6ffd9c71870e2351720278f015cbe3be702a9d",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/request-filter/README.zh-CN.md",
+                "sha256": "2023ec5bc85d54d9ab5da604549b39c490acc8745333e38f95e2aebc591cc2f2"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/request-filter/1.0.0/CHANGELOG.md",
+            "sha256": "e5452e9a4ccff42813ada092b1e688c983962b8e65b901d4bb2e93228f0321e2",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/request-filter/1.0.0/CHANGELOG.zh-CN.md",
+                "sha256": "42dd6b377dd2f47d81ad8662d896b26cc664b88b03f87b7418ef9407cfe1ffb3"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "request-redact",
+      "name": "Request redaction",
+      "iconFile": {
+        "path": "plugins/tasks/request-redact/icon.svg",
+        "sha256": "4fef21599e57c7ce82f13bcfea16f7746ff005ff90478aca7c98a9dd27e0286b"
+      },
+      "description": {
+        "en": "Replaces personal information and keys in request text before it is sent",
+        "zh": "发送前替换请求文本中的个人信息和密钥"
+      },
+      "routes": [],
+      "usageSchema": null,
+      "usageExamples": null,
+      "usageProfiles": null,
+      "task": false,
+      "provider": false,
+      "transform": true,
+      "latest": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/tasks/request-redact/1.0.0/plugin.js",
+          "sha256": "4edd19826e51b19a612d749d9d8ff116e902174f8d47b4ee10c5696d39410d0a",
+          "minApiVersion": 1,
+          "kind": "task",
+          "readme": {
+            "path": "plugins/tasks/request-redact/README.md",
+            "sha256": "bf607824f6fa058e40f98ef92f18ac3c43d150eb1ce4210230098931a686328d",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/request-redact/README.zh-CN.md",
+                "sha256": "9ce6300f9653c3633f4790263a7771720830fa5d3194d6bc5bebc90c36283c59"
+              }
+            }
+          },
+          "changelog": {
+            "path": "plugins/tasks/request-redact/1.0.0/CHANGELOG.md",
+            "sha256": "c95ddecec63622449414c268609ac47a7be4cfc159c3f2997873b8e302030fd4",
+            "translations": {
+              "zh-CN": {
+                "path": "plugins/tasks/request-redact/1.0.0/CHANGELOG.zh-CN.md",
+                "sha256": "cbd5034211f5e621509c9161838f86b928e9234c5efc8a8b82dff891ea136726"
               }
             }
           }

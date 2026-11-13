@@ -26,7 +26,7 @@ locale: zh-CN
 | `POST /api/v3/images/generations` | 用方舟原生请求体生成图片。带 `stream: true` 时按方舟的推送顺序流式返回图片。 | Seedream 模型 |
 
 Seedance 模型有 `doubao-seedance-1-0-pro-250528`、`doubao-seedance-1-0-lite-t2v`、`doubao-seedance-1-0-lite-i2v`、`doubao-seedance-1-5-pro-251215`、`doubao-seedance-2-0-260128`、`doubao-seedance-2-0-fast-260128`、`doubao-seedance-2-0-mini-260615` 和 `doubao-seedance-2-5-260628`。
-Seedream 模型有 `doubao-seedream-5-0-pro-260628`、`doubao-seedream-5-0-flash-260915`、`doubao-seedream-5-0-lite-260128`、`doubao-seedream-5-0-260128`、`doubao-seedream-4-5-251128` 和 `doubao-seedream-4-0-250828`。
+Seedream 模型有 `doubao-seedream-5-5-261028`、`doubao-seedream-5-0-pro-260628`、`doubao-seedream-5-0-flash-260915`、`doubao-seedream-5-0-lite-260128`、`doubao-seedream-5-0-260128`、`doubao-seedream-4-5-251128` 和 `doubao-seedream-4-0-250828`。
 
 视频客户端轮询 `GET /v1/videos/{task_id}` 查看任务状态，完成后从 `GET /v1/videos/{task_id}/content` 下载视频。
 Responses 的结果里带有网关提供的视频或图片链接。后台调用的结果用 `GET /v1/responses/{response_id}` 查询。
@@ -45,9 +45,9 @@ Seedream 模型的计价字段如下。
 
 - “图片生成单价（1.5K 及以下）”和“图片生成单价（1.5K 以上）”按输出图片张数计费，以 261 万像素为界。Seedream 5.0 lite、5.0 和 4.5 的输出都在这条线以上，只有一个“图片生成单价”。网关先按请求的尺寸和张数估算，完成后按每张图的实际尺寸结算。
 - “输入图片单价”按参考图张数计费。网关先按请求里的图片数计，完成后按方舟返回的张数结算。
-- “是否开启图层拆分”可以给图层拆分单独定价，适用于 Seedream 5.0 pro 和 flash。拆出的每一层都按一张输出图片计。
+- “是否开启图层拆分”可以给图层拆分单独定价，适用于 Seedream 5.5、5.0 pro 和 flash。拆出的每一层都按一张输出图片计。
 
-组图生成和图层拆分在图片返回前，按请求允许的最多张数预扣。
+组图生成和图层拆分在图片返回前，按请求允许的最多张数预扣。图层拆分在 Seedream 5.0 pro 和 flash 上按 17 张预扣；在 Seedream 5.5 上按请求的 `layer_decomposition_options.max_images` 预扣，未设置时按 30 张。
 
 ## 示例
 
@@ -74,5 +74,6 @@ curl -o video.mp4 https://your-gateway.example.com/v1/videos/{task_id}/content \
 - 时长设为 `-1` 时，Seedance 1.5 pro、2.0 和 2.5 会自己决定视频长度。
 - `/v1/videos` 的参考素材必须是 URL，上传文件会被拒绝。
 - 在 OpenAI Images API 上，`n` 只能为 1，需要多张图时用 `sequential_image_generation`。这个接口不支持流式返回和 `mask`。
-- Seedream 5.0 pro 和 flash 最多接受 10 张参考图，其他 Seedream 模型最多 14 张。上传的单张图片不超过 30 MiB。
+- Seedream 5.0 pro 和 flash 生成透明背景（`background: "transparent"`）时，必须恰好有一张参考图。Seedream 5.5 没有这个限制，还可以传 `background: "auto"`。透明背景图片不能使用 `output_format: "jpeg"`。
+- Seedream 5.5、5.0 pro 和 flash 最多接受 10 张参考图，其他 Seedream 模型最多 14 张。上传的单张图片不超过 30 MiB。
 - 带 `callback_url` 的请求会被拒绝，请改为轮询任务。

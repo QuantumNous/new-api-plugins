@@ -27,7 +27,7 @@ Generates videos with Doubao Seedance and images with Doubao Seedream on Volceng
 | `POST /api/v3/images/generations` | Creates images with Ark's own body. With `stream: true` the images stream back as Ark sends them. | Seedream models |
 
 The Seedance models are `doubao-seedance-1-0-pro-250528`, `doubao-seedance-1-0-lite-t2v`, `doubao-seedance-1-0-lite-i2v`, `doubao-seedance-1-5-pro-251215`, `doubao-seedance-2-0-260128`, `doubao-seedance-2-0-fast-260128`, `doubao-seedance-2-0-mini-260615` and `doubao-seedance-2-5-260628`.
-The Seedream models are `doubao-seedream-5-0-pro-260628`, `doubao-seedream-5-0-flash-260915`, `doubao-seedream-5-0-lite-260128`, `doubao-seedream-5-0-260128`, `doubao-seedream-4-5-251128` and `doubao-seedream-4-0-250828`.
+The Seedream models are `doubao-seedream-5-5-261028`, `doubao-seedream-5-0-pro-260628`, `doubao-seedream-5-0-flash-260915`, `doubao-seedream-5-0-lite-260128`, `doubao-seedream-5-0-260128`, `doubao-seedream-4-5-251128` and `doubao-seedream-4-0-250828`.
 
 Video clients poll `GET /v1/videos/{task_id}` and download the file from `GET /v1/videos/{task_id}/content`.
 A finished Responses result contains gateway links to the video or images. Background responses are read with `GET /v1/responses/{response_id}`.
@@ -46,9 +46,9 @@ Seedream models have these price fields.
 
 - "Image generation unit price (1.5K and below)" and "Image generation unit price (above 1.5K)" charge per output image, split at 2.61 megapixels. Seedream 5.0 lite, 5.0 and 4.5 make only larger images and have a single "Image generation unit price". The gateway estimates from the requested size and count, and settles on the size of each delivered image.
 - "Input image unit price" is charged per reference image. The gateway counts the request's images and settles on the count Ark reports.
-- "Whether layer decomposition is enabled" gives layer decomposition its own price on Seedream 5.0 pro and flash. Each layer counts as an output image.
+- "Whether layer decomposition is enabled" gives layer decomposition its own price on Seedream 5.5, 5.0 pro and flash. Each layer counts as an output image.
 
-Group generation and layer decomposition hold the largest image count the request allows until the images arrive.
+Group generation and layer decomposition hold the largest image count the request allows until the images arrive. Layer decomposition holds 17 images on Seedream 5.0 pro and flash, and on Seedream 5.5 the `layer_decomposition_options.max_images` of the request, or 30 without it.
 
 ## Example
 
@@ -75,5 +75,6 @@ curl -o video.mp4 https://your-gateway.example.com/v1/videos/{task_id}/content \
 - A duration of `-1` lets Seedance 1.5 pro, 2.0 and 2.5 choose the length.
 - `/v1/videos` takes references as URLs. File uploads are refused.
 - On the OpenAI Images API, `n` is 1. Use `sequential_image_generation` for several images. Streaming and `mask` are unavailable there.
-- Seedream 5.0 pro and flash take up to 10 reference images, and the other Seedream models up to 14. An uploaded image is at most 30 MiB.
+- A transparent background (`background: "transparent"`) on Seedream 5.0 pro and flash needs exactly one reference image. Seedream 5.5 has no such rule and also takes `background: "auto"`. Transparent images cannot use `output_format: "jpeg"`.
+- Seedream 5.5, 5.0 pro and flash take up to 10 reference images, and the other Seedream models up to 14. An uploaded image is at most 30 MiB.
 - Requests with `callback_url` are refused. Poll the task instead.
